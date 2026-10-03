@@ -131,6 +131,18 @@ This is explicit human design approval of revision 3 as one combined packet: sco
 
 Not approved: feature acceptance (the second human checkpoint), deferred scope, cleanup of setup tooling (D-023 stands), or the wider first-release scope, which remains open under Q-004. Implementation follows D-023: developer TDD, separate validator, independent reviewer, one feature packet plus these registers.
 
+## D-030: Select Spring Data JPA/Hibernate persistence
+
+Date: October 3, 2026. Owner: human product owner. Related question: [Q-010](questions.md#q-010-fin-001-spring-persistence-direction).
+
+After asking about JPA and Spring service/repository patterns, the owner clarified:
+
+> Switch to Spring Data JPA/Hibernate repositories
+
+This selects Spring Data JPA/Hibernate for persistence with Spring services coordinating business operations and transactions. It supersedes revision 3's JDBC persistence choice for the affected FIN-001 work. Exact USD amounts, dates, ownership integrity, API/UX scope, Flyway, PostgreSQL and independent validation/review remain required. No new service, login, deployment or feature acceptance is implied.
+
+The coordinator preserved the in-progress work and interrupted dependent development. The architect prepares the concrete persistence amendment, alternatives and operational/engineering cost in the existing FIN-001 packet; validator then reconciles affected acceptance checks. Concrete amended design review remains required before dependent implementation under AGENTS.md. The technology selection itself is settled and must not be asked again.
+
 ## Architect authority boundaries
 
 Routine choices follow the approved baseline and feature design. New deployable services, message brokers, external providers, replacement frameworks or databases, and material changes to security or deployment require a concrete explanation and human review before implementation. Routine dependency changes must remain justified and recorded. Setup revision 1 is approved; future finance scope remains unresolved under [Q-004](questions.md#q-004-first-usable-finance-release).

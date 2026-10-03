@@ -2,10 +2,10 @@
 
 One feature is implemented at a time. Each packet links its designs, acceptance plan, role work, explanation and final evidence. Human approval and acceptance live in the feature's canonical status record.
 
-| Feature                                                                      | What it adds                                                                                                         | Current facts                                                           |
-| ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| [SETUP-001: project setup](setup/index.md)                                   | Reproducible local application foundation, persistent development PostgreSQL, disposable tests and a Markdown reader | [Canonical setup status](setup/status.md)                               |
-| [FIN-001: Household and first checking account](household-checking/index.md) | Proposed household/member/checking slice with distinguishing labels, joint ownership and persisted reload            | Revision 3 design approved (D-029); not implemented; acceptance pending |
+| Feature                                                                      | What it adds                                                                                                         | Current facts                                                                                   |
+| ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| [SETUP-001: project setup](setup/index.md)                                   | Reproducible local application foundation, persistent development PostgreSQL, disposable tests and a Markdown reader | [Canonical setup status](setup/status.md)                                                       |
+| [FIN-001: Household and first checking account](household-checking/index.md) | Proposed household/member/checking slice with distinguishing labels, joint ownership and persisted reload            | JPA selected (D-030); revision 4 amendment ready for review; developer held; acceptance pending |
 
 ## Household finance features
 

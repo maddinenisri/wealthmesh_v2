@@ -121,3 +121,13 @@ The supplied policy answers are recorded in [D-027](decisions.md#d-027-fin-001-a
 - Rationale/options: [validation](features/setup/validation.md) passes required outcomes with zero required skips; [review](features/setup/review.md) recommends presentation. Review the [demo](features/setup/demo.md), [changes](features/setup/implementation.md) and limits before accepting or identifying required changes.
 - Answer: **“Accept completed SETUP-001”**, supplied after the coordinator presented the existing demo, explanation and final independent evidence. No completed validation was repeated to obtain acceptance.
 - Decision: [D-026](decisions.md#d-026-accept-completed-project-setup); recorded in [canonical setup status](features/setup/status.md). FIN-001 design approval remains separate.
+
+## Q-010: FIN-001 Spring persistence direction
+
+- Owner: human product owner; architect supplies concrete implications and coordinator records the answer.
+- Status: technology choice resolved October 3, 2026; concrete persistence amendment in preparation, dependent development held and existing work preserved.
+- Question: does “we should go with spring approach” mean switching to Spring Data JPA/Hibernate, or retaining the existing Spring services and JDBC repositories?
+- Context: the approved baseline and revision 3 already use Spring `@Service`, `@Repository`, dependency injection and managed transactions with explicit JDBC SQL. The owner first asked about JPA and service/repository patterns, then supplied the direction quoted above. The coordinator provisionally interprets it as a JPA preference, but has not recorded that interpretation as a human answer or revised design approval.
+- Options: retain the approved Spring JDBC adapter; or prepare a bounded Spring Data JPA/Hibernate persistence amendment preserving the approved financial/API/UX rules, Flyway and disposable PostgreSQL tests. Architect explains concrete mappings, transactions, risks and cost in the existing FIN-001 packet before dependent implementation.
+- Answer: **“Switch to Spring Data JPA/Hibernate repositories.”** The earlier “we should go with spring approach” is now clarified. Do not ask this technology choice again.
+- Decision: [D-030](decisions.md#d-030-select-spring-data-jpahibernate-persistence). D-029's feature scope and financial rules persist; its JDBC choice is superseded. The architect supplies the concrete amendment and cost for review before dependent implementation under AGENTS.md, within the existing design checkpoint.
