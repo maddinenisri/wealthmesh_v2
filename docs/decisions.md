@@ -41,7 +41,7 @@ Record unanswered/resolved questions in `docs/questions.md` with stable IDs, own
 
 ## D-022: Setup design approval
 
-Date: October 3, 2026. Owner: human product owner. Questions: [Q-007](questions.md#q-007-setup-design-checkpoint), [Q-003](questions.md#q-003-setup-frameworktool-baseline), [Q-001](questions.md#q-001-ux-review-format).
+Date: October 3, 2026. Owner: human product owner. Questions: [Q-007](questions.md#q-007-setup-design-checkpoint), [Q-003](questions.md#q-003-setup-framework-tool-baseline), [Q-001](questions.md#q-001-ux-review-format).
 
 The owner's words quoted under D-021 approve [SETUP-001 packet](features/setup/index.md), revision 1 dated October 3, 2026. Approval includes the concrete setup scope, framework/tool baseline, annotated UX, acceptance plan and working viewer/demo sequence. Implementation is authorized; no additional routine approval is needed. Optional cleanup severity/escalation remains the unresolved workflow question [Q-002](questions.md#q-002-review-findings-and-disagreement-policy).
 
@@ -84,6 +84,30 @@ The owner additionally instructed:
 > we need to commit all required and knowledge docs as well
 
 Commit and push the requested handover documents and retain tracked requirements/knowledge records, including the immutable captured source; ignored runtime/tools/dependencies/build outputs and secrets remain excluded. This delivery instruction adds no feature approval.
+
+## D-026: Accept completed project setup
+
+Date: October 3, 2026. Owner: human product owner. Question: [Q-009](questions.md#q-009-setup-feature-acceptance).
+
+Owner's actual answer:
+
+> Accept completed SETUP-001
+
+The owner accepts the completed setup after the existing working demo, plain-English explanation and final independent validation/review were presented. [Canonical setup status](features/setup/status.md) records acceptance of revision 1 with the delivered VD-01 correction and known limits. No setup validation was repeated to obtain this answer; historical evidence retains its actual tested content identity and is not retroactively attributed to a Git commit.
+
+This resolves setup's existing acceptance checkpoint. It does not approve FIN-001's design, implementation, first-release scope or deployment. FIN-001's concrete product policies and combined design review remain pending.
+
+## D-027: FIN-001 amount, date and member policies
+
+Date: October 3, 2026. Owner: human product owner. Related question: [Q-004](questions.md#q-004-first-usable-finance-release).
+
+The owner answered the concrete architect proposals:
+
+- Opening amount: **“Use the recommended input/sign/precision policy.”** Blank/zero starts at zero; plain or correctly grouped dollar text is accepted, including a leading minus for overdrafts; more than two decimal places is rejected without rounding. Negative balances reduce the checking-only total.
+- Financial dates: **“Use the recommended local-date policy.”** Default to the backend's local today, initially this computer's `America/New_York` financial zone; allow earlier dates and reject future dates.
+- Member names: **“Allow duplicate names with an additional distinguishing label.”** Revise the earlier unique-name recommendation to support same-name members with distinguishable owner choices. Architecture/UX must supply the concrete label contract in the combined packet.
+
+These actual answers settle the named policies, not the entire feature design or first release. The revised combined FIN-001 packet and validator plan still require explicit approval before production implementation. No approval is inferred for unanswered design details, feature acceptance or deployment.
 
 ## Architect authority boundaries
 

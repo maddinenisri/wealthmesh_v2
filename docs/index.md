@@ -1,10 +1,10 @@
 # WealthMesh: household financial health
 
-This project is for one household, on this computer through localhost, without login. Project setup is the current delivery. Household finance capabilities are future features; setup itself creates no accounts, balances, spending records or investments.
+This project is for one household, on this computer through localhost, without login. The owner accepted project setup; it creates no accounts, balances, spending records or investments. [FIN-001 household and first checking](features/household-checking/index.md) is the current design review, with implementation awaiting approval.
 
 ## Current work and your review
 
-Open the [setup packet](features/setup/index.md) for the delivery goal and reading order. The [canonical status](features/setup/status.md) records design, implementation, independent validation, review and the next human checkpoint. Approval and acceptance are distinct recorded decisions; this reader does not infer either from tests or files.
+Open the [FIN-001 combined packet](features/household-checking/index.md) for proposed screens, financial rules and the acceptance plan. The [canonical setup status](features/setup/status.md) retains its completed evidence and actual acceptance under D-026. Approval and acceptance are distinct recorded decisions; this reader does not infer either from tests or files.
 
 - [Questions awaiting or retaining your answers](questions.md)
 - [Human decisions and their history](decisions.md)

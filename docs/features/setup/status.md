@@ -2,18 +2,18 @@
 
 The coordinator owns this canonical record. Agents recommend; the human owner supplies design approval and feature acceptance.
 
-| Dimension                      | Current fact                                                                                                 |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| Feature                        | SETUP-001: localhost project setup and Markdown reader                                                       |
-| Approved design                | Packet revision 1, October 3, 2026                                                                           |
-| Current stage                  | **READY FOR HUMAN ACCEPTANCE — not accepted**                                                                |
-| Implementation                 | Complete; bounded VD-01 prerequisite correction delivered                                                    |
-| Independent validation         | **PASS**: required setup outcomes established; zero required skips; VD-01 independently closed               |
-| Independent review             | Recommends presenting setup for owner acceptance; six findings and VD-01 checked closed                      |
-| Human design approval          | Supplied for revision 1, including framework/tool baseline                                                   |
-| Human acceptance               | **Pending; no owner answer supplied**                                                                        |
-| Finance requirement completion | None; captured requirements await feature scope selection                                                    |
-| Next action                    | Owner reviews the working demo, explanation and final independent evidence, then accepts or requests changes |
+| Dimension                      | Current fact                                                                                   |
+| ------------------------------ | ---------------------------------------------------------------------------------------------- |
+| Feature                        | SETUP-001: localhost project setup and Markdown reader                                         |
+| Approved design                | Packet revision 1, October 3, 2026                                                             |
+| Current stage                  | **ACCEPTED — October 3, 2026, owner answer recorded under D-026**                              |
+| Implementation                 | Complete; bounded VD-01 prerequisite correction delivered                                      |
+| Independent validation         | **PASS**: required setup outcomes established; zero required skips; VD-01 independently closed |
+| Independent review             | Recommends presenting setup for owner acceptance; six findings and VD-01 checked closed        |
+| Human design approval          | Supplied for revision 1, including framework/tool baseline                                     |
+| Human acceptance               | **Supplied: “Accept completed SETUP-001”**                                                     |
+| Finance requirement completion | None; captured requirements await feature scope selection                                      |
+| Next action                    | FIN-001 revision 2 design review; concrete combined approval remains pending                   |
 
 ## Read the working delivery
 
@@ -42,7 +42,9 @@ Developer results remain separately attributed in [backend](backend-implementati
 
 ## Human acceptance checkpoint
 
-Working demo and explanation: **ready**. Independent validation: **passed**. Review recommendation: **present for acceptance**. Human response: **not supplied**; [Q-009](../../questions.md#q-009-setup-feature-acceptance) remains open. A passing test suite, reviewer recommendation or local commit cannot populate acceptance.
+Working demo and explanation: **reviewed for acceptance**. Independent validation: **passed**. Review recommendation: **present for acceptance**. Human response on October 3, 2026: **“Accept completed SETUP-001”**. [Q-009](../../questions.md#q-009-setup-feature-acceptance) is resolved by [D-026](../../decisions.md#d-026-accept-completed-project-setup). Acceptance covers revision 1's completed delivery, including the VD-01 correction and the known limits below. The actual owner answer supplies acceptance; tests, agent recommendations and Git bookkeeping do not.
+
+No setup validation was rerun for this checkpoint. Existing role-owned evidence retains its historical tested content identity; no later Git commit is invented as its tested revision. Acceptance does not approve FIN-001 or publish the application.
 
 Known limits: setup implements installation/status/documentation infrastructure only, with no household finance feature, authentication or remote access. Mermaid's visible bundle-size warning remains; a docs port override requires using the printed URL. No destructive restore/reset or deployment was performed. See final reports for details.
 

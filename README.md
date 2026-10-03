@@ -2,7 +2,7 @@
 
 WealthMesh v2 is a greenfield application for one household to manage its finances and understand its financial health. The MVP runs on the owner's computer through localhost and has no login.
 
-The owner approved setup packet revision 1 on October 3, 2026. The application skeleton, persistent development database, test commands and Markdown reader are implemented. [Independent validation](docs/features/setup/validation.md) passes all required setup outcomes with zero required skips; [final review](docs/features/setup/review.md) recommends presentation. **Ready for human acceptance; not accepted.** Follow [canonical status](docs/features/setup/status.md) and the [working demo](docs/features/setup/demo.md).
+The owner approved setup packet revision 1 and accepted its completed delivery on October 3, 2026 under [D-026](docs/decisions.md#d-026-accept-completed-project-setup). The application skeleton, persistent development database, test commands and Markdown reader are implemented. [Independent validation](docs/features/setup/validation.md) passes all required setup outcomes with zero required skips; [final review](docs/features/setup/review.md) is complete. Follow [canonical status](docs/features/setup/status.md) and the [working demo](docs/features/setup/demo.md). FIN-001 design approval remains pending.
 
 ## Start here
 
@@ -21,7 +21,7 @@ The owner approved setup packet revision 1 on October 3, 2026. The application s
 - [Approved project setup design](docs/bootstrap-design.md)
 - [Feature review packet template](docs/templates/feature-packet.md)
 - [Copyable prompt for the next feature session](docs/prompts/next-feature-session.md)
-- [FIN-001 next-session planning package: household and first checking](docs/features/household-checking/index.md) — recommended scope, not implemented or design-approved
+- [FIN-001 combined design review: household and first checking](docs/features/household-checking/index.md) — revision 2 and acceptance plan ready; implementation/design approval pending
 
 The source requirements are in `../wealthmesh/docs/requirements/v2`. Setup captured an immutable text-only [snapshot and provenance](docs/requirements/index.md), with [current inventory](docs/requirements/inventory.md) recording 39 feature files and 262 scenario identities. No sibling implementation was imported or source file modified. Finance scenarios remain deferred for release selection; setup implements no household finance capability. Later source changes require a new dated capture/comparison rather than overwriting the snapshot.
 
