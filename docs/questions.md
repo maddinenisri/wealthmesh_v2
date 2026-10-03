@@ -34,7 +34,7 @@ Agents propose questions and alternatives in their role handoffs. The coordinato
 ## Q-004: First usable finance release
 
 - Owner: human product owner; coordinator gathers requirement inventory and feature proposals.
-- Status: open for combined FIN-001 design approval and first-release scope; policy answers supplied under D-027; setup accepted under D-026.
+- Status: open for first-release scope only; FIN-001 revision 3 design approved under D-029; policy answers supplied under D-027; setup accepted under D-026.
 - Question: which requirement scenarios belong in the first usable finance release and first finance feature?
 - Rationale/options: select a narrow usable slice or a larger group of related capabilities after the immutable requirement inventory is available. No finance scope is implied by setup approval.
 
@@ -54,7 +54,7 @@ Full original completion needs explicit boundary decisions:
 
 Checking 006 recovery may be deferred for this feature; greenfield status does not delete it globally. Choosing this first feature would resolve only that portion of Q-004; the remaining release scope stays open. Proposed later ordering remains provisional and dependency-aware, without claiming every scenario depends on this slice.
 
-[D-023](decisions.md#d-023-finish-setup-and-simplify-future-workflow) already retains setup with lighter future delivery; do not reopen trimming infrastructure without a concrete new blocker. [Q-009](#q-009-setup-feature-acceptance) is now resolved by actual setup acceptance under D-026. The original pasted recommendation alone supplied no approval; the subsequent direction authorizes [FIN-001's planning package](features/household-checking/index.md), with the actual design checkpoint still pending.
+[D-023](decisions.md#d-023-finish-setup-and-simplify-future-workflow) already retains setup with lighter future delivery; do not reopen trimming infrastructure without a concrete new blocker. [Q-009](#q-009-setup-feature-acceptance) is now resolved by actual setup acceptance under D-026. The original pasted recommendation alone supplied no approval; the subsequent direction authorizes [FIN-001's planning package](features/household-checking/index.md), with the subsequent design approval recorded in D-029.
 
 - Answer: “update with your recommendation and ensure final package for next session” directs packaging the combined recommendation. The concrete amount/date/member answers below were subsequently supplied under D-027; final combined scope/design and first-release scope remain open. Selecting a planning target does not approve the whole first release.
 - Decision: [D-025](decisions.md#d-025-prepare-the-combined-first-feature-planning-package), planning direction only. Final feature/release approval and full source-scenario completion are not inferred.
@@ -69,11 +69,11 @@ UX, architect and validator sessions prepared the [combined packet](features/hou
 | Financial dates | Backend-defined local financial date, initially this computer's `America/New_York` zone; default to today, permit earlier dates, reject future dates. This avoids displaying a scheduled amount as today's balance.                                             | “Use the recommended local-date policy.”                         |
 | Member names    | Initial recommendation required unique normalized names. The owner selected the alternative: duplicate names with an additional label. Revise UX/API/storage/tests so owner choices are distinguishable.                                                        | “Allow duplicate names with an additional distinguishing label.” |
 
-The supplied policy answers are recorded in [D-027](decisions.md#d-027-fin-001-amount-date-and-member-policies). The concrete member-label contract and combined design still await review. Final first-release scope remains open even if FIN-001 is later design-approved. Q-009's prerequisite is satisfied by [D-026](decisions.md#d-026-accept-completed-project-setup).
+The supplied policy answers are recorded in [D-027](decisions.md#d-027-fin-001-amount-date-and-member-policies). The concrete member-label contract and combined revision 3 design are approved under D-029. Final first-release scope remains open. Q-009's prerequisite is satisfied by [D-026](decisions.md#d-026-accept-completed-project-setup).
 
 ### FIN-001 revision 3 recommendation
 
-The owner supplied a complexity review, said **“I haven't approved it”**, and left the recommendation to the coordinator ([D-028](decisions.md#d-028-request-a-recommendation-after-fin-001-complexity-review)). No FIN-001 design approval is supplied. Coordinator recommends revision 3 with simpler automatic save rereads/client-ID retries, last-write-wins detail edits, no navigation prompts/new timezone setting, minimal errors and member name/label correction. D-027's label policy persists. UX, architecture and validator completed sequential revisions; the combined packet now awaits approval. Wider release scope remains open. D-023 requires one feature document plus these registers; setup's historical per-role evidence chain does not apply to FIN-001.
+**Revision 3 was approved by the owner on October 3, 2026 ([D-029](decisions.md#d-029-approve-fin-001-design-revision-3)).** D-028 was corrected: its earlier owner quotes were the assistant's words. Wider release scope stays open; FIN-001 acceptance is pending. The approved revision 3 uses simpler automatic save rereads/client-ID retries, last-write-wins detail edits, no navigation prompts/new timezone setting, minimal errors and member name/label correction. D-027's label policy persists. UX, architecture and validator completed sequential revisions; the combined packet now proceeds to implementation. Wider release scope remains open. D-023 requires one feature document plus these registers; setup's historical per-role evidence chain does not apply to FIN-001.
 
 ## Q-005: Browser editing and human communication
 

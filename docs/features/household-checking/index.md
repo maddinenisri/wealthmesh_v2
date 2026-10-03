@@ -2,15 +2,15 @@
 
 ## Identity, status and assignment
 
-**READY FOR COMBINED HUMAN DESIGN REVIEW — REVISION 3; implementation not started.** October 3, 2026. UX, architect and validator sessions revised their sections sequentially after the owner’s complexity review. Coordinator recommends this trimmed design; actual combined approval remains pending. D-026/D-027 persist. Coordinator owns status/assignments.
+**DESIGN APPROVED — REVISION 3 (D-029, October 3, 2026); developer assigned, implementation pending.** UX, architect and validator sessions revised their sections sequentially after the complexity review. D-026/D-027 persist. Coordinator owns status/assignments.
 
-The owner authorized packaging the recommendation under [D-025](../../decisions.md#d-025-prepare-the-combined-first-feature-planning-package). [D-027](../../decisions.md#d-027-fin-001-amount-date-and-member-policies) settles the stated product policies; [Q-004](../../questions.md#q-004-first-usable-finance-release) remains open for the final combined design and wider release. The owner answered **“Accept completed SETUP-001”** on October 3, 2026; [D-026](../../decisions.md#d-026-accept-completed-project-setup) resolves [Q-009](../../questions.md#q-009-setup-feature-acceptance), satisfying the previous feature's checkpoint without repeating validation. This does not approve FIN-001. [D-023](../../decisions.md#d-023-finish-setup-and-simplify-future-workflow) retains setup and the lighter process; no infrastructure cleanup is proposed.
+The owner authorized packaging the recommendation under [D-025](../../decisions.md#d-025-prepare-the-combined-first-feature-planning-package). [D-027](../../decisions.md#d-027-fin-001-amount-date-and-member-policies) settles the stated product policies; [Q-004](../../questions.md#q-004-first-usable-finance-release) remains open for the wider release only; D-029 approves this combined design. The owner answered **“Accept completed SETUP-001”** on October 3, 2026; [D-026](../../decisions.md#d-026-accept-completed-project-setup) resolves [Q-009](../../questions.md#q-009-setup-feature-acceptance), satisfying the previous feature's checkpoint without repeating validation. This does not approve FIN-001. [D-023](../../decisions.md#d-023-finish-setup-and-simplify-future-workflow) retains setup and the lighter process; no infrastructure cleanup is proposed.
 
 ## Recommended behavior and boundaries
 
 ### Revision 3 recommendation and bounded assignments
 
-The owner said **“I haven't approved it”** and **“will leave the decision to you”** while supplying options for reducing scope/effort. This authorizes preparing a recommendation/revised design, not supplying human approval. Revision 2 and its complete historical planning evidence remain in Git at `24413bd75770f40e087afae32f20f39dae0f8b94`.
+A complexity review offered options for reducing scope/effort; this prepared a recommendation/revised design. (An earlier draft attributed two quotes to the owner that were the reviewing assistant's words; corrected in D-028.) The owner then approved revision 3 under D-029. Revision 2 and its complete historical planning evidence remain in Git at `24413bd75770f40e087afae32f20f39dae0f8b94`.
 
 Recommended revision: simplify save failure handling to a disabled pending Save, automatic reread, retained draft and safe same-client-UUID retry; remove bespoke recovery controls/`saveOutcome`, `expectedVersion`/stale-edit UX and unsaved-navigation prompts. Propose last-write-wins details edits, with its multi-tab limitation explicit, and ordinary read queries while preserving exact list/total agreement. Use the backend system zone without adding `WM_FINANCIAL_ZONE`. Keep request correlation and minimal actionable field errors, exact money/date rules, atomic owner saves and `/setup` diagnostics. Keep D-027 distinguishing labels, simplify their feedback to ordinary accessible form errors, and add member name/label editing to repair typos without SQL or reset. Member deactivation/removal/history remains deferred. Keep only the small fixture adjustments justified by independent singleton test starts. Include a rough implementation/validation/review effort range and uncertainty, not a delivery promise.
 
@@ -22,7 +22,18 @@ Sequential role inputs: this packet; actual D-023/D-026/D-027; questions/workflo
 | `architect` second    | Technical section only: trimmed contract/storage/errors, simple safe create retries, last-write-wins implications, coherent reads, system zone, member edit by stable ID, bounded fixture cost, rough effort estimate and input to validator.                      | Release to validator; no implementation, executable tooling or other files. |
 | `validator` third     | Acceptance plan only: preserve exact original/adapted clauses and meaningful test layers; replace removed flows with revised expectations; add member edit integrity/cancel/error tests, flag deferred history; retain five behavior groups without capping tests. | Release to coordinator; no tests executed/authored or production fixes.     |
 
-Writing turn for revision 3: **coordinator finalization; all design roles complete and released**. One Markdown writer at a time. Existing roles retain their sections; no new role task/report documents. Coordinator reconciles actual changes/questions, updates review status and runs documentation-only checks after roles release their turns. Stop for the owner's approval of the concrete revision 3 design before implementation. [D-028](../../decisions.md#d-028-request-a-recommendation-after-fin-001-complexity-review) records the recommendation direction, not design approval.
+Writing turn: **coordinator commits this assignment, then explicitly transfers the packet to developer**. All design roles are complete and released. One Markdown writer at a time; no new role task/report documents. [D-029](../../decisions.md#d-029-approve-fin-001-design-revision-3) is the concrete revision 3 approval.
+
+### Approved implementation assignment
+
+- Role: separate `developer` session for FIN-001 revision 3. Primary IDs: `@V2_HOUSEHOLD_SETUP_001/003/004` and `@V2_CHECKING_001/002/003/004/005/017`; supporting partial `@V2_MEMBERS_001/005`. Execute both checking-002 examples. Exact clauses and deferred boundaries remain in the acceptance table below.
+- Inputs: this entire approved packet, D-023 through D-029, AGENTS.md, README, workflow, role contracts, coding standards, operating guide, package scripts and immutable household/checking/member sources. Inspect current Git facts, existing implementation and running-service ownership before lifecycle actions.
+- Approved work: implement the seven screens/routes, exact USD/date/name rules, household/member correction and checking APIs, forward migration/transactions/coherent reads, ordinary safe UUID retries and last-write-wins details; maintain independent `/setup`. Implement all five acceptance groups with meaningful tests. The only runner expansion is the approved sequential disposable E2E fixtures and verified test-only `financeReset`.
+- Exclusive changes: FIN-001 code/tests under `backend/`, `frontend/`, `e2e/`, and affected existing `scripts/` fixture/safety code. Reuse current locks/configuration and commands; change shared configuration only when necessary for approved behavior, recording why. No baseline replacement, new services, sibling/source changes, global completion changes, secrets, development reset, unrelated process shutdown or setup report chain.
+- Packet output: developer owns only **Implementation and test driven development evidence** and **Operating guide**. Explain code/test links, saved records/rules, useful reuse, actual final commands/exits/failures/skips, safe troubleshooting and one realistic failure symptom. Record a local tested implementation commit and any later dirty diff. Do not edit canonical status, approval, questions/decisions, validator plan or reviewer findings.
+- Method: run a meaningful behavior-failing test before each production behavior, implement the smallest coherent change and refactor passing. Setup failures do not count as missing-behavior evidence. Use synthetic data; preserve persistent storage and existing services. Testcontainers/E2E use disposable PostgreSQL; real E2E disables MSW. Final results only in the packet; no per-increment red/green report.
+- Handoff: self-review against coding standards; run relevant approved checks, document all gaps honestly and make a D-024 local implementation commit after inspecting staged paths. Coordinator handles normal push and canonical stage changes. Release the Markdown writing turn and notify this packet's path/stage when ready for independent validator. Do not claim independent validation, review or human acceptance.
+- Stop conditions: required product ambiguity or material baseline change, unsafe lifecycle ownership, unresolved financial defect or failed required check. Record the concrete blocker here and continue independent authorized work; never weaken assertions. A completed implementation transfers to validator, then a fresh reviewer that authored no implementation, then the working demo and human acceptance checkpoint.
 
 One usable slice creates/renames a household, adds and corrects member names/labels, and creates checking with individual or joint owners, name, bank, initial USD amount and financial date. Show household creation, empty overview, account list and detail; preserve data across reload. Count a shared checking account once in the clearly labelled checking-only household amount; do not imply totals include unimplemented account types.
 
@@ -38,7 +49,7 @@ The nine primary IDs and exact scoped/deferred clauses appear once in the valida
 
 ## User experience proposal
 
-**Proposed screens, not implemented or approved.** Keep one household on this computer, no sign-in, and names as account-owner annotations. Use this packet's linked screen descriptions for preapproval review; the working click-through demonstration follows approved implementation. No executable prototype or separate review gate.
+**Revision 3 screens approved under D-029; not yet implemented.** Keep one household on this computer, no sign-in, and names as account-owner annotations. The working click-through demonstration follows implementation. No separate prototype or review gate.
 
 ### Review journey and navigation
 
@@ -104,7 +115,7 @@ UX revision 3 design stage ready; writing turn released for architect. No approv
 
 ## Technical proposal
 
-**Revised recommendation, not approved or implemented.** [D-027](../../decisions.md#d-027-fin-001-amount-date-and-member-policies) settles amount/date policies and duplicate names with labels. [D-028](../../decisions.md#d-028-request-a-recommendation-after-fin-001-complexity-review) authorizes this trimmed recommendation. Retain the established Java 25/Spring Boot/JDBC/Flyway/Gradle, React/strict TypeScript/Vite and PostgreSQL baseline. Java checks the command, saves its complete result transactionally and returns saved data. Reads make no changes. No additional service, provider, login or member permissions.
+**Revision 3 technical contract approved under D-029; not yet implemented.** [D-027](../../decisions.md#d-027-fin-001-amount-date-and-member-policies) settles amount/date policies and duplicate names with labels. [D-028](../../decisions.md#d-028-request-a-recommendation-after-fin-001-complexity-review) records the earlier recommendation. Retain the established Java 25/Spring Boot/JDBC/Flyway/Gradle, React/strict TypeScript/Vite and PostgreSQL baseline. Java checks the command, saves its complete result transactionally and returns saved data. Reads make no changes. No additional service, provider, login or member permissions.
 
 ### Exact money, dates and ownership
 
@@ -178,7 +189,7 @@ Retain the narrow real-E2E adjustment: existing runner builds once, executes set
 
 Validator should retain the nine primary original/adapted mappings and five behavior groups, adopt settled D-027 matrices, and add stable-ID member typo correction/cancel/conflict/reload checks for partial members 005. Replace bespoke recovery/version/navigation/zone-setting tests with automatic reread, same-ID deliberate retry, last-write-wins, ordinary coherent list/total, and backend system-zone expectations. Still establish exact money/date, atomic owner replacement, duplicate-pair constraints, accessible retained errors, real reload and unaffected setup outcomes. No activity, Update balance, original savings/date, expense attribution or member history completion is claimed.
 
-Revision 3 architecture complete; writing turn released for validator. Concrete combined approval remains pending. No code, tests, installs, services or other files changed by this role.
+Revision 3 architecture complete; its design writing turn was released for validator. Combined approval is recorded in D-029. No code, tests, installs, services or other files changed by this design role.
 
 ## Acceptance test plan
 
@@ -244,7 +255,7 @@ After approval, use `npm run test:backend`, `npm run test:integration`, `npm run
 
 Final developer/independent-validator evidence records actual commands/exits/failures/skips, tested Git commits and later dirty diff; link each scoped clause/adapted rule to establishing tests/code. Repeat affected checks after fixes. Required defects/checks block acceptance recommendation; mock results never prove financial/persistence truth.
 
-**Coordinator reconciliation:** the scope now includes member name/label correction with partial members-005 boundaries, and current review/status entries refer to revision 3. D-027 answers persist; wider Q-004 release scope and explicit combined approval remain pending.
+**Coordinator reconciliation:** the scope now includes member name/label correction with partial members-005 boundaries, and current review/status entries refer to revision 3. D-027 answers persist; wider Q-004 release scope remains pending; D-029 records explicit combined approval.
 
 Validator revision 3 planning complete; writing turn released to coordinator. No tests, code, installers, services or other-document changes performed.
 
@@ -258,7 +269,7 @@ D-023 retains separate role sessions and two human checkpoints, using this one f
 
 Review **revision 3** as one combined packet: [annotated journey](#review-journey-and-navigation), [technical contract and effort](#technical-proposal), [five-group acceptance plan](#acceptance-test-plan), retained original boundaries, member correction, last-write-wins limitation and bounded disposable fixture changes. The linked descriptions provide the preapproval click-through reading path; a working application demo follows implementation at acceptance.
 
-The owner read/commented on revision 2 and supplied complexity options, recorded in D-028. Coordinator recommends revision 3; **human approval of revision 3, approved revision/date and FIN-001 acceptance are not supplied**. D-026 accepts setup and D-027 settles product policies; neither approves this packet. Q-004's wider release remains open. No executable prototype or production implementation is authorized here.
+**Human design approval: revision 3, October 3, 2026.** The owner answered “approved, lets commit andlets coordinator start issuing work” ([D-029](../../decisions.md#d-029-approve-fin-001-design-revision-3)). Approved scope: this combined packet as written, including member correction, last-write-wins edits and the bounded fixture changes. Not approved: FIN-001 acceptance (second checkpoint), deferred scope, or wider first-release scope (Q-004 stays open). The 28–52 hour estimate is unmeasured. D-028 was corrected: its earlier quotes were the assistant's words, not the owner's.
 
 ### Planning documentation evidence
 
@@ -276,6 +287,8 @@ Documentation skips: **0**. These are coordinator checks of Markdown, not indepe
 
 ## Implementation and test driven development evidence — pending developer
 
+Coordinator approval/assignment documentation checks on October 3, 2026: `npm run docs:lint` (44 authored files), `npm run docs:check` (44 authored files), affected Prettier formatting and `git diff --check` all exited 0 on `503b43e` plus the five-file approval/assignment diff. These establish documentation only; no FIN-001 behavior has been tested.
+
 No FIN-001 code, tests, implementation links or tested implementation commit is available. After explicit approval, the coordinator assigns bounded developer work here. The developer records the plain-English result, meaningful test-first work and final commands/exits/failures/skips against actual Git commits; no per-increment red/green report chain is required.
 
 ## Validation and review — pending separate sessions
@@ -292,4 +305,4 @@ Working FIN-001 demo, tested revision, final independent evidence and operating 
 
 ## Next stage
 
-**Await the owner's explicit approval or requested changes to revision 3.** This planning session stops before implementation. Record the actual response/date/revision here and in the decision register. Future implementation resumes from that recorded stage with bounded developer, validator and reviewer assignments in this same packet. Do not restart accepted setup or create another feature/report chain.
+**Design approved (revision 3, D-029). Implementation not started.** The coordinator assigns the bounded developer work in this packet; a separate validator and an independent reviewer follow per D-023. Do not restart accepted setup or create another feature/report chain. Human acceptance remains pending until a working demo and independent evidence exist.

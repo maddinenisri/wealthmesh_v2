@@ -113,17 +113,23 @@ These actual answers settle the named policies, not the entire feature design or
 
 Date: October 3, 2026. Owner: human product owner. Related question: [Q-004](questions.md#q-004-first-usable-finance-release).
 
-The owner supplied options for keeping or trimming the revision 2 design and said:
+**Correction (October 3, 2026, recorded with D-029):** an earlier version of this entry quoted “I haven't approved it” and “will leave the decision to you” as the owner's words. Those sentences were written by the reviewing assistant in its review reply, not by the owner. The owner supplied no such statement. The owner relayed the complexity-review options and made no selection until D-029.
 
-> I haven't approved it
-
-The owner also wrote:
-
-> will leave the decision to you
-
-The coordinator chooses to prepare a trimmed revision 3 recommendation, including simpler save handling/detail edits and a member typo-correction capability. This records the owner's direction to recommend a path, not a human selection of “approve with trims” or approval of implementation. Concrete role proposals belong in the single FIN-001 packet and remain reviewable before coding.
+The review offered options for keeping or trimming the revision 2 design. The coordinator prepared a trimmed revision 3 recommendation, including simpler save handling/detail edits and a member typo-correction capability. This was a recommendation only, not a human selection or approval of implementation. Concrete role proposals belong in the single FIN-001 packet and remain reviewable before coding.
 
 Existing D-026 setup acceptance and D-027 policy answers persist. D-023's one-document future workflow retains separate role sessions and both checkpoints; setup's historical role-report chain is not carried into FIN-001. Wider release scope and the combined revision 3 design approval remain open. No implementation, deployment or feature acceptance is authorized by this direction.
+
+## D-029: Approve FIN-001 design revision 3
+
+Date: October 3, 2026. Owner: human product owner. Related question: [Q-004](questions.md#q-004-first-usable-finance-release).
+
+After reviewing revision 3 of [FIN-001](features/household-checking/index.md) (commit `503b43e`), the owner answered:
+
+> approved, lets commit andlets coordinator start issuing work
+
+This is explicit human design approval of revision 3 as one combined packet: scope and retained original boundaries, UX, technical contract, member name/label correction, last-write-wins detail edits, bounded disposable test-fixture changes (sequential setup/finance E2E suites and the test-only `financeReset`), and the five-group acceptance plan. The packet's 28–52 hour estimate is unmeasured and not a commitment. It authorizes the bounded implementation described there.
+
+Not approved: feature acceptance (the second human checkpoint), deferred scope, cleanup of setup tooling (D-023 stands), or the wider first-release scope, which remains open under Q-004. Implementation follows D-023: developer TDD, separate validator, independent reviewer, one feature packet plus these registers.
 
 ## Architect authority boundaries
 
