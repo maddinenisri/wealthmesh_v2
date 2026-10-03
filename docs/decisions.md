@@ -69,6 +69,22 @@ Owner's actual words:
 
 Use a descriptive title with the feature ID and a short plain-English body explaining the problem, user-visible result and high-level changes, followed by relevant actual validation. Avoid method/file inventories and unexecuted pass claims. Preserve pending human acceptance and feature limits when relevant. This convention improves Git history without adding another report chain or approval gate; [workflow](workflow.md#commit-messages) and `AGENTS.md` apply it to future commits.
 
+## D-025: Prepare the combined first-feature planning package
+
+Date: October 3, 2026. Owner: human product owner. Related question: [Q-004](questions.md#q-004-first-usable-finance-release).
+
+Owner's actual words:
+
+> update with your recommendation and ensure final package for next session
+
+Prepare [FIN-001: Household and first checking account](features/household-checking/index.md) as the recommended next-session planning target, with the updated copyable prompt and knowledge links. This authorizes packaging and preapproval planning, not a completed concrete design, production implementation, final release scope or setup/feature acceptance. Role designs, validator plan and precise product questions remain for the next session. D-023's lighter workflow and existing checkpoints remain.
+
+The owner additionally instructed:
+
+> we need to commit all required and knowledge docs as well
+
+Commit and push the requested handover documents and retain tracked requirements/knowledge records, including the immutable captured source; ignored runtime/tools/dependencies/build outputs and secrets remain excluded. This delivery instruction adds no feature approval.
+
 ## Architect authority boundaries
 
 Routine choices follow the approved baseline and feature design. New deployable services, message brokers, external providers, replacement frameworks or databases, and material changes to security or deployment require a concrete explanation and human review before implementation. Routine dependency changes must remain justified and recorded. Setup revision 1 is approved; future finance scope remains unresolved under [Q-004](questions.md#q-004-first-usable-finance-release).

@@ -21,6 +21,7 @@ The owner approved setup packet revision 1 on October 3, 2026. The application s
 - [Approved project setup design](docs/bootstrap-design.md)
 - [Feature review packet template](docs/templates/feature-packet.md)
 - [Copyable prompt for the next feature session](docs/prompts/next-feature-session.md)
+- [FIN-001 next-session planning package: household and first checking](docs/features/household-checking/index.md) — recommended scope, not implemented or design-approved
 
 The source requirements are in `../wealthmesh/docs/requirements/v2`. Setup captured an immutable text-only [snapshot and provenance](docs/requirements/index.md), with [current inventory](docs/requirements/inventory.md) recording 39 feature files and 262 scenario identities. No sibling implementation was imported or source file modified. Finance scenarios remain deferred for release selection; setup implements no household finance capability. Later source changes require a new dated capture/comparison rather than overwriting the snapshot.
 

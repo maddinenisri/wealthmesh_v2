@@ -34,7 +34,7 @@ Agents propose questions and alternatives in their role handoffs. The coordinato
 ## Q-004: First usable finance release
 
 - Owner: human product owner; coordinator gathers requirement inventory and feature proposals.
-- Status: open; does not block setup.
+- Status: open for final feature scope/design and first-release scope; combined planning target supplied under D-025; does not block setup.
 - Question: which requirement scenarios belong in the first usable finance release and first finance feature?
 - Rationale/options: select a narrow usable slice or a larger group of related capabilities after the immutable requirement inventory is available. No finance scope is implied by setup approval.
 
@@ -42,7 +42,7 @@ Agents propose questions and alternatives in their role handoffs. The coordinato
 
 “Household and first checking account” is a sensible recommendation for one combined vertical slice: create a household, named members and a checking account, then find its saved details after reload. Household creation and the empty overview remain explicit states within the same feature. Include individual/joint ownership, unchanged money on detail edits, synthetic names and starting amounts excluded from income. The architect must propose exact USD representation, dates, constraints and transactions; no arbitrary schema or money policy is approved here.
 
-The supplied enumeration contains **nine unique source IDs**, not thirteen: `@V2_HOUSEHOLD_SETUP_001/003/004` and `@V2_CHECKING_001/002/003/004/005/017` (three household plus six checking). A tenth ID, if intended, has not been identified. Source outlines count once; example rows are separate test executions, not additional scenario identities.
+The supplied enumeration contains **nine unique source IDs**, not thirteen: `@V2_HOUSEHOLD_SETUP_001/003/004` and `@V2_CHECKING_001/002/003/004/005/017` (three household plus six checking). No additional IDs are inferred. Source outlines count once; example rows are separate test executions, not additional scenario identities.
 
 Full original completion needs explicit boundary decisions:
 
@@ -54,10 +54,10 @@ Full original completion needs explicit boundary decisions:
 
 Checking 006 recovery may be deferred for this feature; greenfield status does not delete it globally. Choosing this first feature would resolve only that portion of Q-004; the remaining release scope stays open. Proposed later ordering remains provisional and dependency-aware, without claiming every scenario depends on this slice.
 
-[D-023](decisions.md#d-023-finish-setup-and-simplify-future-workflow) already retains setup with lighter future delivery; do not reopen trimming infrastructure without a concrete new blocker. [Q-009](#q-009-setup-feature-acceptance) acceptance remains pending. Pasting this recommendation supplies neither feature selection, design approval, release approval nor full source-scenario completion.
+[D-023](decisions.md#d-023-finish-setup-and-simplify-future-workflow) already retains setup with lighter future delivery; do not reopen trimming infrastructure without a concrete new blocker. [Q-009](#q-009-setup-feature-acceptance) acceptance remains pending. The original pasted recommendation alone supplied no approval; the subsequent direction now authorizes [FIN-001's planning package](features/household-checking/index.md), with role design and the actual design checkpoint still pending.
 
-- Answer: not supplied.
-- Decision: none yet.
+- Answer: “update with your recommendation and ensure final package for next session” directs packaging the combined recommendation. Precise scope/design, opening-amount input/sign/precision, future/local-date policy and member-name uniqueness remain unanswered; selecting a planning target does not approve the whole first release.
+- Decision: [D-025](decisions.md#d-025-prepare-the-combined-first-feature-planning-package), planning direction only. Final feature/release approval and full source-scenario completion are not inferred.
 
 ## Q-005: Browser editing and human communication
 
