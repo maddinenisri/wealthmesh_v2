@@ -143,6 +143,22 @@ This selects Spring Data JPA/Hibernate for persistence with Spring services coor
 
 The coordinator preserved the in-progress work and interrupted dependent development. The architect prepares the concrete persistence amendment, alternatives and operational/engineering cost in the existing FIN-001 packet; validator then reconciles affected acceptance checks. Concrete amended design review remains required before dependent implementation under AGENTS.md. The technology selection itself is settled and must not be asked again.
 
+## D-031: Approve FIN-001 revision 4 persistence amendment
+
+Date: October 3, 2026. Owner: human product owner. Related: [D-030](#d-030-select-spring-data-jpahibernate-persistence), [Q-010](questions.md#q-010-fin-001-spring-persistence-direction).
+
+After reviewing the concrete amendment in the [FIN-001 packet](features/household-checking/index.md#persistence-amendment--spring-data-jpahibernate-revision-4) (commit `c4a5217`), the owner answered:
+
+> Approve the amendment (revision 4).
+
+This approves the concrete persistence design: Spring Data JPA/Hibernate for FIN-001 finance persistence with Spring services coordinating transactions; Flyway as sole schema authority with Hibernate `validate`; `open-in-view` off; DTOs separate from entities; assigned-UUID `Persistable` creates with rollback-then-replay; pessimistic account locking and ordered owner replacement; one coherent projection for list/total; accepted setup's small JDBC metadata reader and test-only JDBC fixture controls retained; and the reconciled acceptance plan with its added JPA checks. Revision 3's financial rules, API and UX scope are unchanged (D-029).
+
+The 12–24 hour additional effort is unmeasured, not a commitment. The earlier review offered an option to re-estimate after the first vertical slice; the owner did not select it, so none is required. Developer evidence from the JDBC draft is invalidated for the persistence layer and must be re-executed on the replacement.
+
+Not approved: feature acceptance (second checkpoint), deferred scope, setup-tooling cleanup (D-023 stands), or wider first-release scope (Q-004 stays open). The coordinator may resume the developer under the amended design.
+
+The owner's subsequent instruction reinforced the approval and engineering requirement: **“approved, please keep clean code.”** Developer self-review and independent reviewer enforcement of the existing coding standards remain mandatory, including coherent responsibilities, DRY financial rules, composition and correction of complexity/length/nesting violations. This does not add a checkpoint or waive required tests.
+
 ## Architect authority boundaries
 
 Routine choices follow the approved baseline and feature design. New deployable services, message brokers, external providers, replacement frameworks or databases, and material changes to security or deployment require a concrete explanation and human review before implementation. Routine dependency changes must remain justified and recorded. Setup revision 1 is approved; future finance scope remains unresolved under [Q-004](questions.md#q-004-first-usable-finance-release).
