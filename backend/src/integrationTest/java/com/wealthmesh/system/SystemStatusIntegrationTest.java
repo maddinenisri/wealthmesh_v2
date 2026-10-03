@@ -50,8 +50,9 @@ class SystemStatusIntegrationTest {
                 fixture.database().getUsername(), fixture.database().getPassword()).load();
 
         assertThat(flyway.migrate().migrationsExecuted).isZero();
-        assertThat(jdbc.queryForObject("SELECT count(*) FROM flyway_schema_history WHERE success", Integer.class))
-                .isEqualTo(1);
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM flyway_schema_history "
+                    + "WHERE success AND version IN ('1', '2')", Integer.class))
+                .isEqualTo(2);
         assertThat(jdbc.queryForObject("SELECT installed_on::text FROM flyway_schema_history "
                 + "WHERE version = '1'", String.class)).isEqualTo(installedOn);
         assertThat(fixture.status().body()).contains("\"installationVersion\":\"2\"");

@@ -103,3 +103,166 @@ button {
     margin-top: 2rem;
   }
 }
+
+nav,
+.actions,
+.section-heading {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+header {
+  flex-wrap: wrap;
+  align-items: center;
+}
+nav {
+  width: 100%;
+}
+nav a[aria-current='page'] {
+  font-weight: 750;
+  text-decoration-thickness: 3px;
+}
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #52685f;
+}
+.announcement:empty {
+  display: none;
+}
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -8rem;
+  background: white;
+  padding: 0.8rem;
+  z-index: 10;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+.field {
+  margin: 1.25rem 0;
+}
+.field label {
+  display: block;
+  font-weight: 650;
+}
+input:not([type='checkbox']) {
+  display: block;
+  width: 100%;
+  max-width: 36rem;
+  font: inherit;
+  border: 1px solid #718b80;
+  border-radius: 6px;
+  padding: 0.65rem;
+  background: white;
+}
+input[aria-invalid='true'] {
+  border: 2px solid #9b3525;
+}
+.helper {
+  color: #405a52;
+  font-size: 0.9rem;
+  max-width: 38rem;
+}
+.field-error {
+  color: #862b1b;
+  font-weight: 650;
+}
+.form-error {
+  padding: 1rem;
+  border: 2px solid #9b3525;
+  border-radius: 8px;
+  background: #fff8f5;
+}
+fieldset {
+  border: 1px solid #718b80;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+legend {
+  font-weight: 650;
+}
+.owner-choice {
+  display: flex;
+  gap: 0.65rem;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+input[type='checkbox'] {
+  width: 1.2rem;
+  height: 1.2rem;
+  accent-color: #176044;
+  flex-shrink: 0;
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.button-link {
+  display: inline-block;
+  padding: 0.65rem 1rem;
+  color: white;
+  background: #176044;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.accounts,
+.members {
+  list-style: none;
+  padding: 0;
+}
+.accounts > li,
+.members > li,
+.total {
+  padding: 1.5rem;
+  background: white;
+  border: 1px solid #c6dacf;
+  border-radius: 12px;
+  margin: 1rem 0;
+  overflow-wrap: anywhere;
+}
+.money {
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+dl {
+  display: grid;
+  grid-template-columns: minmax(6rem, 1fr) 3fr;
+  gap: 0.3rem 1rem;
+}
+dt {
+  font-weight: 650;
+}
+dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.owner-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.member-label {
+  display: block;
+  font-size: 0.85rem;
+  color: #405a52;
+}
+@media (max-width: 500px) {
+  dl {
+    grid-template-columns: 1fr;
+  }
+  dd {
+    margin-bottom: 0.7rem;
+  }
+  .actions > * {
+    width: 100%;
+  }
+  nav {
+    gap: 0.8rem;
+  }
+}

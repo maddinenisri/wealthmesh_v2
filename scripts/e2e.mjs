@@ -5,7 +5,13 @@ import { preview } from '../frontend/node_modules/vite/dist/node/index.js';
 import { command } from './commands.mjs';
 import { root, runtime, prepareRuntime } from './paths.mjs';
 import { preflight } from './preflight.mjs';
-import { freePort, startFixture, waitForFixture, stopFixture } from './e2e-support.mjs';
+import {
+  freePort,
+  startFixture,
+  waitForFixture,
+  stopFixture,
+  runSequentialSuites,
+} from './e2e-support.mjs';
 
 async function frontendPreview(backendUrl) {
   process.env.WM_BACKEND_URL = backendUrl;
@@ -16,7 +22,7 @@ async function frontendPreview(backendUrl) {
   });
   return { server, url: `http://127.0.0.1:${port}` };
 }
-async function browserTests(directory, url) {
+async function browserTests(directory, url, suite) {
   await command(
     process.execPath,
     [
@@ -24,6 +30,7 @@ async function browserTests(directory, url) {
       'test',
       '--config',
       'e2e/playwright.config.ts',
+      suite,
     ],
     {
       env: { ...process.env, WM_E2E_BASE_URL: url, WM_E2E_FIXTURE_DIR: directory },
@@ -54,6 +61,9 @@ async function run() {
   await prepareRuntime();
   await preflight();
   await command('npm', ['run', 'build', '--workspace', 'frontend'], { timeout: 120000 });
+  await runSequentialSuites(['setup.spec.ts', 'finance.spec.ts'], runSuite);
+}
+async function runSuite(suite) {
   const directory = join(runtime, 'e2e', randomUUID());
   await mkdir(directory, { recursive: true, mode: 0o700 });
   const fixture = await startFixture(directory, await freePort());
@@ -63,7 +73,7 @@ async function run() {
   try {
     ready = await waitForFixture(directory, fixture);
     frontend = await frontendPreview(ready.backendUrl);
-    await browserTests(directory, frontend.url);
+    await browserTests(directory, frontend.url, suite);
   } catch (error) {
     failure = error;
   } finally {

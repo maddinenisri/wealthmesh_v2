@@ -6,6 +6,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.sql.SQLException;
 import java.time.Duration;
 import java.util.Map;
 import javax.sql.DataSource;
@@ -16,6 +17,8 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.MapPropertySource;
 import org.springframework.core.env.StandardEnvironment;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.support.TransactionTemplate;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 
 /** The application and its disposable database belong to this one test invocation. */
@@ -29,6 +32,19 @@ public final class BackendFixture implements AutoCloseable {
 
     public void start(int port) {
         database.start();
+        startApplication(port);
+    }
+
+    public void restartApplication() {
+        if (application == null || !database.isRunning()) {
+            throw new IllegalStateException("Only an active owned test application can restart");
+        }
+        application.close();
+        application = null;
+        startApplication(0);
+    }
+
+    private void startApplication(int port) {
         SpringApplication launcher = new SpringApplication(WealthMeshApplication.class);
         launcher.setEnvironment(ownedEnvironment(port));
         application = launcher.run();
@@ -51,6 +67,14 @@ public final class BackendFixture implements AutoCloseable {
 
     public PostgreSQLContainer database() {
         return database;
+    }
+
+    public <T> T bean(Class<T> type) {
+        return application.getBean(type);
+    }
+
+    public String property(String name) {
+        return application.getEnvironment().getProperty(name);
     }
 
     public JdbcTemplate jdbc() {
@@ -79,6 +103,39 @@ public final class BackendFixture implements AutoCloseable {
         try (HttpClient client = HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(2)).build()) {
             return client.send(HttpRequest.newBuilder(URI.create(backendUrl() + "/api/system/status"))
                     .timeout(Duration.ofSeconds(8)).GET().build(), HttpResponse.BodyHandlers.ofString());
+        }
+    }
+
+    public void financeReset() {
+        verifyFinanceResetOwnership();
+        var transaction = new TransactionTemplate(application.getBean(PlatformTransactionManager.class));
+        transaction.executeWithoutResult(status -> {
+            jdbc().update("DELETE FROM checking_account_owner");
+            jdbc().update("DELETE FROM checking_account");
+            jdbc().update("DELETE FROM household_member");
+            jdbc().update("DELETE FROM household");
+        });
+    }
+
+    private void verifyFinanceResetOwnership() {
+        requireActiveDisposableFixture();
+        if (!database.getJdbcUrl().equals(effectiveDatabaseUrl())
+                || jdbc().getDataSource() != application.getBean(DataSource.class)) {
+            throw new IllegalStateException("Finance reset requires the owned disposable datasource");
+        }
+        try (var connection = jdbc().getDataSource().getConnection()) {
+            if (!connection.getMetaData().getURL().equals(database.getJdbcUrl())) {
+                throw new IllegalStateException("Finance reset datasource identity does not match");
+            }
+        } catch (SQLException failure) {
+            throw new IllegalStateException("Cannot verify finance reset datasource", failure);
+        }
+    }
+
+    private void requireActiveDisposableFixture() {
+        if (application == null || !database.isRunning() || database.isShouldBeReused()
+                || !database.getDatabaseName().startsWith("wm_test_")) {
+            throw new IllegalStateException("Finance reset requires an active disposable fixture");
         }
     }
 

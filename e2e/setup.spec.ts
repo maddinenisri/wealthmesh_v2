@@ -8,7 +8,7 @@ test('real screen reads persisted versions, handles absence, retries, and bounds
   page,
   request,
 }) => {
-  await page.goto('/');
+  await page.goto('/setup');
   await expect(page.getByRole('heading', { name: 'Setup ready' })).toBeVisible();
   await expect(page.getByText('Installation version 1')).toBeVisible();
   expect(

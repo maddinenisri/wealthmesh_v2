@@ -113,6 +113,7 @@ public final class E2eFixture {
                     "DELETE FROM installation_metadata WHERE key = ?", "setup_version");
             case "restore" -> fixture.jdbc().update("INSERT INTO installation_metadata(key, value) VALUES (?, ?) "
                     + "ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value", "setup_version", "1");
+            case "financeReset" -> fixture.financeReset();
             case "databaseStop" -> fixture.database().stop();
             case "stop" -> {
                 return false;

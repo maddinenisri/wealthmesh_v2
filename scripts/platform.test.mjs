@@ -137,3 +137,32 @@ test('frontend reader rejects private-directory canaries and still serves ordina
     await unlink(canary);
   }
 });
+
+test('E2E explicitly starts setup then finance in distinct sequential lifecycles', async () => {
+  const { runSequentialSuites } = await import('./e2e-support.mjs');
+  const stages = [];
+  await runSequentialSuites(['setup.spec.ts', 'finance.spec.ts'], async (suite) => {
+    stages.push('start:' + suite);
+    await Promise.resolve();
+    stages.push('cleanup:' + suite);
+  });
+  assert.deepEqual(stages, [
+    'start:setup.spec.ts',
+    'cleanup:setup.spec.ts',
+    'start:finance.spec.ts',
+    'cleanup:finance.spec.ts',
+  ]);
+});
+
+test('E2E propagates failure and leaves later suites unexecuted', async () => {
+  const { runSequentialSuites } = await import('./e2e-support.mjs');
+  const started = [];
+  await assert.rejects(
+    runSequentialSuites(['setup.spec.ts', 'finance.spec.ts'], async (suite) => {
+      started.push(suite);
+      throw new Error('controlled suite failure');
+    }),
+    /controlled suite failure/,
+  );
+  assert.deepEqual(started, ['setup.spec.ts']);
+});

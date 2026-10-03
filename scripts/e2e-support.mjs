@@ -98,3 +98,7 @@ async function inspectCleanup(directory, ready) {
   }
   return ids;
 }
+
+export async function runSequentialSuites(suites, runSuite) {
+  for (const suite of suites) await runSuite(suite);
+}
