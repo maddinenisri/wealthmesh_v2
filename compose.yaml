@@ -1,0 +1,21 @@
+name: wealthmesh-v2
+services:
+  postgres:
+    image: ${POSTGRES_IMAGE:?Use npm run db:up to load the pinned image}
+    environment:
+      POSTGRES_DB: wealthmesh_v2
+      POSTGRES_USER: wealthmesh
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Use npm run db:up to create local credentials}
+    ports:
+      - '127.0.0.1:${WM_DB_PORT:-5433}:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U wealthmesh -d wealthmesh_v2']
+      interval: 2s
+      timeout: 3s
+      retries: 30
+    stop_grace_period: 20s
+volumes:
+  postgres_data:
+    name: wealthmesh-v2_postgres_data

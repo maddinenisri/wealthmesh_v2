@@ -1,0 +1,220 @@
+{
+  "captureStartedUtc": "2026-10-03T16:42:02.686Z",
+  "captureFinishedUtc": "2026-10-03T16:42:02.730Z",
+  "sourcePath": "/Users/srini/workspace/mdstect_ws/wealthmesh/docs/requirements/v2",
+  "sourceRevision": "c2527c056de7c1f19d60d3dbde9830cc68bac4a1",
+  "sourceStatusBefore": "?? docs/requirements/v2/README.md\n?? docs/requirements/v2/accounts/401k/setup.feature\n?? docs/requirements/v2/accounts/brokerage/setup.feature\n?? docs/requirements/v2/accounts/checking/activity.feature\n?? docs/requirements/v2/accounts/checking/setup.feature\n?? docs/requirements/v2/accounts/checking/transfers.feature\n?? docs/requirements/v2/accounts/credit-cards/activity.feature\n?? docs/requirements/v2/accounts/credit-cards/setup.feature\n?? docs/requirements/v2/accounts/defined-benefit/setup.feature\n?? docs/requirements/v2/accounts/hsa/setup.feature\n?? docs/requirements/v2/accounts/lifecycle/dated-values.feature\n?? docs/requirements/v2/accounts/lifecycle/manage-accounts.feature\n?? docs/requirements/v2/accounts/loans/manage-loans.feature\n?? docs/requirements/v2/accounts/mortgage/manage-mortgage.feature\n?? docs/requirements/v2/accounts/other-assets/setup.feature\n?? docs/requirements/v2/accounts/property/setup.feature\n?? docs/requirements/v2/accounts/roth-ira/setup.feature\n?? docs/requirements/v2/accounts/savings/activity.feature\n?? docs/requirements/v2/accounts/savings/setup.feature\n?? docs/requirements/v2/accounts/traditional-ira/setup.feature\n?? docs/requirements/v2/household/history/manage-supporting-records.feature\n?? docs/requirements/v2/household/journeys/manage-household-finances.feature\n?? docs/requirements/v2/household/members/manage-members.feature\n?? docs/requirements/v2/household/overview/understand-wealth.feature\n?? docs/requirements/v2/household/setup/set-up-household.feature\n?? docs/requirements/v2/investments/corrections.feature\n?? docs/requirements/v2/investments/dividends-fees.feature\n?? docs/requirements/v2/investments/funding.feature\n?? docs/requirements/v2/investments/holdings.feature\n?? docs/requirements/v2/investments/performance.feature\n?? docs/requirements/v2/investments/purchases.feature\n?? docs/requirements/v2/investments/retirement-health.feature\n?? docs/requirements/v2/investments/sales.feature\n?? docs/requirements/v2/spending/budgets/manage-budgets.feature\n?? docs/requirements/v2/spending/categories/manage-categories.feature\n?? docs/requirements/v2/spending/categories/split-expenses.feature\n?? docs/requirements/v2/spending/expenses/record-expenses.feature\n?? docs/requirements/v2/spending/income/record-income.feature\n?? docs/requirements/v2/spending/monthly-review/review-spending.feature\n?? docs/requirements/v2/spending/recurring/manage-recurring.feature",
+  "sourceStatusAfter": "?? docs/requirements/v2/README.md\n?? docs/requirements/v2/accounts/401k/setup.feature\n?? docs/requirements/v2/accounts/brokerage/setup.feature\n?? docs/requirements/v2/accounts/checking/activity.feature\n?? docs/requirements/v2/accounts/checking/setup.feature\n?? docs/requirements/v2/accounts/checking/transfers.feature\n?? docs/requirements/v2/accounts/credit-cards/activity.feature\n?? docs/requirements/v2/accounts/credit-cards/setup.feature\n?? docs/requirements/v2/accounts/defined-benefit/setup.feature\n?? docs/requirements/v2/accounts/hsa/setup.feature\n?? docs/requirements/v2/accounts/lifecycle/dated-values.feature\n?? docs/requirements/v2/accounts/lifecycle/manage-accounts.feature\n?? docs/requirements/v2/accounts/loans/manage-loans.feature\n?? docs/requirements/v2/accounts/mortgage/manage-mortgage.feature\n?? docs/requirements/v2/accounts/other-assets/setup.feature\n?? docs/requirements/v2/accounts/property/setup.feature\n?? docs/requirements/v2/accounts/roth-ira/setup.feature\n?? docs/requirements/v2/accounts/savings/activity.feature\n?? docs/requirements/v2/accounts/savings/setup.feature\n?? docs/requirements/v2/accounts/traditional-ira/setup.feature\n?? docs/requirements/v2/household/history/manage-supporting-records.feature\n?? docs/requirements/v2/household/journeys/manage-household-finances.feature\n?? docs/requirements/v2/household/members/manage-members.feature\n?? docs/requirements/v2/household/overview/understand-wealth.feature\n?? docs/requirements/v2/household/setup/set-up-household.feature\n?? docs/requirements/v2/investments/corrections.feature\n?? docs/requirements/v2/investments/dividends-fees.feature\n?? docs/requirements/v2/investments/funding.feature\n?? docs/requirements/v2/investments/holdings.feature\n?? docs/requirements/v2/investments/performance.feature\n?? docs/requirements/v2/investments/purchases.feature\n?? docs/requirements/v2/investments/retirement-health.feature\n?? docs/requirements/v2/investments/sales.feature\n?? docs/requirements/v2/spending/budgets/manage-budgets.feature\n?? docs/requirements/v2/spending/categories/manage-categories.feature\n?? docs/requirements/v2/spending/categories/split-expenses.feature\n?? docs/requirements/v2/spending/expenses/record-expenses.feature\n?? docs/requirements/v2/spending/income/record-income.feature\n?? docs/requirements/v2/spending/monthly-review/review-spending.feature\n?? docs/requirements/v2/spending/recurring/manage-recurring.feature",
+  "sourceDirty": true,
+  "featureCount": 39,
+  "scenarioCount": 262,
+  "sourceAggregateSha256": "b9b575dccce13b2eb77402aa8145361d5728c716d92661e3809ac9ab0be09d56",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 12273,
+      "sha256": "d34c5be0675598dc9d21e7121bcf1e7e0bc7197792d5ac504075144d4157a22d"
+    },
+    {
+      "path": "accounts/401k/setup.feature",
+      "bytes": 5442,
+      "sha256": "39a09ffa431144e6ab1a63de84fa2f4bc49ce0a1382d405e5b0c8ff1781fdcf1"
+    },
+    {
+      "path": "accounts/brokerage/setup.feature",
+      "bytes": 5003,
+      "sha256": "e3d3f78650f9d40018de2e5d17597d130039611f3fc427c3c25cea215afb98fe"
+    },
+    {
+      "path": "accounts/checking/activity.feature",
+      "bytes": 8008,
+      "sha256": "5b816d5896b34a674859008c4f3d7f92d2c6f077b60e7fd6bacd31d473ea959d"
+    },
+    {
+      "path": "accounts/checking/setup.feature",
+      "bytes": 4826,
+      "sha256": "79f860bde4e283e8f7a5b2cc255f460d5beef0f69f73af6accc21b3eb68c4d89"
+    },
+    {
+      "path": "accounts/checking/transfers.feature",
+      "bytes": 2317,
+      "sha256": "1694e171a6d76e80ef432558576e4cdd9fe273b36970f750f017ffe5cbb8d091"
+    },
+    {
+      "path": "accounts/credit-cards/activity.feature",
+      "bytes": 5162,
+      "sha256": "a959f661862abc014b7d39ce56909ca17abddee98980a500ed08911cc37fde13"
+    },
+    {
+      "path": "accounts/credit-cards/setup.feature",
+      "bytes": 3038,
+      "sha256": "c4d916a5e8a54a10dae330b52890d2b6cc923637b7ee5e8e5613814172e33bbf"
+    },
+    {
+      "path": "accounts/defined-benefit/setup.feature",
+      "bytes": 3732,
+      "sha256": "dbb03e0fbc8c0d99b801e24f4544b0699bb99d4763f4a302b6562d3e10467a72"
+    },
+    {
+      "path": "accounts/hsa/setup.feature",
+      "bytes": 5422,
+      "sha256": "1ef3c86c5572efbf443028bd963b30ff5cede9c980ac3fb88e6b7438f6e798e2"
+    },
+    {
+      "path": "accounts/lifecycle/dated-values.feature",
+      "bytes": 2698,
+      "sha256": "62b851e637bac1fcfca8641892434e4353c0fc9886b5e82d9e80ad8df909e874"
+    },
+    {
+      "path": "accounts/lifecycle/manage-accounts.feature",
+      "bytes": 4072,
+      "sha256": "89777f1f158f6656096834a64946420c00f93206fedf005bb7628f6594e6ade5"
+    },
+    {
+      "path": "accounts/loans/manage-loans.feature",
+      "bytes": 3163,
+      "sha256": "7809df510dc467d542b25494f2fe9956f5595773a8e5800ea09b05cdb6204519"
+    },
+    {
+      "path": "accounts/mortgage/manage-mortgage.feature",
+      "bytes": 4728,
+      "sha256": "f0bc44255eefa36aa555a668c8d2eb62babb4e4a3a644380a03d60d853600ea0"
+    },
+    {
+      "path": "accounts/other-assets/setup.feature",
+      "bytes": 2805,
+      "sha256": "f6553767db41e02ec5c2efce0858c6ccbde01e01e84850f87b2ecf3bf5f51c83"
+    },
+    {
+      "path": "accounts/property/setup.feature",
+      "bytes": 3527,
+      "sha256": "fab42001628fad96c51b09e57a6d4e945c47ce16b4ffb8267c0472d6dd2f61de"
+    },
+    {
+      "path": "accounts/roth-ira/setup.feature",
+      "bytes": 5516,
+      "sha256": "a5ccb3fbed96c62d67e0cfb8ae1a64c3e55aea3273865c8bff86e11bf4007f9f"
+    },
+    {
+      "path": "accounts/savings/activity.feature",
+      "bytes": 2998,
+      "sha256": "0d8aff6c9fa44675eb30a9b4cd2f533d84e1716a77ccb0f1b3f7535edb0eaa9a"
+    },
+    {
+      "path": "accounts/savings/setup.feature",
+      "bytes": 3871,
+      "sha256": "76efc836528080d83ba61262506ba8d5d3f855df7d40d3c7b539e7a3ad2b2127"
+    },
+    {
+      "path": "accounts/traditional-ira/setup.feature",
+      "bytes": 5622,
+      "sha256": "b5d3bedbe8765692fcfb613ba6191e6fccfa401df32093135a99c81f55d3a942"
+    },
+    {
+      "path": "household/history/manage-supporting-records.feature",
+      "bytes": 2239,
+      "sha256": "13299aeb60aa7d42d0cb20552d70f81eedeb89890e66babb3a5ec274b03cc468"
+    },
+    {
+      "path": "household/journeys/manage-household-finances.feature",
+      "bytes": 9694,
+      "sha256": "357711e654f77b09d17946dfed95dabd66fbddc746868dae4e073c12d10f5df8"
+    },
+    {
+      "path": "household/members/manage-members.feature",
+      "bytes": 3720,
+      "sha256": "77c6c09c743cafb3ff582446194b1518119b95d2c96e04d2396e409d75bb2d0b"
+    },
+    {
+      "path": "household/overview/understand-wealth.feature",
+      "bytes": 9321,
+      "sha256": "fa910361af69978b80596a5a3a940bd5afab63e790a01a54e8d604f6bd9cb185"
+    },
+    {
+      "path": "household/setup/set-up-household.feature",
+      "bytes": 4010,
+      "sha256": "c02efbadef6f549c2d56f502d2883268ff4d552a8b1b2d1de49f771ff96d0e8e"
+    },
+    {
+      "path": "investments/corrections.feature",
+      "bytes": 8453,
+      "sha256": "562e6049a7cff3eeb3ffe0b62ef880e644c55bc90248c4d64cd61e199f9c647a"
+    },
+    {
+      "path": "investments/dividends-fees.feature",
+      "bytes": 4711,
+      "sha256": "6a9042cf664e4df96cce7e8bd13d56ef71624fac61f187b3e1d7ea8e43d0cb98"
+    },
+    {
+      "path": "investments/funding.feature",
+      "bytes": 3903,
+      "sha256": "e80de61e79413b568c1d8f81934ed22416bbb63953f11192152177593a247b50"
+    },
+    {
+      "path": "investments/holdings.feature",
+      "bytes": 6632,
+      "sha256": "ccced748667c1f4d58983e7d99355b22d6c45bd19365ba16957d5efb347fb0a1"
+    },
+    {
+      "path": "investments/performance.feature",
+      "bytes": 7260,
+      "sha256": "92355fefb631ee515678178794e58fcd8c8c0f925bd8603dca3674aaa90e2ea8"
+    },
+    {
+      "path": "investments/purchases.feature",
+      "bytes": 5055,
+      "sha256": "de9b35207744a9ffd493208e714e0b67218250c4541d4d0ac77ba1a74143de0c"
+    },
+    {
+      "path": "investments/retirement-health.feature",
+      "bytes": 5712,
+      "sha256": "f034b1451e2175558d26929d541bdab756e7a2090030ced6dca1942baf048b75"
+    },
+    {
+      "path": "investments/sales.feature",
+      "bytes": 5542,
+      "sha256": "16f6de3a024f12ba1dffadaf94e2db7970758fa164edc62945b3b306396fcc8d"
+    },
+    {
+      "path": "spending/budgets/manage-budgets.feature",
+      "bytes": 5308,
+      "sha256": "18b083bf3dd2c1a0b2d1ddff227176a36e7acdd770e25b103891b1169ef1728c"
+    },
+    {
+      "path": "spending/categories/manage-categories.feature",
+      "bytes": 4615,
+      "sha256": "e9be45fff2b0d7756e133c32184c3a677f224c71469fd5e04583650e9bb24ee9"
+    },
+    {
+      "path": "spending/categories/split-expenses.feature",
+      "bytes": 2740,
+      "sha256": "f68d4cff0484828caa9be6b5836a8654af7760b84f07315ff1f464247c48b597"
+    },
+    {
+      "path": "spending/expenses/record-expenses.feature",
+      "bytes": 7207,
+      "sha256": "8e2f5944732d6ff8ffc3f94bf4283210943c696f9d023fec49abebbafc6774bb"
+    },
+    {
+      "path": "spending/income/record-income.feature",
+      "bytes": 4153,
+      "sha256": "670cf0451bed1a9f181806f9db99335e3a560b714cc54db3b463b916e0095e2c"
+    },
+    {
+      "path": "spending/monthly-review/review-spending.feature",
+      "bytes": 4124,
+      "sha256": "f3853409964c638ae7ba5e2907e77a6a1bb07ad909e03b582783eed1f6d6cc14"
+    },
+    {
+      "path": "spending/recurring/manage-recurring.feature",
+      "bytes": 6612,
+      "sha256": "982d3486f177a7ae3f531955cb06eb1326d5f9c264d38a29b29d603c6b1d14f3"
+    }
+  ],
+  "diagnostics": {
+    "uniqueIds": 262,
+    "missingIds": [],
+    "multipleIds": [],
+    "duplicates": []
+  }
+}

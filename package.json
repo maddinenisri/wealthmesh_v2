@@ -1,0 +1,70 @@
+{
+  "name": "wealthmesh-v2",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "npm@11.17.0",
+  "engines": {
+    "node": ">=26.4.0 <27",
+    "npm": ">=11.17.0 <12"
+  },
+  "workspaces": [
+    "frontend"
+  ],
+  "scripts": {
+    "preflight": "node scripts/runtime.mjs preflight",
+    "dev": "node scripts/runtime.mjs start",
+    "stop": "node scripts/runtime.mjs stop",
+    "status": "node scripts/runtime.mjs status",
+    "db:up": "node scripts/runtime.mjs db-up",
+    "db:stop": "node scripts/runtime.mjs db-stop",
+    "docs:dev": "node scripts/runtime.mjs docs",
+    "docs:build": "vitepress build docs",
+    "docs:check": "node scripts/check-docs.mjs",
+    "test:backend": "node scripts/backend.mjs test",
+    "test:integration": "node scripts/backend.mjs integrationTest",
+    "test:frontend": "npm run test --workspace frontend",
+    "test:platform": "node --test scripts/*.test.mjs",
+    "test:e2e": "node scripts/e2e.mjs",
+    "test:docs": "node scripts/docs-browser-check.mjs",
+    "quality:frontend": "npm run typecheck --workspace frontend && npm run docs:typecheck && npm run typecheck:e2e && npm run test:docs:unit && eslint --max-warnings 0 frontend e2e scripts docs/.vitepress && prettier --check frontend e2e scripts config compose.yaml package.json eslint.config.mjs .prettierrc.json docs/.vitepress docs/index.md docs/features/index.md docs/operations docs/features/setup/platform-implementation.md docs/features/setup/implementation.md docs/features/setup/demo.md docs/requirements/index.md docs/requirements/inventory.md docs/features/setup/docs-implementation.md && npm run docs:lint && npm run docs:check && npm run docs:build",
+    "quality": "node scripts/backend.mjs quality && npm run quality:frontend",
+    "build": "node scripts/backend.mjs bootJar && npm run build --workspace frontend",
+    "format": "prettier --write frontend e2e scripts config compose.yaml package.json eslint.config.mjs .prettierrc.json docs/.vitepress docs/index.md docs/features/index.md docs/operations docs/features/setup/platform-implementation.md docs/features/setup/implementation.md docs/features/setup/demo.md docs/requirements/index.md docs/requirements/inventory.md docs/features/setup/docs-implementation.md",
+    "verify": "npm run quality && npm run build && npm run test:backend && npm run test:integration && npm run test:frontend && npm run test:msw-policy && npm run test:platform && npm run test:launcher && npm run test:docs:unit && npm run test:docs && npm run test:e2e",
+    "test:docs:unit": "node --test docs/.vitepress/*.test.mjs",
+    "db:backup": "node scripts/backup.mjs",
+    "docs:typecheck": "vue-tsc --noEmit -p docs/.vitepress/tsconfig.json",
+    "docs:lint": "node scripts/lint-docs.mjs",
+    "test:launcher": "node scripts/launcher-check.mjs",
+    "test:lifecycle": "node scripts/lifecycle-check.mjs",
+    "test:msw-policy": "node scripts/msw-policy-check.mjs",
+    "typecheck:e2e": "tsc --noEmit -p e2e/tsconfig.json"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@playwright/test": "1.63.0",
+    "@types/node": "26.6.4",
+    "eslint": "10.12.0",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "eslint-plugin-react-refresh": "0.5.7",
+    "mermaid": "12.1.0",
+    "prettier": "3.9.9",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.71.0",
+    "vitepress": "1.6.4",
+    "vue": "3.5.43",
+    "globals": "17.13.0",
+    "eslint-plugin-vue": "10.11.1",
+    "vue-eslint-parser": "10.4.1",
+    "vue-tsc": "3.3.12",
+    "markdownlint": "0.41.1",
+    "markdown-it": "14.3.2",
+    "minisearch": "7.2.0"
+  },
+  "overrides": {
+    "vitepress": {
+      "vite": "6.4.3"
+    }
+  }
+}

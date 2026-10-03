@@ -1,0 +1,3670 @@
+[
+  {
+    "file": "accounts/401k/setup.feature",
+    "line": 7,
+    "name": "Create a complete opening account and edit its descriptive details",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_401K_001"
+    ],
+    "ids": [
+      "@V2_401K_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/401k/setup.feature",
+    "line": 21,
+    "name": "Complete empty setup by leaving the optional starting amount blank",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_401K_002"
+    ],
+    "ids": [
+      "@V2_401K_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/401k/setup.feature",
+    "line": 31,
+    "name": "Keep an incomplete opening amount as a draft",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_401K_003"
+    ],
+    "ids": [
+      "@V2_401K_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/401k/setup.feature",
+    "line": 41,
+    "name": "Correct cash with a dated explanation and preserve the earlier Balance",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_401K_004"
+    ],
+    "ids": [
+      "@V2_401K_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/401k/setup.feature",
+    "line": 54,
+    "name": "Reject invalid opening components without changing household wealth",
+    "kind": "Scenario Outline",
+    "tags": [
+      "@V2_401K_005"
+    ],
+    "ids": [
+      "@V2_401K_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/401k/setup.feature",
+    "line": 69,
+    "name": "Review a total that does not match the entered opening components",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_401K_006"
+    ],
+    "ids": [
+      "@V2_401K_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/401k/setup.feature",
+    "line": 78,
+    "name": "Keep an individual owner while sharing the account with the household",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_401K_007"
+    ],
+    "ids": [
+      "@V2_401K_007"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/brokerage/setup.feature",
+    "line": 7,
+    "name": "Create a complete opening account and edit its descriptive details",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_BROKERAGE_001"
+    ],
+    "ids": [
+      "@V2_BROKERAGE_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/brokerage/setup.feature",
+    "line": 21,
+    "name": "Complete empty setup by leaving the optional starting amount blank",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_BROKERAGE_002"
+    ],
+    "ids": [
+      "@V2_BROKERAGE_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/brokerage/setup.feature",
+    "line": 31,
+    "name": "Keep an incomplete opening amount as a draft",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_BROKERAGE_003"
+    ],
+    "ids": [
+      "@V2_BROKERAGE_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/brokerage/setup.feature",
+    "line": 41,
+    "name": "Correct cash with a dated explanation and preserve the earlier Balance",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_BROKERAGE_004"
+    ],
+    "ids": [
+      "@V2_BROKERAGE_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/brokerage/setup.feature",
+    "line": 54,
+    "name": "Reject invalid opening components without changing household wealth",
+    "kind": "Scenario Outline",
+    "tags": [
+      "@V2_BROKERAGE_005"
+    ],
+    "ids": [
+      "@V2_BROKERAGE_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/brokerage/setup.feature",
+    "line": 69,
+    "name": "Review a total that does not match the entered opening components",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_BROKERAGE_006"
+    ],
+    "ids": [
+      "@V2_BROKERAGE_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/checking/activity.feature",
+    "line": 7,
+    "name": "Follow take-home salary, rent and savings through one Balance",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CHECKING_007"
+    ],
+    "ids": [
+      "@V2_CHECKING_007"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/checking/activity.feature",
+    "line": 19,
+    "name": "Correct an expense amount without adding another expense",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CHECKING_008"
+    ],
+    "ids": [
+      "@V2_CHECKING_008"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/checking/activity.feature",
+    "line": 27,
+    "name": "Review a dated Balance correction without inventing income",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CHECKING_009"
+    ],
+    "ids": [
+      "@V2_CHECKING_009"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/checking/activity.feature",
+    "line": 38,
+    "name": "Cancel a transfer after checking its destination",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CHECKING_010"
+    ],
+    "ids": [
+      "@V2_CHECKING_010"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/checking/activity.feature",
+    "line": 46,
+    "name": "Correct a negative purchase and save it once",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CHECKING_011"
+    ],
+    "ids": [
+      "@V2_CHECKING_011"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/checking/activity.feature",
+    "line": 54,
+    "name": "Hide and restore an inactive zero-balance account without losing history",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CHECKING_012"
+    ],
+    "ids": [
+      "@V2_CHECKING_012"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/checking/activity.feature",
+    "line": 65,
+    "name": "Correct an earlier Balance correction and keep both versions visible",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CHECKING_013"
+    ],
+    "ids": [
+      "@V2_CHECKING_013"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/checking/activity.feature",
+    "line": 78,
+    "name": "Replace an unexplained correction when the missing fee is found",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CHECKING_014"
+    ],
+    "ids": [
+      "@V2_CHECKING_014"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/checking/activity.feature",
+    "line": 89,
+    "name": "Record an actual overdraft without pretending money is available",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CHECKING_015"
+    ],
+    "ids": [
+      "@V2_CHECKING_015"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/checking/activity.feature",
+    "line": 97,
+    "name": "Review an expense dated before tracking began",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CHECKING_016"
+    ],
+    "ids": [
+      "@V2_CHECKING_016"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/checking/activity.feature",
+    "line": 108,
+    "name": "Preview a backdated correction without losing later activity",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CHECKING_018"
+    ],
+    "ids": [
+      "@V2_CHECKING_018"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/checking/setup.feature",
+    "line": 8,
+    "name": "Create checking with a known initial Balance and find it again",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CHECKING_001"
+    ],
+    "ids": [
+      "@V2_CHECKING_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/checking/setup.feature",
+    "line": 19,
+    "name": "Start new checking at zero when an opening amount is not needed",
+    "kind": "Scenario Outline",
+    "tags": [
+      "@V2_CHECKING_002"
+    ],
+    "ids": [
+      "@V2_CHECKING_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/checking/setup.feature",
+    "line": 33,
+    "name": "Edit account details without changing money",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CHECKING_003"
+    ],
+    "ids": [
+      "@V2_CHECKING_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/checking/setup.feature",
+    "line": 43,
+    "name": "Cancel account-detail changes",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CHECKING_004"
+    ],
+    "ids": [
+      "@V2_CHECKING_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/checking/setup.feature",
+    "line": 50,
+    "name": "Explain an incomplete setup and allow cancellation",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CHECKING_005"
+    ],
+    "ids": [
+      "@V2_CHECKING_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/checking/setup.feature",
+    "line": 59,
+    "name": "Supply missing starting information without inventing history",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CHECKING_006"
+    ],
+    "ids": [
+      "@V2_CHECKING_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/checking/setup.feature",
+    "line": 74,
+    "name": "Keep an invalid initial Balance as an unsaved form",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CHECKING_017"
+    ],
+    "ids": [
+      "@V2_CHECKING_017"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/checking/transfers.feature",
+    "line": 6,
+    "name": "Change a transfer's amount, date and destination together",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_TRANSFER_001"
+    ],
+    "ids": [
+      "@V2_TRANSFER_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/checking/transfers.feature",
+    "line": 16,
+    "name": "Remove a transfer and undo without leaving one side behind",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_TRANSFER_002"
+    ],
+    "ids": [
+      "@V2_TRANSFER_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/checking/transfers.feature",
+    "line": 27,
+    "name": "Cancel or reject a transfer correction without changing either account",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_TRANSFER_003"
+    ],
+    "ids": [
+      "@V2_TRANSFER_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/credit-cards/activity.feature",
+    "line": 7,
+    "name": "Follow a purchase, refund and payment to the remaining debt",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CARD_006"
+    ],
+    "ids": [
+      "@V2_CARD_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/credit-cards/activity.feature",
+    "line": 16,
+    "name": "Review a card payment's bank account and cancel",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CARD_007"
+    ],
+    "ids": [
+      "@V2_CARD_007"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/credit-cards/activity.feature",
+    "line": 24,
+    "name": "Show a refund received without a matching purchase this month",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CARD_008"
+    ],
+    "ids": [
+      "@V2_CARD_008"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/credit-cards/activity.feature",
+    "line": 32,
+    "name": "Reject a negative purchase and cancel its correction",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CARD_009"
+    ],
+    "ids": [
+      "@V2_CARD_009"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/credit-cards/activity.feature",
+    "line": 40,
+    "name": "Review a card statement and make one dated Balance correction",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CARD_010"
+    ],
+    "ids": [
+      "@V2_CARD_010"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/credit-cards/activity.feature",
+    "line": 52,
+    "name": "Record actual card interest and fees as spending once",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CARD_011"
+    ],
+    "ids": [
+      "@V2_CARD_011"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/credit-cards/activity.feature",
+    "line": 59,
+    "name": "Record an overpayment as Card credit rather than extra spending",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CARD_012"
+    ],
+    "ids": [
+      "@V2_CARD_012"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/credit-cards/activity.feature",
+    "line": 69,
+    "name": "Correct and remove a recorded card payment with both accounts kept together",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CARD_013"
+    ],
+    "ids": [
+      "@V2_CARD_013"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/credit-cards/setup.feature",
+    "line": 7,
+    "name": "Create a card with debt and open its detail",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CARD_001"
+    ],
+    "ids": [
+      "@V2_CARD_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/credit-cards/setup.feature",
+    "line": 16,
+    "name": "Create a card at zero without an extra confirmation step",
+    "kind": "Scenario Outline",
+    "tags": [
+      "@V2_CARD_002"
+    ],
+    "ids": [
+      "@V2_CARD_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/credit-cards/setup.feature",
+    "line": 29,
+    "name": "Create a card with a credit instead of debt",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CARD_003"
+    ],
+    "ids": [
+      "@V2_CARD_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/credit-cards/setup.feature",
+    "line": 37,
+    "name": "Edit card details separately from its Balance",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CARD_004"
+    ],
+    "ids": [
+      "@V2_CARD_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/credit-cards/setup.feature",
+    "line": 44,
+    "name": "Explain a missing account name and allow cancellation",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CARD_005"
+    ],
+    "ids": [
+      "@V2_CARD_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/credit-cards/setup.feature",
+    "line": 52,
+    "name": "Explain an invalid initial amount",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CARD_014"
+    ],
+    "ids": [
+      "@V2_CARD_014"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/defined-benefit/setup.feature",
+    "line": 5,
+    "name": "Create a plan value and edit the descriptive details",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_DB_001"
+    ],
+    "ids": [
+      "@V2_DB_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/defined-benefit/setup.feature",
+    "line": 15,
+    "name": "Save a blank initial value without changing a pension promise",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_DB_002"
+    ],
+    "ids": [
+      "@V2_DB_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/defined-benefit/setup.feature",
+    "line": 23,
+    "name": "Record pay and interest credits separately",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_DB_003"
+    ],
+    "ids": [
+      "@V2_DB_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/defined-benefit/setup.feature",
+    "line": 33,
+    "name": "Correct a plan statement with review and cancellation",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_DB_004"
+    ],
+    "ids": [
+      "@V2_DB_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/defined-benefit/setup.feature",
+    "line": 43,
+    "name": "Reject an invalid completed plan value",
+    "kind": "Scenario Outline",
+    "tags": [
+      "@V2_DB_005"
+    ],
+    "ids": [
+      "@V2_DB_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/defined-benefit/setup.feature",
+    "line": 54,
+    "name": "Preserve individual participation and a nonzero archived value",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_DB_006"
+    ],
+    "ids": [
+      "@V2_DB_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/hsa/setup.feature",
+    "line": 7,
+    "name": "Create a complete opening account and edit its descriptive details",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_HSA_001"
+    ],
+    "ids": [
+      "@V2_HSA_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/hsa/setup.feature",
+    "line": 21,
+    "name": "Complete empty setup by leaving the optional starting amount blank",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_HSA_002"
+    ],
+    "ids": [
+      "@V2_HSA_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/hsa/setup.feature",
+    "line": 31,
+    "name": "Keep an incomplete opening amount as a draft",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_HSA_003"
+    ],
+    "ids": [
+      "@V2_HSA_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/hsa/setup.feature",
+    "line": 41,
+    "name": "Correct cash with a dated explanation and preserve the earlier Balance",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_HSA_004"
+    ],
+    "ids": [
+      "@V2_HSA_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/hsa/setup.feature",
+    "line": 54,
+    "name": "Reject invalid opening components without changing household wealth",
+    "kind": "Scenario Outline",
+    "tags": [
+      "@V2_HSA_005"
+    ],
+    "ids": [
+      "@V2_HSA_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/hsa/setup.feature",
+    "line": 69,
+    "name": "Review a total that does not match the entered opening components",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_HSA_006"
+    ],
+    "ids": [
+      "@V2_HSA_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/hsa/setup.feature",
+    "line": 78,
+    "name": "Keep an individual owner while sharing the account with the household",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_HSA_007"
+    ],
+    "ids": [
+      "@V2_HSA_007"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/lifecycle/dated-values.feature",
+    "line": 7,
+    "name": "Require a current or past date for a recorded value",
+    "kind": "Scenario Outline",
+    "tags": [
+      "@V2_DATED_VALUE_001"
+    ],
+    "ids": [
+      "@V2_DATED_VALUE_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/lifecycle/dated-values.feature",
+    "line": 23,
+    "name": "Review a value before the account's tracking start",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_DATED_VALUE_002"
+    ],
+    "ids": [
+      "@V2_DATED_VALUE_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/lifecycle/dated-values.feature",
+    "line": 37,
+    "name": "Remove and restore a loan correction",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_DATED_VALUE_003"
+    ],
+    "ids": [
+      "@V2_DATED_VALUE_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/lifecycle/dated-values.feature",
+    "line": 48,
+    "name": "Prevent repeated confirmation from saving duplicate estimates",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_DATED_VALUE_004"
+    ],
+    "ids": [
+      "@V2_DATED_VALUE_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/lifecycle/manage-accounts.feature",
+    "line": 7,
+    "name": "Archive an account that still holds money",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_ACCOUNT_LIFECYCLE_001"
+    ],
+    "ids": [
+      "@V2_ACCOUNT_LIFECYCLE_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/lifecycle/manage-accounts.feature",
+    "line": 20,
+    "name": "Archive a card without hiding debt",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_ACCOUNT_LIFECYCLE_002"
+    ],
+    "ids": [
+      "@V2_ACCOUNT_LIFECYCLE_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/lifecycle/manage-accounts.feature",
+    "line": 29,
+    "name": "Close savings after moving its remaining money",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_ACCOUNT_LIFECYCLE_003"
+    ],
+    "ids": [
+      "@V2_ACCOUNT_LIFECYCLE_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/lifecycle/manage-accounts.feature",
+    "line": 41,
+    "name": "Close a paid-off credit card",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_ACCOUNT_LIFECYCLE_004"
+    ],
+    "ids": [
+      "@V2_ACCOUNT_LIFECYCLE_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/lifecycle/manage-accounts.feature",
+    "line": 51,
+    "name": "Delete an unused zero account and undo the deletion",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_ACCOUNT_LIFECYCLE_005"
+    ],
+    "ids": [
+      "@V2_ACCOUNT_LIFECYCLE_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/lifecycle/manage-accounts.feature",
+    "line": 62,
+    "name": "Preserve an account with saved financial history",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_ACCOUNT_LIFECYCLE_006"
+    ],
+    "ids": [
+      "@V2_ACCOUNT_LIFECYCLE_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/lifecycle/manage-accounts.feature",
+    "line": 71,
+    "name": "Delete an incomplete investment draft without changing wealth",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_ACCOUNT_LIFECYCLE_007"
+    ],
+    "ids": [
+      "@V2_ACCOUNT_LIFECYCLE_007"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/loans/manage-loans.feature",
+    "line": 7,
+    "name": "Create, view and edit a loan",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_LOAN_001"
+    ],
+    "ids": [
+      "@V2_LOAN_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/loans/manage-loans.feature",
+    "line": 18,
+    "name": "Leave the optional initial debt blank",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_LOAN_002"
+    ],
+    "ids": [
+      "@V2_LOAN_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/loans/manage-loans.feature",
+    "line": 25,
+    "name": "Record one car loan payment with principal and interest",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_LOAN_003"
+    ],
+    "ids": [
+      "@V2_LOAN_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/loans/manage-loans.feature",
+    "line": 37,
+    "name": "Review a debt correction without inventing a payment",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_LOAN_004"
+    ],
+    "ids": [
+      "@V2_LOAN_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/loans/manage-loans.feature",
+    "line": 47,
+    "name": "Reject invalid initial loan debt",
+    "kind": "Scenario Outline",
+    "tags": [
+      "@V2_LOAN_005"
+    ],
+    "ids": [
+      "@V2_LOAN_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/loans/manage-loans.feature",
+    "line": 58,
+    "name": "Review an overpayment instead of silently turning debt into an asset",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_LOAN_006"
+    ],
+    "ids": [
+      "@V2_LOAN_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/mortgage/manage-mortgage.feature",
+    "line": 7,
+    "name": "Create, view and edit a mortgage separately from the home",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_MORTGAGE_001"
+    ],
+    "ids": [
+      "@V2_MORTGAGE_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/mortgage/manage-mortgage.feature",
+    "line": 20,
+    "name": "Start a mortgage at zero when the amount is left blank",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_MORTGAGE_002"
+    ],
+    "ids": [
+      "@V2_MORTGAGE_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/mortgage/manage-mortgage.feature",
+    "line": 27,
+    "name": "Record a mortgage payment and follow its wealth effect",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_MORTGAGE_003"
+    ],
+    "ids": [
+      "@V2_MORTGAGE_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/mortgage/manage-mortgage.feature",
+    "line": 40,
+    "name": "Correct the payment portions and retain the original",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_MORTGAGE_004"
+    ],
+    "ids": [
+      "@V2_MORTGAGE_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/mortgage/manage-mortgage.feature",
+    "line": 51,
+    "name": "Remove and restore both sides of a mortgage payment",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_MORTGAGE_005"
+    ],
+    "ids": [
+      "@V2_MORTGAGE_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/mortgage/manage-mortgage.feature",
+    "line": 62,
+    "name": "Require all payment portions to equal the money leaving checking",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_MORTGAGE_006"
+    ],
+    "ids": [
+      "@V2_MORTGAGE_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/mortgage/manage-mortgage.feature",
+    "line": 70,
+    "name": "Reject an invalid initial mortgage amount",
+    "kind": "Scenario Outline",
+    "tags": [
+      "@V2_MORTGAGE_007"
+    ],
+    "ids": [
+      "@V2_MORTGAGE_007"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/mortgage/manage-mortgage.feature",
+    "line": 81,
+    "name": "Review a dated lender correction without creating income",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_MORTGAGE_008"
+    ],
+    "ids": [
+      "@V2_MORTGAGE_008"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/other-assets/setup.feature",
+    "line": 7,
+    "name": "Create, view and edit a car asset",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_OTHER_ASSET_001"
+    ],
+    "ids": [
+      "@V2_OTHER_ASSET_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/other-assets/setup.feature",
+    "line": 19,
+    "name": "Start an asset at zero when its initial value is left blank",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_OTHER_ASSET_002"
+    ],
+    "ids": [
+      "@V2_OTHER_ASSET_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/other-assets/setup.feature",
+    "line": 26,
+    "name": "Record a lower car estimate and view its effect on wealth",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_OTHER_ASSET_003"
+    ],
+    "ids": [
+      "@V2_OTHER_ASSET_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/other-assets/setup.feature",
+    "line": 36,
+    "name": "Reject an invalid other-asset amount",
+    "kind": "Scenario Outline",
+    "tags": [
+      "@V2_OTHER_ASSET_004"
+    ],
+    "ids": [
+      "@V2_OTHER_ASSET_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/other-assets/setup.feature",
+    "line": 47,
+    "name": "Cancel an asset value change",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_OTHER_ASSET_005"
+    ],
+    "ids": [
+      "@V2_OTHER_ASSET_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/other-assets/setup.feature",
+    "line": 53,
+    "name": "Remove a car estimate and undo",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_OTHER_ASSET_006"
+    ],
+    "ids": [
+      "@V2_OTHER_ASSET_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/property/setup.feature",
+    "line": 7,
+    "name": "Create, view and edit a jointly owned home",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_PROPERTY_001"
+    ],
+    "ids": [
+      "@V2_PROPERTY_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/property/setup.feature",
+    "line": 19,
+    "name": "Leave the optional initial property value blank",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_PROPERTY_002"
+    ],
+    "ids": [
+      "@V2_PROPERTY_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/property/setup.feature",
+    "line": 28,
+    "name": "Record a new property estimate and correct it with history",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_PROPERTY_003"
+    ],
+    "ids": [
+      "@V2_PROPERTY_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/property/setup.feature",
+    "line": 41,
+    "name": "Reject an invalid initial property amount",
+    "kind": "Scenario Outline",
+    "tags": [
+      "@V2_PROPERTY_004"
+    ],
+    "ids": [
+      "@V2_PROPERTY_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/property/setup.feature",
+    "line": 52,
+    "name": "Remove an estimate and restore the earlier effective value",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_PROPERTY_005"
+    ],
+    "ids": [
+      "@V2_PROPERTY_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/property/setup.feature",
+    "line": 64,
+    "name": "Keep a future estimate as a plan rather than today's value",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_PROPERTY_006"
+    ],
+    "ids": [
+      "@V2_PROPERTY_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/roth-ira/setup.feature",
+    "line": 7,
+    "name": "Create a complete opening account and edit its descriptive details",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_ROTH_IRA_001"
+    ],
+    "ids": [
+      "@V2_ROTH_IRA_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/roth-ira/setup.feature",
+    "line": 21,
+    "name": "Complete empty setup by leaving the optional starting amount blank",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_ROTH_IRA_002"
+    ],
+    "ids": [
+      "@V2_ROTH_IRA_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/roth-ira/setup.feature",
+    "line": 31,
+    "name": "Keep an incomplete opening amount as a draft",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_ROTH_IRA_003"
+    ],
+    "ids": [
+      "@V2_ROTH_IRA_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/roth-ira/setup.feature",
+    "line": 41,
+    "name": "Correct cash with a dated explanation and preserve the earlier Balance",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_ROTH_IRA_004"
+    ],
+    "ids": [
+      "@V2_ROTH_IRA_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/roth-ira/setup.feature",
+    "line": 54,
+    "name": "Reject invalid opening components without changing household wealth",
+    "kind": "Scenario Outline",
+    "tags": [
+      "@V2_ROTH_IRA_005"
+    ],
+    "ids": [
+      "@V2_ROTH_IRA_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/roth-ira/setup.feature",
+    "line": 69,
+    "name": "Review a total that does not match the entered opening components",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_ROTH_IRA_006"
+    ],
+    "ids": [
+      "@V2_ROTH_IRA_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/roth-ira/setup.feature",
+    "line": 78,
+    "name": "Keep an individual owner while sharing the account with the household",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_ROTH_IRA_007"
+    ],
+    "ids": [
+      "@V2_ROTH_IRA_007"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/savings/activity.feature",
+    "line": 6,
+    "name": "Follow saving, interest and a transfer back to checking",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_SAVINGS_006"
+    ],
+    "ids": [
+      "@V2_SAVINGS_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/savings/activity.feature",
+    "line": 17,
+    "name": "Open both sides of a savings transfer",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_SAVINGS_007"
+    ],
+    "ids": [
+      "@V2_SAVINGS_007"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/savings/activity.feature",
+    "line": 25,
+    "name": "Cancel a savings Balance update after reviewing its difference",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_SAVINGS_008"
+    ],
+    "ids": [
+      "@V2_SAVINGS_008"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/savings/activity.feature",
+    "line": 33,
+    "name": "Review a savings correction without automatically creating interest",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_SAVINGS_009"
+    ],
+    "ids": [
+      "@V2_SAVINGS_009"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/savings/activity.feature",
+    "line": 43,
+    "name": "Reject a same-account transfer without losing its entered details",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_SAVINGS_010"
+    ],
+    "ids": [
+      "@V2_SAVINGS_010"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/savings/setup.feature",
+    "line": 7,
+    "name": "Add savings and follow it from the list to its detail",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_SAVINGS_001"
+    ],
+    "ids": [
+      "@V2_SAVINGS_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/savings/setup.feature",
+    "line": 18,
+    "name": "Start savings at zero and add money later",
+    "kind": "Scenario Outline",
+    "tags": [
+      "@V2_SAVINGS_002"
+    ],
+    "ids": [
+      "@V2_SAVINGS_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/savings/setup.feature",
+    "line": 33,
+    "name": "Rename savings and correct its owner and bank separately from its balance",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_SAVINGS_003"
+    ],
+    "ids": [
+      "@V2_SAVINGS_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/savings/setup.feature",
+    "line": 42,
+    "name": "Cancel an account edit without losing the existing savings account",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_SAVINGS_004"
+    ],
+    "ids": [
+      "@V2_SAVINGS_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/savings/setup.feature",
+    "line": 49,
+    "name": "Keep an incomplete existing account unknown until reviewed setup",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_SAVINGS_005"
+    ],
+    "ids": [
+      "@V2_SAVINGS_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/savings/setup.feature",
+    "line": 62,
+    "name": "Explain an invalid Balance while preserving setup details",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_SAVINGS_011"
+    ],
+    "ids": [
+      "@V2_SAVINGS_011"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/traditional-ira/setup.feature",
+    "line": 7,
+    "name": "Create a complete opening account and edit its descriptive details",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_TRAD_IRA_001"
+    ],
+    "ids": [
+      "@V2_TRAD_IRA_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/traditional-ira/setup.feature",
+    "line": 21,
+    "name": "Complete empty setup by leaving the optional starting amount blank",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_TRAD_IRA_002"
+    ],
+    "ids": [
+      "@V2_TRAD_IRA_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/traditional-ira/setup.feature",
+    "line": 31,
+    "name": "Keep an incomplete opening amount as a draft",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_TRAD_IRA_003"
+    ],
+    "ids": [
+      "@V2_TRAD_IRA_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/traditional-ira/setup.feature",
+    "line": 41,
+    "name": "Correct cash with a dated explanation and preserve the earlier Balance",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_TRAD_IRA_004"
+    ],
+    "ids": [
+      "@V2_TRAD_IRA_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/traditional-ira/setup.feature",
+    "line": 54,
+    "name": "Reject invalid opening components without changing household wealth",
+    "kind": "Scenario Outline",
+    "tags": [
+      "@V2_TRAD_IRA_005"
+    ],
+    "ids": [
+      "@V2_TRAD_IRA_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/traditional-ira/setup.feature",
+    "line": 69,
+    "name": "Review a total that does not match the entered opening components",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_TRAD_IRA_006"
+    ],
+    "ids": [
+      "@V2_TRAD_IRA_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "accounts/traditional-ira/setup.feature",
+    "line": 78,
+    "name": "Keep an individual owner while sharing the account with the household",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_TRAD_IRA_007"
+    ],
+    "ids": [
+      "@V2_TRAD_IRA_007"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/history/manage-supporting-records.feature",
+    "line": 7,
+    "name": "Keep an original statement when adding a corrected copy",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_SUPPORTING_RECORD_001"
+    ],
+    "ids": [
+      "@V2_SUPPORTING_RECORD_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/history/manage-supporting-records.feature",
+    "line": 18,
+    "name": "Remove and restore a supporting statement without removing money",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_SUPPORTING_RECORD_002"
+    ],
+    "ids": [
+      "@V2_SUPPORTING_RECORD_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/history/manage-supporting-records.feature",
+    "line": 31,
+    "name": "Cancel a statement revision",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_SUPPORTING_RECORD_003"
+    ],
+    "ids": [
+      "@V2_SUPPORTING_RECORD_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/journeys/manage-household-finances.feature",
+    "line": 7,
+    "name": "Set up known balances, manage September money and understand the household result",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_JOURNEY_001"
+    ],
+    "ids": [
+      "@V2_JOURNEY_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/journeys/manage-household-finances.feature",
+    "line": 59,
+    "name": "Begin without known balances and build a small household money history",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_JOURNEY_002"
+    ],
+    "ids": [
+      "@V2_JOURNEY_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/journeys/manage-household-finances.feature",
+    "line": 81,
+    "name": "Review the same household month from spending and investment views",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_JOURNEY_003"
+    ],
+    "ids": [
+      "@V2_JOURNEY_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/journeys/manage-household-finances.feature",
+    "line": 94,
+    "name": "Enter the correct starting amount after initially leaving it blank",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_JOURNEY_004"
+    ],
+    "ids": [
+      "@V2_JOURNEY_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/journeys/manage-household-finances.feature",
+    "line": 112,
+    "name": "Carry September into October and pay a recurring bill on its due date",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_JOURNEY_005"
+    ],
+    "ids": [
+      "@V2_JOURNEY_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/journeys/manage-household-finances.feature",
+    "line": 140,
+    "name": "Connect take-home salary and retirement contributions without creating a checking transfer",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_JOURNEY_006"
+    ],
+    "ids": [
+      "@V2_JOURNEY_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/members/manage-members.feature",
+    "line": 7,
+    "name": "Add two people to the same local household",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_MEMBERS_001"
+    ],
+    "ids": [
+      "@V2_MEMBERS_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/members/manage-members.feature",
+    "line": 15,
+    "name": "Understand individual and joint account views",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_MEMBERS_002"
+    ],
+    "ids": [
+      "@V2_MEMBERS_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/members/manage-members.feature",
+    "line": 29,
+    "name": "Record who entered a correction without implying a verified identity",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_MEMBERS_003"
+    ],
+    "ids": [
+      "@V2_MEMBERS_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/members/manage-members.feature",
+    "line": 39,
+    "name": "Remove a member from new choices while preserving existing ownership",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_MEMBERS_004"
+    ],
+    "ids": [
+      "@V2_MEMBERS_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/members/manage-members.feature",
+    "line": 53,
+    "name": "Rename a member without changing money or losing attribution",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_MEMBERS_005"
+    ],
+    "ids": [
+      "@V2_MEMBERS_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/members/manage-members.feature",
+    "line": 63,
+    "name": "Cancel a member removal",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_MEMBERS_006"
+    ],
+    "ids": [
+      "@V2_MEMBERS_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/overview/understand-wealth.feature",
+    "line": 7,
+    "name": "View a dated household snapshot and open an account behind a total",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_WEALTH_001"
+    ],
+    "ids": [
+      "@V2_WEALTH_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/overview/understand-wealth.feature",
+    "line": 26,
+    "name": "Understand that retirement and investment groups overlap",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_WEALTH_002"
+    ],
+    "ids": [
+      "@V2_WEALTH_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/overview/understand-wealth.feature",
+    "line": 41,
+    "name": "See card debt and a separate card credit without hiding either",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_WEALTH_003"
+    ],
+    "ids": [
+      "@V2_WEALTH_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/overview/understand-wealth.feature",
+    "line": 53,
+    "name": "Notice an older balance before relying on the household total",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_WEALTH_004"
+    ],
+    "ids": [
+      "@V2_WEALTH_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/overview/understand-wealth.feature",
+    "line": 67,
+    "name": "Review a missing starting amount in an account that already has spending",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_WEALTH_005"
+    ],
+    "ids": [
+      "@V2_WEALTH_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/overview/understand-wealth.feature",
+    "line": 81,
+    "name": "Replace a balance correction with a discovered bank fee",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_WEALTH_006"
+    ],
+    "ids": [
+      "@V2_WEALTH_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/overview/understand-wealth.feature",
+    "line": 99,
+    "name": "Connect spending, investment growth and the change in wealth",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_WEALTH_007"
+    ],
+    "ids": [
+      "@V2_WEALTH_007"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/overview/understand-wealth.feature",
+    "line": 111,
+    "name": "Include Roth IRA and HSA in explicitly named groups",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_WEALTH_008"
+    ],
+    "ids": [
+      "@V2_WEALTH_008"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/overview/understand-wealth.feature",
+    "line": 124,
+    "name": "View an earlier net worth without applying later transactions or prices",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_WEALTH_009"
+    ],
+    "ids": [
+      "@V2_WEALTH_009"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/overview/understand-wealth.feature",
+    "line": 135,
+    "name": "Explain dividends and fees once when wealth changes",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_WEALTH_010"
+    ],
+    "ids": [
+      "@V2_WEALTH_010"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/overview/understand-wealth.feature",
+    "line": 148,
+    "name": "Count an overdraft as debt while showing bank money honestly",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_WEALTH_011"
+    ],
+    "ids": [
+      "@V2_WEALTH_011"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/setup/set-up-household.feature",
+    "line": 7,
+    "name": "Add the people who own the household's accounts",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_HOUSEHOLD_SETUP_001"
+    ],
+    "ids": [
+      "@V2_HOUSEHOLD_SETUP_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/setup/set-up-household.feature",
+    "line": 19,
+    "name": "Add known balances for the household's different account types",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_HOUSEHOLD_SETUP_002"
+    ],
+    "ids": [
+      "@V2_HOUSEHOLD_SETUP_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/setup/set-up-household.feature",
+    "line": 37,
+    "name": "Start with an empty household and choose the first account to add",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_HOUSEHOLD_SETUP_003"
+    ],
+    "ids": [
+      "@V2_HOUSEHOLD_SETUP_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/setup/set-up-household.feature",
+    "line": 49,
+    "name": "Use today's date or choose the date of a known starting balance",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_HOUSEHOLD_SETUP_004"
+    ],
+    "ids": [
+      "@V2_HOUSEHOLD_SETUP_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "household/setup/set-up-household.feature",
+    "line": 59,
+    "name": "Find a personal retirement account from the household account list",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_HOUSEHOLD_SETUP_005"
+    ],
+    "ids": [
+      "@V2_HOUSEHOLD_SETUP_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/corrections.feature",
+    "line": 5,
+    "name": "Remove and undo a purchase with its cash and fee together",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_INV_CORRECTION_001"
+    ],
+    "ids": [
+      "@V2_INV_CORRECTION_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/corrections.feature",
+    "line": 18,
+    "name": "Review sale dependencies before removing proceeds already withdrawn",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_INV_CORRECTION_002"
+    ],
+    "ids": [
+      "@V2_INV_CORRECTION_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/corrections.feature",
+    "line": 33,
+    "name": "Correct purchase price without rewriting the current market price",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_INV_CORRECTION_003"
+    ],
+    "ids": [
+      "@V2_INV_CORRECTION_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/corrections.feature",
+    "line": 45,
+    "name": "Review removal and undo of a dated price used by performance",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_INV_CORRECTION_004"
+    ],
+    "ids": [
+      "@V2_INV_CORRECTION_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/corrections.feature",
+    "line": 59,
+    "name": "Remove a supporting statement without silently removing saved holdings",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_INV_CORRECTION_005"
+    ],
+    "ids": [
+      "@V2_INV_CORRECTION_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/corrections.feature",
+    "line": 69,
+    "name": "Extend tracking earlier without charging an opening purchase twice",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_INV_CORRECTION_006"
+    ],
+    "ids": [
+      "@V2_INV_CORRECTION_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/corrections.feature",
+    "line": 82,
+    "name": "Remove and undo a dividend reinvestment as one linked action",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_INV_CORRECTION_007"
+    ],
+    "ids": [
+      "@V2_INV_CORRECTION_007"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/corrections.feature",
+    "line": 93,
+    "name": "Archive a nonzero account without hiding wealth and close only at zero",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_INV_CORRECTION_008"
+    ],
+    "ids": [
+      "@V2_INV_CORRECTION_008"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/corrections.feature",
+    "line": 105,
+    "name": "Review a dependent sale before removing the purchase that supplied its shares",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_INV_CORRECTION_009"
+    ],
+    "ids": [
+      "@V2_INV_CORRECTION_009"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/dividends-fees.feature",
+    "line": 5,
+    "name": "Receive a cash dividend and move it to checking without duplicate income",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_EARNINGS_001"
+    ],
+    "ids": [
+      "@V2_EARNINGS_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/dividends-fees.feature",
+    "line": 18,
+    "name": "Reinvest a dividend as one linked income and purchase action",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_EARNINGS_002"
+    ],
+    "ids": [
+      "@V2_EARNINGS_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/dividends-fees.feature",
+    "line": 28,
+    "name": "Record cash interest and a separate account fee",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_EARNINGS_003"
+    ],
+    "ids": [
+      "@V2_EARNINGS_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/dividends-fees.feature",
+    "line": 38,
+    "name": "Recover a missing fee that had already been covered by a correction",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_EARNINGS_004"
+    ],
+    "ids": [
+      "@V2_EARNINGS_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/dividends-fees.feature",
+    "line": 49,
+    "name": "Cancel a dividend reinvestment or reject an unfunded fee",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_EARNINGS_005"
+    ],
+    "ids": [
+      "@V2_EARNINGS_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/dividends-fees.feature",
+    "line": 57,
+    "name": "Reject invalid earnings or fees without changing cash",
+    "kind": "Scenario Outline",
+    "tags": [
+      "@V2_EARNINGS_006"
+    ],
+    "ids": [
+      "@V2_EARNINGS_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/funding.feature",
+    "line": 5,
+    "name": "Review cash funding from checking and retain both sides",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_FUNDING_001"
+    ],
+    "ids": [
+      "@V2_FUNDING_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/funding.feature",
+    "line": 16,
+    "name": "Record cash received from outside the household without creating a fictional bank movement",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_FUNDING_002"
+    ],
+    "ids": [
+      "@V2_FUNDING_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/funding.feature",
+    "line": 24,
+    "name": "Withdraw available cash into a household bank account",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_FUNDING_003"
+    ],
+    "ids": [
+      "@V2_FUNDING_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/funding.feature",
+    "line": 33,
+    "name": "Confirm intentional repeated funding rather than save an accidental duplicate",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_FUNDING_004"
+    ],
+    "ids": [
+      "@V2_FUNDING_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/funding.feature",
+    "line": 44,
+    "name": "Reject invalid cash funding or withdrawals without partial changes",
+    "kind": "Scenario Outline",
+    "tags": [
+      "@V2_FUNDING_005"
+    ],
+    "ids": [
+      "@V2_FUNDING_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/holdings.feature",
+    "line": 5,
+    "name": "View an empty investment group without inventing positions",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_HOLDINGS_001"
+    ],
+    "ids": [
+      "@V2_HOLDINGS_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/holdings.feature",
+    "line": 14,
+    "name": "Read one security across three accounts and distinguish known cost from value coverage",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_HOLDINGS_002"
+    ],
+    "ids": [
+      "@V2_HOLDINGS_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/holdings.feature",
+    "line": 28,
+    "name": "Keep selected-account holdings and whole-investment summaries clearly separate",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_HOLDINGS_003"
+    ],
+    "ids": [
+      "@V2_HOLDINGS_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/holdings.feature",
+    "line": 39,
+    "name": "Display HSA holdings with partial purchase cost",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_HOLDINGS_004"
+    ],
+    "ids": [
+      "@V2_HOLDINGS_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/holdings.feature",
+    "line": 49,
+    "name": "Review a dated statement without replacing the calculated Balance",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_HOLDINGS_005"
+    ],
+    "ids": [
+      "@V2_HOLDINGS_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/holdings.feature",
+    "line": 59,
+    "name": "See mixed price dates before asking for exact-date performance",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_HOLDINGS_006"
+    ],
+    "ids": [
+      "@V2_HOLDINGS_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/holdings.feature",
+    "line": 69,
+    "name": "Keep plan value and investment cash in their proper groups",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_HOLDINGS_007"
+    ],
+    "ids": [
+      "@V2_HOLDINGS_007"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/holdings.feature",
+    "line": 78,
+    "name": "Review a known zero market price without deleting the holding",
+    "kind": "Scenario Outline",
+    "tags": [
+      "@V2_HOLDINGS_008"
+    ],
+    "ids": [
+      "@V2_HOLDINGS_008"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/performance.feature",
+    "line": 6,
+    "name": "Follow brokerage setup through funding and a closing price",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_PERFORMANCE_001"
+    ],
+    "ids": [
+      "@V2_PERFORMANCE_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/performance.feature",
+    "line": 20,
+    "name": "Keep selected performance separate from the whole investment group",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_PERFORMANCE_002"
+    ],
+    "ids": [
+      "@V2_PERFORMANCE_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/performance.feature",
+    "line": 33,
+    "name": "Neutralize a transfer inside the selected investment group",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_PERFORMANCE_003"
+    ],
+    "ids": [
+      "@V2_PERFORMANCE_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/performance.feature",
+    "line": 45,
+    "name": "Require the requested period dates rather than nearby prices",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_PERFORMANCE_004"
+    ],
+    "ids": [
+      "@V2_PERFORMANCE_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/performance.feature",
+    "line": 57,
+    "name": "Explain known dollar earnings when the percentage has no denominator",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_PERFORMANCE_005"
+    ],
+    "ids": [
+      "@V2_PERFORMANCE_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/performance.feature",
+    "line": 67,
+    "name": "Keep dividends and account fees in net earnings",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_PERFORMANCE_006"
+    ],
+    "ids": [
+      "@V2_PERFORMANCE_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/performance.feature",
+    "line": 78,
+    "name": "Treat a distribution as outgoing funding rather than an investment loss",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_PERFORMANCE_007"
+    ],
+    "ids": [
+      "@V2_PERFORMANCE_007"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/performance.feature",
+    "line": 88,
+    "name": "Count activity on a period boundary only once",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_PERFORMANCE_008"
+    ],
+    "ids": [
+      "@V2_PERFORMANCE_008"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/purchases.feature",
+    "line": 5,
+    "name": "Fund a purchase from existing cash and see the fee once",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_PURCHASE_001"
+    ],
+    "ids": [
+      "@V2_PURCHASE_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/purchases.feature",
+    "line": 16,
+    "name": "Keep two purchases on the same day separate",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_PURCHASE_002"
+    ],
+    "ids": [
+      "@V2_PURCHASE_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/purchases.feature",
+    "line": 27,
+    "name": "Add a dated price and preserve original purchase costs",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_PURCHASE_003"
+    ],
+    "ids": [
+      "@V2_PURCHASE_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/purchases.feature",
+    "line": 36,
+    "name": "Record opening shares before recording later purchases",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_PURCHASE_004"
+    ],
+    "ids": [
+      "@V2_PURCHASE_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/purchases.feature",
+    "line": 47,
+    "name": "Review purchases against a conflicting statement before changing recorded shares",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_PURCHASE_005"
+    ],
+    "ids": [
+      "@V2_PURCHASE_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/purchases.feature",
+    "line": 58,
+    "name": "Reject a purchase that cannot be funded or dated as completed activity",
+    "kind": "Scenario Outline",
+    "tags": [
+      "@V2_PURCHASE_006"
+    ],
+    "ids": [
+      "@V2_PURCHASE_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/retirement-health.feature",
+    "line": 5,
+    "name": "Record take-home pay, employee funding and employer match separately",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_RETIREMENT_ACTIVITY_001"
+    ],
+    "ids": [
+      "@V2_RETIREMENT_ACTIVITY_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/retirement-health.feature",
+    "line": 19,
+    "name": "Keep a promised employer contribution out of current Balance",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_RETIREMENT_ACTIVITY_002"
+    ],
+    "ids": [
+      "@V2_RETIREMENT_ACTIVITY_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/retirement-health.feature",
+    "line": 28,
+    "name": "Pay a medical expense directly from HSA cash",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_RETIREMENT_ACTIVITY_003"
+    ],
+    "ids": [
+      "@V2_RETIREMENT_ACTIVITY_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/retirement-health.feature",
+    "line": 37,
+    "name": "Reimburse a checking-paid medical expense without counting spending twice",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_RETIREMENT_ACTIVITY_004"
+    ],
+    "ids": [
+      "@V2_RETIREMENT_ACTIVITY_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/retirement-health.feature",
+    "line": 49,
+    "name": "Reimburse an earlier month's expense without moving its spending date",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_RETIREMENT_ACTIVITY_005"
+    ],
+    "ids": [
+      "@V2_RETIREMENT_ACTIVITY_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/retirement-health.feature",
+    "line": 58,
+    "name": "Sell HSA shares before a medical payment when cash is insufficient",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_RETIREMENT_ACTIVITY_006"
+    ],
+    "ids": [
+      "@V2_RETIREMENT_ACTIVITY_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/retirement-health.feature",
+    "line": 68,
+    "name": "Keep Roth IRA and HSA group membership explicit",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_RETIREMENT_ACTIVITY_007"
+    ],
+    "ids": [
+      "@V2_RETIREMENT_ACTIVITY_007"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/sales.feature",
+    "line": 6,
+    "name": "Select the shares sold and review known realized gain",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_SALE_001"
+    ],
+    "ids": [
+      "@V2_SALE_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/sales.feature",
+    "line": 18,
+    "name": "Preserve unknown gain when the selected shares have unknown cost",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_SALE_002"
+    ],
+    "ids": [
+      "@V2_SALE_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/sales.feature",
+    "line": 26,
+    "name": "Choose from two purchases before saving a partial sale",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_SALE_003"
+    ],
+    "ids": [
+      "@V2_SALE_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/sales.feature",
+    "line": 36,
+    "name": "Reject an invalid sale or leave an unsaved sale canceled",
+    "kind": "Scenario Outline",
+    "tags": [
+      "@V2_SALE_004"
+    ],
+    "ids": [
+      "@V2_SALE_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/sales.feature",
+    "line": 50,
+    "name": "Keep an incomplete sale entry as a draft until proceeds are received",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_SALE_005"
+    ],
+    "ids": [
+      "@V2_SALE_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/sales.feature",
+    "line": 60,
+    "name": "Cancel a reviewed sale without losing the selected purchase information",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_SALE_006"
+    ],
+    "ids": [
+      "@V2_SALE_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "investments/sales.feature",
+    "line": 67,
+    "name": "Keep known and unknown realized gain separate within one sale",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_SALE_007"
+    ],
+    "ids": [
+      "@V2_SALE_007"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/budgets/manage-budgets.feature",
+    "line": 7,
+    "name": "Build a September Budget and compare it with spending",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_BUDGET_001"
+    ],
+    "ids": [
+      "@V2_BUDGET_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/budgets/manage-budgets.feature",
+    "line": 19,
+    "name": "Explain a gap between the total Budget and category targets",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_BUDGET_002"
+    ],
+    "ids": [
+      "@V2_BUDGET_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/budgets/manage-budgets.feature",
+    "line": 31,
+    "name": "Review a target change without quietly changing the total Budget",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_BUDGET_003"
+    ],
+    "ids": [
+      "@V2_BUDGET_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/budgets/manage-budgets.feature",
+    "line": 43,
+    "name": "Copy targets into a new month without copying expenses",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_BUDGET_004"
+    ],
+    "ids": [
+      "@V2_BUDGET_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/budgets/manage-budgets.feature",
+    "line": 54,
+    "name": "Explain a zero category target without a misleading percentage",
+    "kind": "Scenario Outline",
+    "tags": [
+      "@V2_BUDGET_005"
+    ],
+    "ids": [
+      "@V2_BUDGET_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/budgets/manage-budgets.feature",
+    "line": 67,
+    "name": "Remove and undo a monthly Budget without removing actual spending",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_BUDGET_006"
+    ],
+    "ids": [
+      "@V2_BUDGET_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/budgets/manage-budgets.feature",
+    "line": 78,
+    "name": "Reject a negative category target and cancel the correction",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_BUDGET_007"
+    ],
+    "ids": [
+      "@V2_BUDGET_007"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/categories/manage-categories.feature",
+    "line": 7,
+    "name": "Create a spending category with a default and override one expense",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CATEGORIES_001"
+    ],
+    "ids": [
+      "@V2_CATEGORIES_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/categories/manage-categories.feature",
+    "line": 18,
+    "name": "Change a category default while keeping past choices",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CATEGORIES_002"
+    ],
+    "ids": [
+      "@V2_CATEGORIES_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/categories/manage-categories.feature",
+    "line": 31,
+    "name": "Rename a category and follow its history",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CATEGORIES_003"
+    ],
+    "ids": [
+      "@V2_CATEGORIES_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/categories/manage-categories.feature",
+    "line": 39,
+    "name": "Merge two categories and undo without duplicating spending",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CATEGORIES_004"
+    ],
+    "ids": [
+      "@V2_CATEGORIES_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/categories/manage-categories.feature",
+    "line": 52,
+    "name": "Archive a category while retaining its saved entries",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CATEGORIES_005"
+    ],
+    "ids": [
+      "@V2_CATEGORIES_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/categories/manage-categories.feature",
+    "line": 61,
+    "name": "Include uncategorized spending and resolve its review flag",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CATEGORIES_006"
+    ],
+    "ids": [
+      "@V2_CATEGORIES_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/categories/manage-categories.feature",
+    "line": 72,
+    "name": "Create an income category without an Essential choice",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CATEGORIES_007"
+    ],
+    "ids": [
+      "@V2_CATEGORIES_007"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/categories/manage-categories.feature",
+    "line": 82,
+    "name": "Reject an empty or duplicate category name",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_CATEGORIES_008"
+    ],
+    "ids": [
+      "@V2_CATEGORIES_008"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/categories/split-expenses.feature",
+    "line": 7,
+    "name": "Record a mixed shopping purchase and view its portions",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_SPLITS_001"
+    ],
+    "ids": [
+      "@V2_SPLITS_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/categories/split-expenses.feature",
+    "line": 18,
+    "name": "Correct the portions without changing the payment",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_SPLITS_002"
+    ],
+    "ids": [
+      "@V2_SPLITS_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/categories/split-expenses.feature",
+    "line": 28,
+    "name": "Require the portions to equal the payment amount",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_SPLITS_003"
+    ],
+    "ids": [
+      "@V2_SPLITS_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/categories/split-expenses.feature",
+    "line": 37,
+    "name": "Remove and restore an entire split expense",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_SPLITS_004"
+    ],
+    "ids": [
+      "@V2_SPLITS_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/categories/split-expenses.feature",
+    "line": 50,
+    "name": "Cancel a split correction",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_SPLITS_005"
+    ],
+    "ids": [
+      "@V2_SPLITS_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/expenses/record-expenses.feature",
+    "line": 7,
+    "name": "Record a bill and inspect it from monthly spending",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_EXPENSE_001"
+    ],
+    "ids": [
+      "@V2_EXPENSE_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/expenses/record-expenses.feature",
+    "line": 17,
+    "name": "Save and add another with a visible date and account",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_EXPENSE_002"
+    ],
+    "ids": [
+      "@V2_EXPENSE_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/expenses/record-expenses.feature",
+    "line": 26,
+    "name": "Review and save four weekly expenses together",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_EXPENSE_003"
+    ],
+    "ids": [
+      "@V2_EXPENSE_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/expenses/record-expenses.feature",
+    "line": 37,
+    "name": "Cancel several prepared expenses without changing the month",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_EXPENSE_004"
+    ],
+    "ids": [
+      "@V2_EXPENSE_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/expenses/record-expenses.feature",
+    "line": 45,
+    "name": "Save none of a group when one amount is invalid",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_EXPENSE_005"
+    ],
+    "ids": [
+      "@V2_EXPENSE_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/expenses/record-expenses.feature",
+    "line": 54,
+    "name": "Correct a purchase category without changing the money spent",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_EXPENSE_006"
+    ],
+    "ids": [
+      "@V2_EXPENSE_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/expenses/record-expenses.feature",
+    "line": 64,
+    "name": "Change the payment account and date with both months reviewed",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_EXPENSE_007"
+    ],
+    "ids": [
+      "@V2_EXPENSE_007"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/expenses/record-expenses.feature",
+    "line": 75,
+    "name": "Correct an expense that was actually a household transfer",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_EXPENSE_008"
+    ],
+    "ids": [
+      "@V2_EXPENSE_008"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/expenses/record-expenses.feature",
+    "line": 85,
+    "name": "Remove an incorrect expense and restore it with Undo",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_EXPENSE_009"
+    ],
+    "ids": [
+      "@V2_EXPENSE_009"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/expenses/record-expenses.feature",
+    "line": 96,
+    "name": "Reject a zero purchase rather than silently recording it",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_EXPENSE_010"
+    ],
+    "ids": [
+      "@V2_EXPENSE_010"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/expenses/record-expenses.feature",
+    "line": 103,
+    "name": "Treat a future bill as a reminder rather than completed spending",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_EXPENSE_011"
+    ],
+    "ids": [
+      "@V2_EXPENSE_011"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/income/record-income.feature",
+    "line": 7,
+    "name": "Record take-home salary and find it from the month and account",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_INCOME_001"
+    ],
+    "ids": [
+      "@V2_INCOME_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/income/record-income.feature",
+    "line": 17,
+    "name": "Record savings interest separately from a Balance correction",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_INCOME_002"
+    ],
+    "ids": [
+      "@V2_INCOME_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/income/record-income.feature",
+    "line": 25,
+    "name": "Correct income amount, date, account and category with affected months visible",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_INCOME_003"
+    ],
+    "ids": [
+      "@V2_INCOME_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/income/record-income.feature",
+    "line": 38,
+    "name": "Remove an incorrectly recorded salary and undo it",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_INCOME_004"
+    ],
+    "ids": [
+      "@V2_INCOME_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/income/record-income.feature",
+    "line": 48,
+    "name": "Reject an invalid received-income amount without losing context",
+    "kind": "Scenario Outline",
+    "tags": [
+      "@V2_INCOME_005"
+    ],
+    "ids": [
+      "@V2_INCOME_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/income/record-income.feature",
+    "line": 60,
+    "name": "Keep expected salary as a reminder until it is received",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_INCOME_006"
+    ],
+    "ids": [
+      "@V2_INCOME_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/monthly-review/review-spending.feature",
+    "line": 7,
+    "name": "Follow September spending back to the household's purchases and bills",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_MONTHLY_001"
+    ],
+    "ids": [
+      "@V2_MONTHLY_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/monthly-review/review-spending.feature",
+    "line": 22,
+    "name": "Keep a card repayment out of a card's monthly purchase total",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_MONTHLY_002"
+    ],
+    "ids": [
+      "@V2_MONTHLY_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/monthly-review/review-spending.feature",
+    "line": 32,
+    "name": "Explain spending above the selected month's Budget",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_MONTHLY_003"
+    ],
+    "ids": [
+      "@V2_MONTHLY_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/monthly-review/review-spending.feature",
+    "line": 41,
+    "name": "Understand Income minus spending alongside the account Balance",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_MONTHLY_004"
+    ],
+    "ids": [
+      "@V2_MONTHLY_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/monthly-review/review-spending.feature",
+    "line": 50,
+    "name": "Label an annual spending estimate based on only one recorded month",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_MONTHLY_005"
+    ],
+    "ids": [
+      "@V2_MONTHLY_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/recurring/manage-recurring.feature",
+    "line": 7,
+    "name": "Inspect three bills supporting a monthly suggestion",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_RECURRING_001"
+    ],
+    "ids": [
+      "@V2_RECURRING_001"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/recurring/manage-recurring.feature",
+    "line": 16,
+    "name": "Confirm a suggested schedule without paying its next bill",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_RECURRING_002"
+    ],
+    "ids": [
+      "@V2_RECURRING_002"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/recurring/manage-recurring.feature",
+    "line": 24,
+    "name": "Record an early payment against its scheduled occurrence",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_RECURRING_003"
+    ],
+    "ids": [
+      "@V2_RECURRING_003"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/recurring/manage-recurring.feature",
+    "line": 37,
+    "name": "Cancel actual payment while preserving its unpaid occurrence",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_RECURRING_004"
+    ],
+    "ids": [
+      "@V2_RECURRING_004"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/recurring/manage-recurring.feature",
+    "line": 45,
+    "name": "Reject a negative estimate and cancel a corrected amount",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_RECURRING_005"
+    ],
+    "ids": [
+      "@V2_RECURRING_005"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/recurring/manage-recurring.feature",
+    "line": 53,
+    "name": "Create a manual recurring schedule with an explicit due date",
+    "kind": "Scenario Outline",
+    "tags": [
+      "@V2_RECURRING_006"
+    ],
+    "ids": [
+      "@V2_RECURRING_006"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/recurring/manage-recurring.feature",
+    "line": 69,
+    "name": "Change future estimates without changing previously paid bills",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_RECURRING_007"
+    ],
+    "ids": [
+      "@V2_RECURRING_007"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/recurring/manage-recurring.feature",
+    "line": 77,
+    "name": "Pause and resume a schedule without recording missed payments",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_RECURRING_008"
+    ],
+    "ids": [
+      "@V2_RECURRING_008"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/recurring/manage-recurring.feature",
+    "line": 86,
+    "name": "Dismiss a suggestion and delete a saved estimate without removing bills",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_RECURRING_009"
+    ],
+    "ids": [
+      "@V2_RECURRING_009"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  },
+  {
+    "file": "spending/recurring/manage-recurring.feature",
+    "line": 96,
+    "name": "Show overdue status without posting an expense",
+    "kind": "Scenario",
+    "tags": [
+      "@V2_RECURRING_010"
+    ],
+    "ids": [
+      "@V2_RECURRING_010"
+    ],
+    "releaseStatus": "deferred",
+    "reason": "Q-004 release selection pending; SETUP-001 implements no finance scenario"
+  }
+]

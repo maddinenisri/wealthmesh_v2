@@ -1,0 +1,15 @@
+node_modules/
+.tools/
+.runtime/
+frontend/dist/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+playwright-report/
+test-results/
+.env
+.env.*
+!.env.example
+.DS_Store
+backend/.gradle/
+backend/build/
+/.vitepress/

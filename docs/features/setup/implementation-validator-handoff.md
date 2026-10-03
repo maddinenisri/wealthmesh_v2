@@ -1,0 +1,9 @@
+# SETUP-001 implementation validator handoff
+
+Independent validator `/root/implementation_validator`, October 3, 2026. Source: [authoritative results](validation.md). Scope: approved revision 1, AC-01–17; no finance completion or human acceptance.
+
+Independent execution is complete: all required outcomes pass, including corrected VD-01 guidance. Full verify, 3 fresh unit/two fresh 12-test integrations, 10 MSW cases/policy rejection, platform/launcher, 16 docs unit/ten browser cases, two distinct real E2Es, lifecycle/persistence/quality-rejection/snapshot and controlled cleanup pass with zero skips. Three targeted prerequisite regressions, actual shell preflight/syntax and affected lint/format/doc checks also pass. Commands/counts/timings/content/resource identities and expected failures are in the report; developer evidence is not substituted.
+
+Owned development marker removed (DELETE 1/count 0), setup version/history unchanged, exact disposable PostgreSQL/Ryuk/JVM resources absent. Development survived both failure exercises unchanged. Demo restored healthy: backend supervisor 66009, frontend 66062, docs 66114; documented loopback addresses and same named volume. `state-final-demo.json` records current readiness. No more validator service mutations planned.
+
+Initial source is unchanged across core execution: 97 files, aggregate `5a115e51914bca7841c173321f997c9564dcea292fedbe2843a338048f6b7ec3`. Final corrected source: 98 files, aggregate `169a652849ea0f8064cf9732f89e182973fdbf0fc514d4b1d61ce2cfca6c4b8c`; independent diff changes only new `scripts/preflight.sh` and prerequisite cases in `scripts/platform.test.mjs`. All unrelated source is identical; targeted checks cover changed behavior. README/operations guidance inspected. No unresolved required validation finding remains. Ready for reviewer/coordinator reconciliation; reviewer owns recommendation and owner alone accepts.

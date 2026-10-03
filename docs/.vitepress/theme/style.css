@@ -1,0 +1,64 @@
+:root {
+  --vp-c-brand-1: #25635f;
+  --vp-c-brand-2: #1f524f;
+  --vp-c-brand-3: #25635f;
+}
+
+.dark {
+  --vp-c-brand-1: #8ed3c9;
+  --vp-c-brand-2: #ade2d9;
+}
+
+:focus-visible {
+  outline: 3px solid var(--vp-c-brand-1);
+  outline-offset: 3px;
+}
+
+.markdown-source {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--vp-c-divider);
+  font-size: 0.85rem;
+  overflow-wrap: anywhere;
+}
+
+.source-path {
+  font-size: 0.9em;
+  overflow-wrap: anywhere;
+}
+
+.mermaid-diagram {
+  margin: 1.5rem 0;
+}
+
+.mermaid-output {
+  overflow-x: auto;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 6px;
+}
+
+.mermaid-output svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.mermaid-diagram figcaption {
+  margin: 0.5rem 0;
+}
+
+.mermaid-diagram button {
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--vp-c-brand-1);
+  border-radius: 6px;
+}
+
+.mermaid-diagram pre {
+  overflow-x: auto;
+  padding: 0.75rem;
+}
+
+.vp-doc table {
+  display: block;
+  overflow-x: auto;
+}

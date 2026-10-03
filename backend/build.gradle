@@ -1,0 +1,129 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '4.1.1'
+    id 'checkstyle'
+}
+
+group = 'com.wealthmesh'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    testSupport {
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
+    }
+    integrationTest {
+        compileClasspath += sourceSets.main.output + sourceSets.testSupport.output
+        runtimeClasspath += sourceSets.main.output + sourceSets.testSupport.output
+    }
+}
+
+configurations {
+    testSupportImplementation.extendsFrom implementation
+    testSupportRuntimeOnly.extendsFrom runtimeOnly
+    integrationTestImplementation.extendsFrom testImplementation, testSupportImplementation
+    integrationTestRuntimeOnly.extendsFrom testRuntimeOnly, testSupportRuntimeOnly
+    pmdTool
+}
+
+dependencies {
+    implementation platform('org.springframework.boot:spring-boot-dependencies:4.1.1')
+    implementation 'org.springframework.boot:spring-boot-starter-webmvc'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-flyway'
+    runtimeOnly 'org.flywaydb:flyway-database-postgresql'
+    runtimeOnly 'org.postgresql:postgresql'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    testSupportImplementation 'org.testcontainers:testcontainers-postgresql:2.0.5'
+    pmdTool 'net.sourceforge.pmd:pmd-cli:7.16.0'
+    pmdTool 'net.sourceforge.pmd:pmd-java:7.16.0'
+}
+
+dependencyLocking {
+    lockAllConfigurations()
+}
+
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+    testLogging {
+        events 'passed', 'skipped', 'failed'
+        exceptionFormat = 'short'
+    }
+}
+
+tasks.register('integrationTest', Test) {
+    description = 'Real PostgreSQL migration, persistence, API and isolation tests.'
+    group = 'verification'
+    testClassesDirs = sourceSets.integrationTest.output.classesDirs
+    classpath = sourceSets.integrationTest.runtimeClasspath
+    shouldRunAfter test
+    systemProperty 'wealthmesh.imageFile', rootProject.file('../config/postgres-image.txt').absolutePath
+    environment 'TESTCONTAINERS_REUSE_ENABLE', 'false'
+    environment 'TESTCONTAINERS_RYUK_DISABLED', 'false'
+}
+
+checkstyle {
+    toolVersion = '12.3.1'
+    maxWarnings = 0
+}
+
+tasks.register('pmdCheck', JavaExec) {
+    description = 'PMD rules with mandatory failure on invalid configuration or analysis errors.'
+    group = 'verification'
+    classpath = configurations.pmdTool
+    mainClass = 'net.sourceforge.pmd.cli.PmdCli'
+    args 'check', '--dir', 'src', '--rulesets', 'config/pmd/ruleset.xml', '--use-version', 'java-25',
+        '--format', 'xml', '--report-file', 'build/reports/pmd/all.xml', '--no-cache'
+    doFirst { mkdir 'build/reports/pmd' }
+}
+
+tasks.register('cpd', JavaExec) {
+    description = 'Detect duplicated Java blocks in handwritten production and tests.'
+    group = 'verification'
+    classpath = configurations.pmdTool
+    mainClass = 'net.sourceforge.pmd.cli.PmdCli'
+    args 'cpd', '--minimum-tokens', '100', '--dir', 'src', '--language', 'java',
+        '--format', 'xml', '--report-file', 'build/reports/cpd.xml'
+    doFirst { mkdir 'build/reports' }
+}
+
+tasks.register('quality') {
+    group = 'verification'
+    description = 'Checkstyle, PMD and duplication checks for all handwritten Java.'
+    dependsOn tasks.withType(Checkstyle), 'pmdCheck', 'cpd'
+}
+
+tasks.register('resolveAndLockAll') {
+    description = 'Resolve every resolvable configuration; invoke with --write-locks only for deliberate updates.'
+    doLast {
+        configurations.findAll { it.canBeResolved }.each { it.resolve() }
+    }
+}
+
+tasks.register('e2eFixture', JavaExec) {
+    group = 'verification'
+    description = 'Run the real backend with owned disposable PostgreSQL for Playwright.'
+    dependsOn testSupportClasses
+    classpath = sourceSets.testSupport.runtimeClasspath
+    mainClass = 'com.wealthmesh.testsupport.E2eFixture'
+    systemProperty 'wealthmesh.imageFile', rootProject.file('../config/postgres-image.txt').absolutePath
+    args providers.gradleProperty('fixtureDir').getOrElse(''), providers.gradleProperty('backendPort').getOrElse('0')
+    systemProperty 'wealthmesh.fixtureStartupFailure', providers.gradleProperty('fixtureStartupFailure').getOrElse('false')
+    environment 'TESTCONTAINERS_REUSE_ENABLE', 'false'
+    environment 'TESTCONTAINERS_RYUK_DISABLED', 'false'
+}
+
+tasks.named('check') {
+    dependsOn integrationTest, quality
+}

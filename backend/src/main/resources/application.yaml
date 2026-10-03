@@ -1,0 +1,37 @@
+server:
+  address: 127.0.0.1
+  port: ${WM_BACKEND_PORT:8080}
+  shutdown: graceful
+  error:
+    include-message: never
+    include-stacktrace: never
+spring:
+  application:
+    name: wealthmesh-backend
+  datasource:
+    url: ${WM_DB_URL}
+    username: ${WM_DB_USERNAME}
+    password: ${WM_DB_PASSWORD}
+    hikari:
+      maximum-pool-size: 4
+      minimum-idle: 0
+      connection-timeout: 2500
+      validation-timeout: 1000
+      initialization-fail-timeout: 1
+      data-source-properties:
+        connectTimeout: 2
+        socketTimeout: 3
+        options: -c statement_timeout=3000
+  jdbc:
+    template:
+      query-timeout: 3s
+  flyway:
+    clean-disabled: true
+    validate-on-migrate: true
+    connect-retries: 0
+    locations: classpath:db/migration
+  lifecycle:
+    timeout-per-shutdown-phase: 5s
+logging:
+  level:
+    com.zaxxer.hikari: ERROR
