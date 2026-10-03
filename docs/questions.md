@@ -61,7 +61,7 @@ Checking 006 recovery may be deferred for this feature; greenfield status does n
 
 ### FIN-001 concrete policy answers
 
-UX, architect and validator sessions prepared the [combined packet](features/household-checking/index.md#product-defaults-and-their-implications). The coordinator asked these concrete questions after the architect supplied implications/defaults. The owner's answers below require a member-label design revision before the combined checkpoint; they do not reopen household versus checking selection.
+UX, architect and validator sessions prepared the [combined packet](features/household-checking/index.md#technical-proposal). The coordinator asked these concrete questions after the architect supplied implications/defaults. The owner's answers below led to the member-label contract; they do not reopen household versus checking selection. Revision 3 incorporates those answers and the subsequent complexity review.
 
 | Policy          | Architect recommendation and implication                                                                                                                                                                                                                        | Supplied answer                                                  |
 | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
@@ -70,6 +70,10 @@ UX, architect and validator sessions prepared the [combined packet](features/hou
 | Member names    | Initial recommendation required unique normalized names. The owner selected the alternative: duplicate names with an additional label. Revise UX/API/storage/tests so owner choices are distinguishable.                                                        | “Allow duplicate names with an additional distinguishing label.” |
 
 The supplied policy answers are recorded in [D-027](decisions.md#d-027-fin-001-amount-date-and-member-policies). The concrete member-label contract and combined design still await review. Final first-release scope remains open even if FIN-001 is later design-approved. Q-009's prerequisite is satisfied by [D-026](decisions.md#d-026-accept-completed-project-setup).
+
+### FIN-001 revision 3 recommendation
+
+The owner supplied a complexity review, said **“I haven't approved it”**, and left the recommendation to the coordinator ([D-028](decisions.md#d-028-request-a-recommendation-after-fin-001-complexity-review)). No FIN-001 design approval is supplied. Coordinator recommends revision 3 with simpler automatic save rereads/client-ID retries, last-write-wins detail edits, no navigation prompts/new timezone setting, minimal errors and member name/label correction. D-027's label policy persists. UX, architecture and validator completed sequential revisions; the combined packet now awaits approval. Wider release scope remains open. D-023 requires one feature document plus these registers; setup's historical per-role evidence chain does not apply to FIN-001.
 
 ## Q-005: Browser editing and human communication
 

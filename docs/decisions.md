@@ -109,6 +109,22 @@ The owner answered the concrete architect proposals:
 
 These actual answers settle the named policies, not the entire feature design or first release. The revised combined FIN-001 packet and validator plan still require explicit approval before production implementation. No approval is inferred for unanswered design details, feature acceptance or deployment.
 
+## D-028: Request a recommendation after FIN-001 complexity review
+
+Date: October 3, 2026. Owner: human product owner. Related question: [Q-004](questions.md#q-004-first-usable-finance-release).
+
+The owner supplied options for keeping or trimming the revision 2 design and said:
+
+> I haven't approved it
+
+The owner also wrote:
+
+> will leave the decision to you
+
+The coordinator chooses to prepare a trimmed revision 3 recommendation, including simpler save handling/detail edits and a member typo-correction capability. This records the owner's direction to recommend a path, not a human selection of “approve with trims” or approval of implementation. Concrete role proposals belong in the single FIN-001 packet and remain reviewable before coding.
+
+Existing D-026 setup acceptance and D-027 policy answers persist. D-023's one-document future workflow retains separate role sessions and both checkpoints; setup's historical role-report chain is not carried into FIN-001. Wider release scope and the combined revision 3 design approval remain open. No implementation, deployment or feature acceptance is authorized by this direction.
+
 ## Architect authority boundaries
 
 Routine choices follow the approved baseline and feature design. New deployable services, message brokers, external providers, replacement frameworks or databases, and material changes to security or deployment require a concrete explanation and human review before implementation. Routine dependency changes must remain justified and recorded. Setup revision 1 is approved; future finance scope remains unresolved under [Q-004](questions.md#q-004-first-usable-finance-release).
