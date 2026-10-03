@@ -6,17 +6,17 @@ Future features use one `docs/features/<feature>/index.md`, based on the [featur
 
 ## Feature stages
 
-| Stage | Responsible role | Required result |
-| --- | --- | --- |
-| Scope | Coordinator and human | Bounded capability, source scenario IDs, exclusions, open questions |
-| Design | UX architect and architect | Screen behavior, financial rules, API and data proposals, test plan |
-| Acceptance test planning | Validator | Scenario coverage, expected outcomes, failure cases, and required test layers before coding |
-| Awaiting design review | Human | Explicit approval or requested revisions recorded against the packet revision |
-| Test and implement | Developer | Meaningful failing tests, working code, passing tests, updated explanations |
-| Validate | Validator | Independent execution results, scenario coverage, browser evidence, defects |
-| Review | Reviewer | Findings about correctness, maintainability, tests, integrity, and operation |
-| Awaiting acceptance | Human | Working demonstration and plain-English explanation of high-level implementation changes reviewed together |
-| Accepted | Coordinator records human decision | Explicit acceptance, tested revision, known limitations, operating guidance |
+| Stage                    | Responsible role                   | Required result                                                                                            |
+| ------------------------ | ---------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| Scope                    | Coordinator and human              | Bounded capability, source scenario IDs, exclusions, open questions                                        |
+| Design                   | UX architect and architect         | Screen behavior, financial rules, API and data proposals, test plan                                        |
+| Acceptance test planning | Validator                          | Scenario coverage, expected outcomes, failure cases, and required test layers before coding                |
+| Awaiting design review   | Human                              | Explicit approval or requested revisions recorded against the packet revision                              |
+| Test and implement       | Developer                          | Meaningful failing tests, working code, passing tests, updated explanations                                |
+| Validate                 | Validator                          | Independent execution results, scenario coverage, browser evidence, defects                                |
+| Review                   | Reviewer                           | Findings about correctness, maintainability, tests, integrity, and operation                               |
+| Awaiting acceptance      | Human                              | Working demonstration and plain-English explanation of high-level implementation changes reviewed together |
+| Accepted                 | Coordinator records human decision | Explicit acceptance, tested revision, known limitations, operating guidance                                |
 
 Design can iterate between UX and architecture. The validator prepares an acceptance test plan before coding, using their proposals and the approved source scenarios. Include that plan in the human design review. The developer writes the failing tests and production implementation; the validator independently checks the finished feature. Validation or review findings return work to the developer, followed by the checks affected by the changes. Passing checks do not bypass either human checkpoint.
 
@@ -39,6 +39,10 @@ Use existing scenario tags for traceability. Plan about five behavior-focused ac
 The developer follows test-first development, but the owner has selected final test results for the human-facing packet. Do not require the owner to inspect red/green logs for each increment. Final reports must still identify failures and skips honestly.
 
 Use Git commits for tested implementation revisions and reference the requirements snapshot. Record commands, actual results, failures and skips in the feature document; identify any later dirty changes with a diff. No custom fingerprint tooling/manifests are required for future features. Developer checks and independent validator results remain separate sections. Run required checks, then repeat only affected checks when changes/failures justify it.
+
+## Commit messages
+
+Follow [D-024](decisions.md#d-024-explain-feature-outcomes-in-commit-messages): use a descriptive feature-ID title and a short plain-English body explaining the problem, user-visible result and high-level changes, with relevant actual validation. Keep pending acceptance and limits explicit when relevant. Explain the feature rather than listing methods/files; this adds no report or approval gate.
 
 ## Human explanation and operation
 

@@ -41,6 +41,8 @@ For future features, identify tested revisions with Git commits; record any late
 
 Use synthetic household data in tests, screenshots, and demonstrations. Explain money rules and rounding choices before implementing them.
 
+Commit messages must use a descriptive feature-ID title and a short plain-English body explaining the problem, user-visible result and high-level changes, with relevant actual validation (D-024). Keep pending human acceptance and limits explicit when relevant; avoid method/file inventories or unexecuted pass claims. No additional report or approval gate is required.
+
 ## Architect authority
 
 The architect may choose routine details within the approved baseline. Major additions require human review before implementation: new deployable services, message brokers, external providers, replacement frameworks or databases, and material security or deployment changes. Present the concrete need, alternatives, and operational cost. Setup packet revision 1, including the baseline in `docs/bootstrap-design.md`, was approved by the owner on October 3, 2026; canonical approval and acceptance facts are in `docs/features/setup/status.md`.
