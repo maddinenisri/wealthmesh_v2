@@ -37,6 +37,25 @@ Agents propose questions and alternatives in their role handoffs. The coordinato
 - Status: open; does not block setup.
 - Question: which requirement scenarios belong in the first usable finance release and first finance feature?
 - Rationale/options: select a narrow usable slice or a larger group of related capabilities after the immutable requirement inventory is available. No finance scope is implied by setup approval.
+
+### Assessment of the pasted first-feature proposal
+
+“Household and first checking account” is a sensible recommendation for one combined vertical slice: create a household, named members and a checking account, then find its saved details after reload. Household creation and the empty overview remain explicit states within the same feature. Include individual/joint ownership, unchanged money on detail edits, synthetic names and starting amounts excluded from income. The architect must propose exact USD representation, dates, constraints and transactions; no arbitrary schema or money policy is approved here.
+
+The supplied enumeration contains **nine unique source IDs**, not thirteen: `@V2_HOUSEHOLD_SETUP_001/003/004` and `@V2_CHECKING_001/002/003/004/005/017` (three household plus six checking). A tenth ID, if intended, has not been identified. Source outlines count once; example rows are separate test executions, not additional scenario identities.
+
+Full original completion needs explicit boundary decisions:
+
+- Household 003 ends with adding the first transaction; checking 002 ends with salary, resulting balance and monthly income. Excluding activity makes these partial, regardless of accepting their setup portions.
+- Checking 001 requires actionable empty activity for money in/out/transfer. Deliver that behavior or explicitly defer its clauses and explain unavailable actions in UX; never present fake working buttons.
+- Household 004 adds savings named “Emergency Savings”. Testing today's date with checking is adapted coverage, not completion of this original savings scenario.
+- Checking 003 includes a separate Update balance action asking for amount/date. Specify whether that action is delivered or its clauses deferred.
+- Household 001 requires joint owners, counting their shared account once in household wealth, and preserving owners/money after household rename. These assertions cannot disappear under “foundation”.
+
+Checking 006 recovery may be deferred for this feature; greenfield status does not delete it globally. Choosing this first feature would resolve only that portion of Q-004; the remaining release scope stays open. Proposed later ordering remains provisional and dependency-aware, without claiming every scenario depends on this slice.
+
+[D-023](decisions.md#d-023-finish-setup-and-simplify-future-workflow) already retains setup with lighter future delivery; do not reopen trimming infrastructure without a concrete new blocker. [Q-009](#q-009-setup-feature-acceptance) acceptance remains pending. Pasting this recommendation supplies neither feature selection, design approval, release approval nor full source-scenario completion.
+
 - Answer: not supplied.
 - Decision: none yet.
 
