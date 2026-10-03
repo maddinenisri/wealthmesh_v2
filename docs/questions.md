@@ -59,7 +59,7 @@ Checking 006 recovery may be deferred for this feature; greenfield status does n
 - Answer: “update with your recommendation and ensure final package for next session” directs packaging the combined recommendation. The concrete amount/date/member answers below were subsequently supplied under D-027; final combined scope/design and first-release scope remain open. Selecting a planning target does not approve the whole first release.
 - Decision: [D-025](decisions.md#d-025-prepare-the-combined-first-feature-planning-package), planning direction only. Final feature/release approval and full source-scenario completion are not inferred.
 
-### FIN-001 concrete policy questions — answers supplied
+### FIN-001 concrete policy answers
 
 UX, architect and validator sessions prepared the [combined packet](features/household-checking/index.md#product-defaults-and-their-implications). The coordinator asked these concrete questions after the architect supplied implications/defaults. The owner's answers below require a member-label design revision before the combined checkpoint; they do not reopen household versus checking selection.
 

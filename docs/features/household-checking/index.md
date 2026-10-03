@@ -125,13 +125,13 @@ Validator should add duplicate-name/distinguishing-label input/error/focus and o
 
 UX reconciliation stage complete; writing turn released for validator reconciliation. No prototype, application change, test, install or service command was run by this role. The coordinator owns subsequent status, question/decision updates and the human review.
 
-## Technical proposal — ready for validator and combined design review
+## Technical proposal
 
 **Combined design proposal, not yet approved or implemented.** The owner's amount/date/member policy answers are settled in [D-027](../../decisions.md#d-027-fin-001-amount-date-and-member-policies); the concrete member-label contract below is the design revision for review. Retain Java 25, Spring Boot, JDBC, Flyway, Gradle, React/strict TypeScript, Vite and PostgreSQL. The browser sends a command; Java validates the names, ownership, amount and date; one database transaction saves the complete result; the browser then reads the saved record. Reading any screen is side-effect free. Members remain ownership annotations, with no authentication or permissions.
 
 ### Product defaults and their implications
 
-The actual answers to the existing [Q-004](../../questions.md#fin-001-concrete-policy-questions-—-answers-supplied) policy questions persist; do not ask them again. First-release scope and the concrete combined design remain separate decisions. The amount/date rules below implement the selected recommendations, while the label details make the selected duplicate-name direction concrete for the combined checkpoint.
+The actual answers to the existing [Q-004](../../questions.md#fin-001-concrete-policy-answers) policy questions persist; do not ask them again. First-release scope and the concrete combined design remain separate decisions. The amount/date rules below implement the selected recommendations, while the label details make the selected duplicate-name direction concrete for the combined checkpoint.
 
 | Policy                                    | Supplied direction and concrete contract                                                                                                                                                                                                                                 | Consequence                                                                                                                                                                                                                                                   |
 | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -222,7 +222,7 @@ Validator dependencies: amount/date matrices now use the actual D-027 answers. R
 
 Architecture revision for the actual D-027 answers complete; writing turn released for UX reconciliation, then validator reconciliation. The settled policy directions persist; the member-label contract and combined design await their concrete approval. No implementation, tests, installation, service changes or other-document edits were performed by this role.
 
-## Draft acceptance plan — ready for combined design review
+## Acceptance test plan
 
 **Pre-code plan only; no FIN-001 test has been authored or executed.** The five groups below organize acceptance, not the number of tests. The developer writes and runs meaningful failing tests before implementation; a separate validator session independently executes the approved plan afterward. Domain tests establish rules without containers; integration tests establish SQL, migration, API and transaction behavior in disposable Testcontainers PostgreSQL; Vitest/Testing Library with MSW establishes isolated browser interactions; Playwright establishes the approved journey against real Java and disposable PostgreSQL with mocks disabled. Mock UI results never establish monetary or persistence truth.
 
@@ -344,13 +344,66 @@ After approval: developer performs genuine TDD; separate validator executes actu
 
 ## Design review decision — awaiting owner
 
-Review **revision 2** as one combined packet: proposed scope and retained source boundaries, [annotated journey](#review-journey-and-navigation), [technical contract](#technical-proposal-—-ready-for-validator-and-combined-design-review), distinguishing-label behavior, bounded existing E2E fixture changes, and [five-group acceptance plan](#draft-acceptance-plan-—-ready-for-combined-design-review). The linked reading path is the preapproval clickable review; the working application demonstration follows approved implementation within this feature's acceptance checkpoint.
+Review **revision 2** as one combined packet: proposed scope and retained source boundaries, [annotated journey](#review-journey-and-navigation), [technical contract](#technical-proposal), distinguishing-label behavior, bounded existing E2E fixture changes, and [five-group acceptance plan](#acceptance-test-plan). The linked reading path is the preapproval clickable review; the working application demonstration follows approved implementation within this feature's acceptance checkpoint.
 
 Actual combined approval: **not supplied**. Reviewed/approved revision and approval date: **not supplied**. Requested combined-design changes: **none supplied yet**. D-026 accepts setup; D-027 settles the stated product policies. Neither approves this complete packet. [Q-004](../../questions.md#q-004-first-usable-finance-release) remains open for combined feature design and the wider first release.
 
 ### Planning documentation evidence — coordinator
 
-Documentation checks: pending final execution. This is a Markdown-only planning change based on HEAD `935e3cb4c8f405c9f6ad9520e82ae7a6b83da0b8`; the diff consists of the FIN-001 packet, question/decision records, setup acceptance status and existing entry links. No tested FIN-001 implementation commit exists. No behavioral suite, build, install or lifecycle command has run for this stage. Immutable snapshots and global requirement completion remain unchanged.
+Documentation-only checked revision: `8349223d0ea81d8084b26468c29a8059dd20737f`, followed by heading/link corrections and this evidence entry. The later Markdown diff is recorded by `git diff 8349223d0ea81d8084b26468c29a8059dd20737f -- docs/features/household-checking/index.md docs/questions.md`. Other delivered paths in that commit are README, decisions, setup acceptance status and existing entry links. No tested FIN-001 implementation commit exists. No behavioral suite, build, install or lifecycle command ran for this stage. Immutable snapshots and global requirement completion remain unchanged.
+
+| Actual check                                                                                                                                                                                    | Result                                                                                                                                                                                                                                  |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `npm run docs:lint`                                                                                                                                                                             | Exit 0; 44 authored files. Earlier exit 1 identified API table/code-span defects, then MD051 heading-fragment mismatch; corrected without changing lint rules.                                                                          |
+| `npm run docs:check`                                                                                                                                                                            | Exit 0; file links and fences across 44 authored files.                                                                                                                                                                                 |
+| `node_modules/.bin/prettier --check README.md docs/decisions.md docs/questions.md docs/features/household-checking/index.md docs/features/setup/status.md docs/features/index.md docs/index.md` | Exit 0; all seven changed authored documents.                                                                                                                                                                                           |
+| `git diff --check`                                                                                                                                                                              | Exit 0; no whitespace errors.                                                                                                                                                                                                           |
+| In-memory installed VitePress renderer, using `node --input-type=module -e` with the JavaScript below                                                                                           | Exit 0; 62 heading links across the seven changed documents. Initial exit 1 identified four links, including an inherited Q-003 link. Corrected; simple headings satisfy both renderer and linter. No server or docs build was started. |
+
+Planning documentation skips: **0** for the checks above. Finance behavior, implementation validation/review and working feature demo: **not run/not available**, as required before design approval. This is coordinator documentation evidence, not independent feature-validation evidence.
+
+The evidence disclosure also initially failed MD033 for inline HTML; plain Markdown replaced it without weakening the rule.
+
+**Reproduce the one-off rendered-heading inspection:**
+
+This is the same JavaScript passed to `node --input-type=module -e` during the check; no script or custom tooling was added to the repository.
+
+```js
+import { createMarkdownRenderer } from 'vitepress';
+import { readFile } from 'node:fs/promises';
+import { resolve, dirname } from 'node:path';
+const md = await createMarkdownRenderer(resolve('docs'));
+const files = [
+  'README.md',
+  'docs/index.md',
+  'docs/features/index.md',
+  'docs/features/household-checking/index.md',
+  'docs/questions.md',
+  'docs/decisions.md',
+  'docs/features/setup/status.md',
+];
+let count = 0;
+const errors = [];
+for (const file of files) {
+  const source = await readFile(file, 'utf8');
+  for (const match of source.matchAll(/\[[^\]]*\]\(([^)]+)\)/g)) {
+    const link = match[1];
+    if (!link.includes('#') || /^(https?:|mailto:)/.test(link)) continue;
+    const [path, anchor] = link.split('#');
+    const target = path ? resolve(dirname(file), path) : resolve(file);
+    const html = md.render(await readFile(target, 'utf8'));
+    if (!html.includes(`id="${anchor}"`)) errors.push(`${file}: ${link}`);
+    count++;
+  }
+}
+if (errors.length) {
+  console.error(errors.join('\n'));
+  process.exitCode = 1;
+} else
+  console.log(
+    `Rendered heading anchors passed: ${count} links across ${files.length} changed documents.`,
+  );
+```
 
 ## Implementation and test driven development evidence — pending developer
 
