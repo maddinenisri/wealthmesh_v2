@@ -7,6 +7,8 @@ import java.math.BigDecimal;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.util.UUID;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 @Entity
 @Table(name = "checking_account")
@@ -22,6 +24,7 @@ public class CheckingEntity extends AssignedUuidEntity {
     @Column(name = "opening_amount", nullable = false, updatable = false, precision = 14, scale = 2)
     private BigDecimal openingAmount;
     @Column(name = "balance_date", nullable = false, updatable = false)
+    @JdbcTypeCode(SqlTypes.LOCAL_DATE)
     private LocalDate balanceDate;
     @Column(name = "created_at", nullable = false, updatable = false, columnDefinition = "timestamptz")
     private Instant createdAt;

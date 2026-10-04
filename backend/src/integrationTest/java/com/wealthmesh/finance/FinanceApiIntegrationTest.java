@@ -15,6 +15,8 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.json.JsonMapper;
 
@@ -423,6 +425,43 @@ class FinanceApiIntegrationTest {
         assertThat(fixture.jdbc().queryForObject("SELECT count(*) FROM household_member "
                 + "WHERE name_key = 'new member' AND label_key = 'parent'", Integer.class)).isEqualTo(1);
         assertThat(fixture.jdbc().queryForObject("SELECT count(*) FROM household_member", Integer.class)).isEqualTo(2);
+    }
+
+    @ParameterizedTest
+    @CsvSource(delimiter = '|', textBlock = """
+            1582-10-10 | 5000.00 | 5000.00
+            0001-01-01 | -$999,999,999,999.99 | -999999999999.99
+            2000-02-29 | -0.00 | 0.00
+            """)
+    void gregorianDatesAndNegativeBoundariesSurviveJpaSqlAndRestart(
+            String date, String inputAmount, String expectedAmount) throws Exception {
+        seedMembers();
+        String id = UUID.randomUUID().toString();
+        var payload = new java.util.HashMap<>(account(id, inputAmount));
+        payload.put("balanceDate", date);
+        var created = request("POST", "/api/accounts/checking", payload);
+        assertThat(created.statusCode()).isEqualTo(201);
+        assertThat(body(created).get("balanceDate").asString()).isEqualTo(date);
+        assertThat(body(created).get("balance").asString()).isEqualTo(expectedAmount);
+        assertBoundaryRoundTrip(id, date, expectedAmount);
+        fixture.restartApplication();
+        assertBoundaryRoundTrip(id, date, expectedAmount);
+    }
+
+    private void assertBoundaryRoundTrip(String id, String date, String amount) throws Exception {
+        var stored = fixture.jdbc().queryForMap("SELECT balance_date::text AS date, "
+                + "opening_amount::text AS amount FROM checking_account WHERE id = ?", UUID.fromString(id));
+        assertThat(stored.get("date")).isEqualTo(date);
+        assertThat(stored.get("amount")).isEqualTo(amount);
+        var detail = request("GET", "/api/accounts/" + id, null);
+        assertThat(detail.statusCode()).isEqualTo(200);
+        assertThat(body(detail).get("balanceDate").asString()).isEqualTo(date);
+        assertThat(body(detail).get("balance").asString()).isEqualTo(amount);
+        var state = body(request("GET", "/api/household", null));
+        assertThat(state.get("accounts").size()).isEqualTo(1);
+        assertThat(state.get("accounts").get(0).get("balanceDate").asString()).isEqualTo(date);
+        assertThat(state.get("accounts").get(0).get("balance").asString()).isEqualTo(amount);
+        assertThat(state.get("checkingTotal").get("amount").asString()).isEqualTo(amount);
     }
 
     private void installOwnerFailure(String table, String operation) {

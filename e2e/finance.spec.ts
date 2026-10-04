@@ -76,6 +76,38 @@ test.beforeEach(async () => {
   await fixtureCommand(directory, 'financeReset');
 });
 
+test('RV-01 Gregorian balance date survives browser save, detail reload and overview', async ({
+  page,
+  request,
+}) => {
+  await seedMembers(request);
+  const response = await page.goto('/accounts/new/checking');
+  expect(response?.status()).toBe(200);
+  expect(response?.headers()['content-type']).toContain('text/html');
+  await page.getByLabel('Name', { exact: true }).fill('Historical Checking');
+  await page.getByRole('checkbox', { name: 'Name: Maya', exact: true }).check();
+  await page.getByLabel('Balance (USD, optional)').fill('5000.00');
+  await page.getByLabel('Balance date').fill('1582-10-10');
+  await page.getByRole('button', { name: 'Save checking account' }).click();
+  await expect(
+    page.getByRole('heading', { name: 'Historical Checking', exact: true }),
+  ).toBeVisible();
+  await expect(page.locator('time')).toHaveText('1582-10-10');
+  await expect(page.locator('time')).toHaveAttribute('datetime', '1582-10-10');
+  await page.reload();
+  await expect(page.locator('time')).toHaveText('1582-10-10');
+  const state = await overview(request);
+  expect(state.accounts).toHaveLength(1);
+  expect(state.accounts[0].balanceDate).toBe('1582-10-10');
+  const detail = await request.get('/api/accounts/' + state.accounts[0].id);
+  expect(detail.status()).toBe(200);
+  expect(parseAccount(await detail.json()).balanceDate).toBe('1582-10-10');
+  await page.getByRole('link', { name: 'Overview', exact: true }).click();
+  await expect(page.locator('time')).toHaveText('1582-10-10');
+  await page.reload();
+  await expect(page.locator('time')).toHaveAttribute('datetime', '1582-10-10');
+});
+
 for (const mode of ['add', 'edit']) {
   test(`VD-01 concurrent household and ${mode}-member forms keep labels, errors and focus distinct`, async ({
     page,
