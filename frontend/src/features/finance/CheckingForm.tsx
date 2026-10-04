@@ -16,13 +16,13 @@ export function CheckingForm({
   if (overview.members.length === 0) return <NoMembers />;
   return (
     <>
-      <Heading>{account ? 'Edit account' : 'Add checking'}</Heading>
+      <Heading>{account ? 'Edit account' : 'Add checking account'}</Heading>
       <p>
         {account
           ? 'These changes leave the balance and balance date unchanged.'
           : 'The starting amount you already have. This does not record income.'}
       </p>
-      <FinanceForm onSubmit={draft.submit} noValidate>
+      <FinanceForm className="panel form-panel" onSubmit={draft.submit} noValidate>
         <FormErrors message={draft.save.message} errors={draft.save.errors} />
         <AccountFields draft={draft} overview={overview} />
         {!account && <OpeningFields draft={draft} zone={overview.financialZone} />}
@@ -48,7 +48,9 @@ function NoMembers() {
       <p>Add a household member before creating checking so you can choose an owner.</p>
       <a href="/household">Go to Household</a>
       <p>
-        <a href="/">Cancel</a>
+        <a href="/" data-return-focus="add-account">
+          Cancel
+        </a>
       </p>
     </>
   );

@@ -33,6 +33,9 @@ async function addChecking(page: Page, amount = '5000.00', owners = ['Maya']) {
   const response = await page.goto('/accounts/new/checking');
   expect(response?.status()).toBe(200);
   expect(response?.headers()['content-type']).toContain('text/html');
+  await fillChecking(page, amount, owners);
+}
+async function fillChecking(page: Page, amount: string, owners = ['Maya']) {
   await page.getByLabel('Name', { exact: true }).fill('Everyday Checking');
   for (const owner of owners)
     await page.getByRole('checkbox', { name: 'Name: ' + owner, exact: true }).check();
@@ -203,7 +206,10 @@ test('@V2_HOUSEHOLD_SETUP_001 joint checking counts once; household and member c
   request,
 }) => {
   await createHouseholdAndMembers(page);
-  await addChecking(page, '$5,000.00', ['Maya', 'Sam']);
+  await page.getByRole('link', { name: 'Overview', exact: true }).click();
+  await page.getByRole('link', { name: 'Add checking account', exact: true }).click();
+  await expect(page).toHaveURL(/\/accounts\/new\/checking$/);
+  await fillChecking(page, '$5,000.00', ['Maya', 'Sam']);
   const before = await verifySaved(request, '5000.00', ['Maya', 'Sam']);
   await page.reload();
   await expect(page.getByText('$5,000.00 USD', { exact: true })).toBeVisible();
@@ -242,7 +248,7 @@ test('@V2_CHECKING_001 individual creation and actual list/detail agree without 
     page.getByRole('button', { name: /money in|money out|transfer|Update balance/i }),
   ).toHaveCount(0);
   await page.getByRole('link', { name: 'Back to accounts' }).click();
-  await expect(page.getByText('$5,000.00 USD')).toBeVisible();
+  await expect(page.getByRole('cell', { name: '$5,000.00 USD', exact: true })).toBeVisible();
   await page.getByRole('link', { name: 'Everyday Checking' }).click();
   await page.reload();
   await verifySaved(request, '5000.00', ['Maya']);
@@ -255,11 +261,10 @@ for (const amount of ['', '$0.00']) {
       await seedMembers(request);
       await page.goto('/');
       await expect(page.getByText('No accounts added yet.', { exact: false })).toBeVisible();
-      await page.getByRole('link', { name: 'Add account', exact: true }).click();
-      await expect(page.getByRole('heading', { name: 'Add account' })).toBeVisible();
-      await expect(page.getByRole('link', { name: 'Checking', exact: true })).toBeVisible();
-      await expect(page.getByText('Other account types will be added later.')).toBeVisible();
-      await addChecking(page, amount);
+      await page.getByRole('link', { name: 'Add checking account', exact: true }).click();
+      await expect(page.getByRole('heading', { name: 'Add checking account' })).toBeVisible();
+      await expect(page).toHaveURL(/\/accounts\/new\/checking$/);
+      await fillChecking(page, amount);
       await page.reload();
       await expect(page.getByText('$0.00 USD')).toBeVisible();
       await verifySaved(request, '0.00', ['Maya']);
@@ -396,9 +401,111 @@ test('overdrafts, distinguishing labels and mobile keyboard controls retain comp
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(
     true,
   );
-  await page.getByRole('link', { name: 'Setup status', exact: true }).press('Enter');
+  await page.goto('/setup');
   await expect(page.getByText('Installation version 1')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Setup status', exact: true })).toBeFocused();
   const account = (await overview(request)).accounts[0];
   expect(account.balance).toBe('-125.50');
   expect(account.owners[0].label).toBe('Parent');
+});
+
+test('UI-05 warm desktop workspace reflows into complete mobile cards with keyboard access', async ({
+  page,
+  request,
+}) => {
+  await seedMembers(request);
+  await addChecking(page, '-$125.50', ['Maya', 'Sam']);
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto('/');
+  await expect(page).toHaveTitle('Overview · WealthMesh');
+  await expect(page.getByRole('navigation').getByRole('link')).toHaveCount(2);
+  await expect(page.getByRole('link', { name: /Setup status|Documentation/ })).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'Maya and Sam', exact: true })).toBeFocused();
+  await expect(page.locator('.workspace-sidebar')).toHaveCSS('width', '228px');
+  await expect(page.locator('body')).toHaveCSS('background-color', 'rgb(243, 241, 236)');
+  await expect(page.locator('h1')).toHaveCSS('font-family', 'Georgia, serif');
+  const registry = page.getByRole('table', { name: 'Accounts' });
+  await expect(registry.getByRole('row')).toHaveCount(2);
+  await expect(registry.getByRole('columnheader')).toHaveCount(5);
+  await expect(registry.getByRole('cell', { name: '-$125.50 USD', exact: true })).toBeVisible();
+  await verifyRegistryReflow(page);
+  await expect(registry.locator('.mobile-label').filter({ hasText: /^Owners$/ })).toBeVisible();
+  const action = page.getByRole('link', { name: 'Add checking account' });
+  expect((await action.boundingBox())?.height).toBeGreaterThanOrEqual(44);
+  await verifyCreationKeyboardJourney(page);
+});
+
+async function verifyRegistryReflow(page: Page) {
+  const registry = page.getByRole('table', { name: 'Accounts' });
+  for (const width of [900, 899, 760, 759, 320]) {
+    await page.setViewportSize({ width, height: 1000 });
+    await expect(page.getByRole('link', { name: 'Everyday Checking' })).toBeVisible();
+    await expect(registry.getByText('Harbor Bank')).toBeVisible();
+    await expect(registry.getByText('Maya', { exact: true })).toBeVisible();
+    await expect(registry.getByText('Sam', { exact: true })).toBeVisible();
+    await expect(registry.locator('time')).toHaveText('2026-09-01');
+    expect(
+      await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
+    ).toBe(true);
+  }
+}
+
+async function verifyCreationKeyboardJourney(page: Page) {
+  const action = page.getByRole('link', { name: 'Add checking account' });
+  await page.keyboard.press('Tab');
+  await page.getByRole('link', { name: 'Skip to content' }).focus();
+  await expect(page.getByRole('link', { name: 'Skip to content' })).toBeVisible();
+  await page.keyboard.press('Enter');
+  await expect(page.getByRole('main')).toBeFocused();
+  await action.press('Enter');
+  await expect(page).toHaveTitle('Add checking account · WealthMesh');
+  await expect(
+    page.getByRole('heading', { name: 'Add checking account', exact: true }),
+  ).toBeFocused();
+  await page.getByRole('button', { name: 'Cancel', exact: true }).press('Enter');
+  await expect(page.getByRole('link', { name: 'Add checking account' })).toBeFocused();
+  await page.goto('/accounts/new');
+  await expect(page).toHaveTitle('Add account · WealthMesh');
+  await expect(page.getByRole('link', { name: 'Checking', exact: true })).toBeVisible();
+  await expect(page.getByText('Other account types will be added later.')).toBeVisible();
+  await page.getByRole('link', { name: 'Cancel', exact: true }).press('Enter');
+  await expect(page.getByRole('link', { name: 'Add checking account' })).toBeFocused();
+}
+
+test('UI-06 long owner labels and exact large totals remain complete at 320px', async ({
+  page,
+  request,
+}) => {
+  await seedMembers(request);
+  const name = 'Maya ' + 'Household'.repeat(12);
+  const label = 'Parent ' + 'Distinguishing'.repeat(5);
+  expect(
+    (await request.put('/api/household/members/' + maya, { data: { name, label } })).status(),
+  ).toBe(200);
+  for (const suffix of ['One', 'Two']) {
+    expect(
+      (
+        await request.post('/api/accounts/checking', {
+          data: {
+            id: crypto.randomUUID(),
+            name: 'Everyday ' + 'Checking'.repeat(12) + suffix,
+            bank: 'Harbor ' + 'Bank'.repeat(25),
+            ownerIds: [maya, sam],
+            openingAmount: '999999999999.99',
+            balanceDate: '2026-09-01',
+          },
+        })
+      ).status(),
+    ).toBe(201);
+  }
+  await page.setViewportSize({ width: 320, height: 1000 });
+  await page.goto('/');
+  await expect(page.locator('.total .money')).toHaveText('$1,999,999,999,999.98');
+  const registry = page.getByRole('table', { name: 'Accounts' });
+  await expect(registry.getByRole('listitem').filter({ hasText: name })).toHaveCount(2);
+  await expect(registry.getByText('Label: ' + label, { exact: true })).toHaveCount(2);
+  await expect(registry.getByRole('link')).toHaveCount(2);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(
+    true,
+  );
 });

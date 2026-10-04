@@ -26,8 +26,11 @@ it('shows onboarding only after a valid successful null household response', asy
   );
   render(<App />);
   expect(await screen.findByRole('heading', { name: 'Set up your household' })).toBeVisible();
-  expect(screen.getByRole('link', { name: 'Setup status' })).toHaveAttribute('href', '/setup');
-  expect(screen.getByRole('link', { name: 'Documentation' })).toBeVisible();
+  expect(within(screen.getByRole('navigation')).getAllByRole('link')).toHaveLength(2);
+  expect(screen.queryByRole('link', { name: 'Setup status' })).not.toBeInTheDocument();
+  expect(screen.queryByRole('link', { name: 'Documentation' })).not.toBeInTheDocument();
+  expect(screen.queryByText('Localhost only · No login · USD checking')).not.toBeInTheDocument();
+  expect(document.title).toBe('Set up household · WealthMesh');
   expect(screen.getByLabelText('Household name')).toBeRequired();
 });
 
@@ -47,7 +50,8 @@ it('keeps diagnostics accessible on a finance failure without invented zero or o
   expect(await screen.findByRole('alert')).toHaveTextContent("We couldn't load your household");
   expect(screen.getByText('Request reference: read-reference-123')).toBeVisible();
   expect(screen.queryByText('$0.00')).not.toBeInTheDocument();
-  await userEvent.click(screen.getByRole('link', { name: 'Setup status' }));
+  window.history.pushState(null, '', '/setup');
+  window.dispatchEvent(new PopStateEvent('popstate'));
   expect(await screen.findByText('Installation version 1')).toBeVisible();
 });
 
@@ -119,6 +123,7 @@ it.each(['create', 'rename'] as const)(
       release();
     }
     expect(await screen.findByRole('heading', { name: 'Our Household' })).toBeVisible();
+    expect(document.title).toBe((mode === 'create' ? 'Overview' : 'Household') + ' · WealthMesh');
     expect(screen.queryByText('Saving…')).not.toBeInTheDocument();
   },
 );
@@ -227,20 +232,21 @@ it('keeps invalid raw amount and every entered field, then cancels without anoth
   await userEvent.click(screen.getByRole('button', { name: 'Cancel' }));
   expect(await screen.findByRole('heading', { name: 'Maya and Sam' })).toBeVisible();
   expect(writes).toBe(1);
-  expect(screen.getByRole('link', { name: 'Add account' })).toHaveFocus();
+  expect(screen.getByRole('link', { name: 'Add checking account' })).toHaveFocus();
 });
 
+const account = {
+  id: '44444444-4444-4444-8444-444444444444',
+  type: 'CHECKING',
+  name: 'Everyday Checking',
+  bank: 'Harbor Bank',
+  owners: [maya, { id: '22222222-2222-4222-8222-222222222222', name: 'Sam', label: 'Parent' }],
+  currency: 'USD',
+  balance: '5000.00',
+  balanceDate: '2026-09-01',
+};
+
 it('shows joint checking once with exact cents and clear opening-only limits', async () => {
-  const account = {
-    id: '44444444-4444-4444-8444-444444444444',
-    type: 'CHECKING',
-    name: 'Everyday Checking',
-    bank: 'Harbor Bank',
-    owners: [maya, { id: '22222222-2222-4222-8222-222222222222', name: 'Sam', label: 'Parent' }],
-    currency: 'USD',
-    balance: '5000.00',
-    balanceDate: '2026-09-01',
-  };
   server.use(
     http.get(endpoint, () =>
       HttpResponse.json({
@@ -258,6 +264,17 @@ it('shows joint checking once with exact cents and clear opening-only limits', a
   expect(await screen.findByRole('heading', { name: 'Maya and Sam' })).toBeVisible();
   expect(screen.getByText('Shared accounts are counted once.', { exact: false })).toBeVisible();
   expect(screen.getAllByRole('link', { name: 'Everyday Checking' })).toHaveLength(1);
+  const registry = screen.getByRole('table', { name: 'Accounts' });
+  expect(
+    within(registry)
+      .getAllByRole('columnheader')
+      .map((item) => item.textContent),
+  ).toEqual(['Account / Bank', 'Type', 'Owners', 'Balance (USD)', 'Balance date']);
+  expect(document.title).toBe('Overview · WealthMesh');
+  expect(screen.getByRole('link', { name: 'Add checking account' })).toHaveAttribute(
+    'href',
+    '/accounts/new/checking',
+  );
   await userEvent.click(screen.getByRole('link', { name: 'Everyday Checking' }));
   expect(await screen.findByRole('heading', { name: 'Everyday Checking' })).toBeVisible();
   expect(screen.getByText('No money activity has been recorded.', { exact: false })).toBeVisible();
@@ -311,5 +328,49 @@ it.each([404, 503])(
     ).toBeVisible();
     expect(screen.queryByText('$0.00')).not.toBeInTheDocument();
     if (status === 503) expect(screen.getByRole('button', { name: 'Retry' })).toBeVisible();
+  },
+);
+
+it('opens checking directly, preserves the chooser bookmark and updates route titles', async () => {
+  server.use(http.get(endpoint, () => HttpResponse.json(household)));
+  render(<App />);
+  await userEvent.click(await screen.findByRole('link', { name: 'Add checking account' }));
+  expect(await screen.findByRole('heading', { name: 'Add checking account' })).toBeVisible();
+  expect(window.location.pathname).toBe('/accounts/new/checking');
+  expect(document.title).toBe('Add checking account · WealthMesh');
+  expect(screen.getByRole('link', { name: 'Overview' })).not.toHaveAttribute('aria-current');
+  await userEvent.click(screen.getByRole('button', { name: 'Cancel' }));
+  expect(await screen.findByRole('link', { name: 'Add checking account' })).toHaveFocus();
+  window.history.pushState(null, '', '/accounts/new');
+  window.dispatchEvent(new PopStateEvent('popstate'));
+  expect(await screen.findByRole('heading', { name: 'Add account' })).toBeVisible();
+  expect(document.title).toBe('Add account · WealthMesh');
+  expect(screen.getByRole('link', { name: 'Checking' })).toHaveAttribute(
+    'href',
+    '/accounts/new/checking',
+  );
+});
+
+it.each(['/', '/accounts/' + account.id])(
+  'keeps route titles independent of a saved name matching onboarding at %s',
+  async (path) => {
+    window.history.replaceState(null, '', path);
+    const name = 'Set up your household';
+    server.use(
+      http.get(endpoint, () =>
+        HttpResponse.json({
+          ...household,
+          household: { ...household.household, name },
+          accounts: [{ ...account, name }],
+          checkingTotal: { currency: 'USD', amount: '5000.00' },
+        }),
+      ),
+      http.get('http://127.0.0.1:5173/api/accounts/' + account.id, () =>
+        HttpResponse.json({ ...account, name }),
+      ),
+    );
+    render(<App />);
+    expect(await screen.findByRole('heading', { name, level: 1 })).toBeVisible();
+    expect(document.title).toBe((path === '/' ? 'Overview' : 'Checking account') + ' · WealthMesh');
   },
 );

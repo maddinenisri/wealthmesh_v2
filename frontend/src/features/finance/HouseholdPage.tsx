@@ -12,23 +12,29 @@ export function HouseholdPage({ overview, refresh, navigate }: HouseholdPageProp
   );
   return (
     <>
-      <Heading>Household and members</Heading>
-      <h2>{overview.household?.name}</h2>
-      {rename ? (
-        <RenameHousehold initial={overview.household?.name ?? ''} onDone={householdDone} />
-      ) : (
-        <button id="rename-household" onClick={openRename}>
-          Rename household
-        </button>
-      )}
-      <h2>Members</h2>
-      <p>Members are names you attach to account ownership. They do not sign in.</p>
-      <MembersSection
-        members={overview.members}
-        editing={editing}
-        edit={openMember}
-        done={memberDone}
-      />
+      <Heading>Household</Heading>
+      <div className="household-grid">
+        <section className="panel" aria-label="Household details">
+          <h2>{overview.household?.name}</h2>
+          {rename ? (
+            <RenameHousehold initial={overview.household?.name ?? ''} onDone={householdDone} />
+          ) : (
+            <button id="rename-household" onClick={openRename}>
+              Rename household
+            </button>
+          )}
+        </section>
+        <section className="panel" aria-labelledby="members-heading">
+          <h2 id="members-heading">Members</h2>
+          <p>Members are names you attach to account ownership. They do not sign in.</p>
+          <MembersSection
+            members={overview.members}
+            editing={editing}
+            edit={openMember}
+            done={memberDone}
+          />
+        </section>
+      </div>
       <p>
         <a href="/">Back to overview</a>
       </p>

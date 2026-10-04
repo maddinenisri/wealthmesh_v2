@@ -4,7 +4,7 @@ import type { Overview } from '../../api/financeContract';
 import { CheckingForm } from './CheckingForm';
 import { CreateHousehold } from './HouseholdForms';
 import { HouseholdPage } from './HouseholdPage';
-import { Heading, type Navigate } from './Navigation';
+import { Heading, PageTitle, type Navigate } from './Navigation';
 import { AccountDetail, OverviewPage } from './OverviewPage';
 import { useRead } from './useRead';
 
@@ -55,12 +55,14 @@ export function FinancePage({ path, navigate }: { path: string; navigate: Naviga
   if (overview.household === null)
     return (
       <>
+        <PageTitle path={path} title="Set up household" />
         <Heading>Set up your household</Heading>
         <CreateHousehold navigate={navigate} />
       </>
     );
   return (
     <>
+      <PageTitle path={path} />
       {state.loading && <p role="status">Refreshing household…</p>}
       {state.failed && (
         <p role="alert">

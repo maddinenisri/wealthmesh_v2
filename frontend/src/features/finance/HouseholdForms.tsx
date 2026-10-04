@@ -25,7 +25,7 @@ export function CreateHousehold({ navigate }: { navigate: Navigate }) {
   return (
     <>
       <p>Give this household a name. You can add people and checking accounts next.</p>
-      <FinanceForm onSubmit={submit} noValidate>
+      <FinanceForm className="panel form-panel" onSubmit={submit} noValidate>
         <FormErrors message={save.message} errors={save.errors} />
         <Field
           name="name"

@@ -1,6 +1,6 @@
 import { ReturnFocusContext } from './features/finance/focusContext';
 import { FinancePage } from './features/finance/FinancePage';
-import { AppHeader, Heading } from './features/finance/Navigation';
+import { AppHeader, Heading, PageTitle } from './features/finance/Navigation';
 import { useNavigation } from './features/finance/useNavigation';
 import { SetupStatus } from './features/system/SetupStatus';
 export function App() {
@@ -8,9 +8,10 @@ export function App() {
   const { path, announcement, revision, navigate } = navigation;
   return (
     <ReturnFocusContext value={navigation.returnFocus}>
-      <div onClick={navigation.follow}>
+      <div className="workspace" onClick={navigation.follow}>
+        <PageTitle path={path} />
         <AppHeader path={path} />
-        <main id="main" tabIndex={-1}>
+        <main id="main" className="workspace-main" tabIndex={-1}>
           <p role="status" className="announcement">
             {announcement}
           </p>
@@ -24,7 +25,6 @@ export function App() {
             <FinancePage key={revision} path={path} navigate={navigate} />
           )}
         </main>
-        <footer>Localhost only · No login · USD checking</footer>
       </div>
     </ReturnFocusContext>
   );

@@ -161,7 +161,7 @@ export function FormActions({
     <div className="actions">
       <button disabled={pending}>{label}</button>
       {cancel && (
-        <button type="button" disabled={pending} onClick={cancel}>
+        <button className="secondary-button" type="button" disabled={pending} onClick={cancel}>
           Cancel
         </button>
       )}
