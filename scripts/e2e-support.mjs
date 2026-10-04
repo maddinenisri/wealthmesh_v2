@@ -1,11 +1,29 @@
 import { spawn } from 'node:child_process';
-import { open, readFile } from 'node:fs/promises';
+import { access, cp, open, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { createServer } from 'node:net';
 import { command, waitUntil } from './commands.mjs';
 import { processIdentity } from './processes.mjs';
 import { fixtureCommand, readFixtureReady } from './fixture-protocol.mjs';
 import { javaEnvironment, root } from './paths.mjs';
+
+export async function copyFrontendOutput(directory, source = join(root, 'frontend/dist')) {
+  const output = join(directory, 'frontend');
+  await cp(source, output, { recursive: true, force: false, errorOnExist: true });
+  await access(join(output, 'index.html'));
+  return output;
+}
+export async function frontendPreview(directory, backendUrl, source) {
+  const { preview } = await import('../frontend/node_modules/vite/dist/node/index.js');
+  const output = await copyFrontendOutput(directory, source);
+  const port = await freePort();
+  const server = await preview({
+    root: join(root, 'frontend'),
+    build: { outDir: output },
+    preview: { host: '127.0.0.1', port, strictPort: true, proxy: { '/api': backendUrl } },
+  });
+  return { server, url: `http://127.0.0.1:${port}` };
+}
 
 export async function freePort() {
   const server = createServer();

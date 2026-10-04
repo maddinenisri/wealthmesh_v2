@@ -1,7 +1,6 @@
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { randomUUID } from 'node:crypto';
-import { preview } from '../frontend/node_modules/vite/dist/node/index.js';
 import { command } from './commands.mjs';
 import { root, runtime, prepareRuntime } from './paths.mjs';
 import { preflight } from './preflight.mjs';
@@ -11,17 +10,8 @@ import {
   waitForFixture,
   stopFixture,
   runSequentialSuites,
+  frontendPreview,
 } from './e2e-support.mjs';
-
-async function frontendPreview(backendUrl) {
-  process.env.WM_BACKEND_URL = backendUrl;
-  const port = await freePort();
-  const server = await preview({
-    root: join(root, 'frontend'),
-    preview: { host: '127.0.0.1', port, strictPort: true, proxy: { '/api': backendUrl } },
-  });
-  return { server, url: `http://127.0.0.1:${port}` };
-}
 async function browserTests(directory, url, suite) {
   await command(
     process.execPath,
@@ -39,7 +29,8 @@ async function browserTests(directory, url, suite) {
   );
 }
 async function cleanup(directory, fixture, frontend, ready, failure) {
-  if (frontend) await new Promise((resolve) => frontend.server.httpServer.close(resolve));
+  if (frontend) await frontend.server.close();
+  await rm(join(directory, 'frontend'), { recursive: true, force: true });
   const removedContainerIds = await stopFixture(directory, fixture);
   await writeFile(
     join(directory, 'result.json'),
@@ -72,7 +63,7 @@ async function runSuite(suite) {
   let failure;
   try {
     ready = await waitForFixture(directory, fixture);
-    frontend = await frontendPreview(ready.backendUrl);
+    frontend = await frontendPreview(directory, ready.backendUrl);
     await browserTests(directory, frontend.url, suite);
   } catch (error) {
     failure = error;

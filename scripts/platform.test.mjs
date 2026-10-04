@@ -166,3 +166,47 @@ test('E2E propagates failure and leaves later suites unexecuted', async () => {
   );
   assert.deepEqual(started, ['setup.spec.ts']);
 });
+
+test('owned E2E preview keeps deep-route HTML and assets when its source output disappears or changes', async () => {
+  const { frontendPreview } = await import('./e2e-support.mjs');
+  const { mkdtemp, mkdir, writeFile, rm } = await import('node:fs/promises');
+  const { tmpdir } = await import('node:os');
+  const { join } = await import('node:path');
+  const temporary = await mkdtemp(join(tmpdir(), 'wealthmesh-preview-isolation-'));
+  const source = join(temporary, 'source');
+  const fixture = join(temporary, 'fixture');
+  let frontend;
+  try {
+    await mkdir(source);
+    await mkdir(fixture);
+    await writeFile(
+      join(source, 'index.html'),
+      '<html><body>INITIAL_SYNTHETIC_SHELL</body></html>',
+    );
+    await writeFile(join(source, 'asset.js'), 'INITIAL_SYNTHETIC_ASSET');
+    frontend = await frontendPreview(fixture, 'http://127.0.0.1:1', source);
+    assert.equal(frontend.server.config.build.outDir, join(fixture, 'frontend'));
+    await assertPreviewFiles(frontend.url);
+    await rm(source, { recursive: true });
+    await assertPreviewFiles(frontend.url);
+    await mkdir(source);
+    await writeFile(join(source, 'index.html'), 'REPLACEMENT_OUTPUT');
+    await writeFile(join(source, 'asset.js'), 'REPLACEMENT_ASSET');
+    await assertPreviewFiles(frontend.url);
+  } finally {
+    if (frontend) await frontend.server.close();
+    await rm(temporary, { recursive: true, force: true });
+  }
+});
+
+async function assertPreviewFiles(origin) {
+  const response = await fetch(origin + '/accounts/new/checking', {
+    headers: { Accept: 'text/html' },
+  });
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get('content-type'), /text\/html/);
+  assert.match(await response.text(), /INITIAL_SYNTHETIC_SHELL/);
+  const asset = await fetch(origin + '/asset.js');
+  assert.equal(asset.status, 200);
+  assert.equal(await asset.text(), 'INITIAL_SYNTHETIC_ASSET');
+}
