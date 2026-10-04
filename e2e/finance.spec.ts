@@ -409,7 +409,7 @@ test('overdrafts, distinguishing labels and mobile keyboard controls retain comp
   expect(account.owners[0].label).toBe('Parent');
 });
 
-test('UI-05 warm desktop workspace reflows into complete mobile cards with keyboard access', async ({
+test('UI-05 modern desktop workspace reflows into complete mobile cards with keyboard access', async ({
   page,
   request,
 }) => {
@@ -422,8 +422,8 @@ test('UI-05 warm desktop workspace reflows into complete mobile cards with keybo
   await expect(page.getByRole('link', { name: /Setup status|Documentation/ })).toHaveCount(0);
   await expect(page.getByRole('heading', { name: 'Maya and Sam', exact: true })).toBeFocused();
   await expect(page.locator('.workspace-sidebar')).toHaveCSS('width', '228px');
-  await expect(page.locator('body')).toHaveCSS('background-color', 'rgb(243, 241, 236)');
-  await expect(page.locator('h1')).toHaveCSS('font-family', 'Georgia, serif');
+  await expect(page.locator('body')).toHaveCSS('background-color', 'rgb(246, 248, 247)');
+  await expect(page.locator('h1')).toHaveCSS('font-family', 'system-ui, -apple-system, sans-serif');
   const registry = page.getByRole('table', { name: 'Accounts' });
   await expect(registry.getByRole('row')).toHaveCount(2);
   await expect(registry.getByRole('columnheader')).toHaveCount(5);

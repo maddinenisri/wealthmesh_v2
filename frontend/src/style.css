@@ -4,15 +4,15 @@
     -apple-system,
     sans-serif;
   color: #1e2924;
-  background: #f3f1ec;
+  background: #f6f8f7;
   font-synthesis: none;
   line-height: 1.5;
-  --paper: #f3f1ec;
-  --panel: #fffefa;
+  --paper: #f6f8f7;
+  --panel: #ffffff;
   --ink: #1e2924;
   --muted: #5e6861;
   --accent: #2e5c4c;
-  --line: #deddd4;
+  --line: #e1e6e3;
 }
 * {
   box-sizing: border-box;
@@ -25,8 +25,7 @@ a {
   color: var(--accent);
   text-underline-offset: 3px;
 }
-:focus-visible,
-h1:focus {
+:focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 3px;
 }
@@ -35,15 +34,14 @@ h1:focus {
   inset: 0 auto 0 0;
   width: 228px;
   padding: 26px 18px;
-  background: #faf9f5;
+  background: var(--panel);
   border-right: 1px solid var(--line);
   overflow-y: auto;
 }
 .brand {
   display: inline-block;
-  font:
-    700 27px Georgia,
-    serif;
+  font-size: 24px;
+  font-weight: 600;
   color: var(--ink);
   text-decoration: none;
   margin-bottom: 26px;
@@ -75,14 +73,21 @@ h1:focus {
   min-width: 0;
 }
 h1 {
-  font:
-    400 44px/1.15 Georgia,
-    serif;
+  font-size: 30px;
+  font-weight: 650;
+  line-height: 1.2;
   letter-spacing: -0.025em;
   margin: 8px 0 24px;
   width: fit-content;
   max-width: 100%;
   overflow-wrap: anywhere;
+}
+h1:focus {
+  outline: none;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 8px;
 }
 h2 {
   font-size: 20px;
@@ -119,7 +124,7 @@ p {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 12px;
-  padding: 24px;
+  padding: 20px;
   margin-bottom: 24px;
   overflow-wrap: anywhere;
 }
@@ -132,9 +137,9 @@ p {
   margin-bottom: 12px;
 }
 .money {
-  font:
-    400 40px/1.2 Georgia,
-    serif;
+  font-size: 32px;
+  font-weight: 650;
+  line-height: 1.2;
   font-variant-numeric: tabular-nums;
   margin-bottom: 16px;
   overflow-wrap: anywhere;
@@ -438,7 +443,7 @@ dd {
     padding: 24px;
   }
   h1 {
-    font-size: 30px;
+    font-size: 24px;
   }
 }
 @media (max-width: 759px) {
@@ -506,7 +511,7 @@ dd {
     flex: 1 1 auto;
   }
   .money {
-    font-size: 36px;
+    font-size: 32px;
   }
 }
 @media (max-width: 399px) {
