@@ -74,6 +74,74 @@ test.beforeEach(async () => {
   await fixtureCommand(directory, 'financeReset');
 });
 
+for (const mode of ['add', 'edit']) {
+  test(`VD-01 concurrent household and ${mode}-member forms keep labels, errors and focus distinct`, async ({
+    page,
+    request,
+  }) => {
+    await seedMembers(request);
+    await page.goto('/household');
+    await page.getByRole('button', { name: 'Rename household' }).click();
+    if (mode === 'edit') await page.getByRole('button', { name: 'Edit member Maya' }).click();
+    const householdName = page.getByRole('textbox', { name: 'Household name', exact: true });
+    const memberName = page.getByRole('textbox', { name: 'Member name', exact: true });
+    await expect(householdName).toHaveValue('Maya and Sam');
+    await expect(memberName).toHaveValue(mode === 'edit' ? 'Maya' : '');
+    expect(await householdName.getAttribute('id')).not.toBe(await memberName.getAttribute('id'));
+    if (mode === 'edit') await expect(memberName).toBeFocused();
+    await householdName.fill('');
+    await page.getByRole('button', { name: 'Save household name' }).click();
+    await page.getByRole('link', { name: 'Enter a household name' }).press('Enter');
+    await expect(householdName).toBeFocused();
+    await memberName.fill('');
+    await page
+      .getByRole('button', { name: mode === 'edit' ? 'Save member details' : 'Add member' })
+      .click();
+    await page.getByRole('link', { name: 'Enter a member name' }).press('Enter');
+    await expect(memberName).toBeFocused();
+    await page
+      .locator('form')
+      .filter({ has: householdName })
+      .getByRole('button', { name: 'Cancel' })
+      .click();
+    await expect(
+      page.getByRole('button', { name: mode === 'edit' ? 'Edit member Maya' : 'Rename household' }),
+    ).toBeFocused();
+    const state = await overview(request);
+    expect(state.household?.name).toBe('Maya and Sam');
+    expect(state.members.map((member) => member.name)).toEqual(['Maya', 'Sam']);
+  });
+}
+
+test('VD-02 rejected out-of-range amount explains supported bounds and permits exact correction', async ({
+  page,
+  request,
+}) => {
+  await seedMembers(request);
+  await page.goto('/accounts/new/checking');
+  await page.getByLabel('Name', { exact: true }).fill('Everyday Checking');
+  await page.getByRole('checkbox', { name: 'Name: Maya', exact: true }).check();
+  await page.getByLabel('Bank (optional)').fill('Harbor Bank');
+  await page.getByLabel('Balance (USD, optional)').fill('1000000000000.00');
+  await page.getByLabel('Balance date').fill('2026-09-01');
+  await page.getByRole('button', { name: 'Save checking account' }).click();
+  await expect(page.getByRole('alert')).toContainText('Enter a valid amount');
+  await expect(page.getByLabel('Balance (USD, optional)')).toHaveAccessibleDescription(
+    /between -\$999,999,999,999\.99 and \$999,999,999,999\.99/,
+  );
+  await expect(page.getByLabel('Balance (USD, optional)')).toHaveValue('1000000000000.00');
+  await expect(page.getByRole('checkbox', { name: 'Name: Maya', exact: true })).toBeChecked();
+  await expect(page.getByLabel('Bank (optional)')).toHaveValue('Harbor Bank');
+  await expect(page.getByLabel('Balance date')).toHaveValue('2026-09-01');
+  expect((await overview(request)).accounts).toHaveLength(0);
+  await page.getByRole('alert').getByRole('link', { name: 'Enter a valid amount' }).press('Enter');
+  await expect(page.getByLabel('Balance (USD, optional)')).toBeFocused();
+  await page.getByLabel('Balance (USD, optional)').fill('5000.00');
+  await page.getByRole('button', { name: 'Save checking account' }).click();
+  await expect(page.getByRole('heading', { name: 'Everyday Checking', exact: true })).toBeVisible();
+  await verifySaved(request, '5000.00', ['Maya']);
+});
+
 test('@V2_HOUSEHOLD_SETUP_001 joint checking counts once; household and member correction preserve identity after reload', async ({
   page,
   request,

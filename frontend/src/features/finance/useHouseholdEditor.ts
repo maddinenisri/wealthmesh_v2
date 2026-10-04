@@ -6,10 +6,6 @@ export function useHouseholdEditor(refresh: () => void, navigate: Navigate) {
   const [editing, setEditing] = useState<Member | null>(null);
   const [returnFocus, setReturnFocus] = useState<string | null>(null);
   useEffect(() => {
-    if (rename || editing) {
-      document.getElementById('name')?.focus();
-      return;
-    }
     if (returnFocus) document.getElementById(returnFocus)?.focus();
   }, [rename, editing, returnFocus]);
   function done(announcement?: string) {

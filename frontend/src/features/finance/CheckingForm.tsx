@@ -1,5 +1,5 @@
 import { type Account, type Overview } from '../../api/financeContract';
-import { Field, FormErrors, Owners, FormActions } from './FormControls';
+import { Field, FormErrors, Owners, FormActions, FinanceForm } from './FormControls';
 import { Heading, type Navigate } from './Navigation';
 import { useCheckingDraft, type CheckingDraft } from './useCheckingDraft';
 
@@ -22,7 +22,7 @@ export function CheckingForm({
           ? 'These changes leave the balance and balance date unchanged.'
           : 'The starting amount you already have. This does not record income.'}
       </p>
-      <form onSubmit={draft.submit} noValidate>
+      <FinanceForm onSubmit={draft.submit} noValidate>
         <FormErrors message={draft.save.message} errors={draft.save.errors} />
         <AccountFields draft={draft} overview={overview} />
         {!account && <OpeningFields draft={draft} zone={overview.financialZone} />}
@@ -37,7 +37,7 @@ export function CheckingForm({
             )
           }
         />
-      </form>
+      </FinanceForm>
     </>
   );
 }
@@ -89,7 +89,7 @@ function OpeningFields({ draft, zone }: { draft: CheckingDraft; zone: string }) 
         value={draft.amount}
         onChange={draft.setAmount}
         error={draft.save.errors.openingAmount}
-        help="Leave blank for $0.00. Use up to two decimal places, for example 5000.00 or $5,000.00. A minus means an overdraft."
+        help="Leave blank for $0.00. Use up to two decimal places, for example 5000.00 or $5,000.00. A minus means an overdraft. Enter an amount between -$999,999,999,999.99 and $999,999,999,999.99. More than two decimal places is rejected without rounding."
       />
       <Field
         name="balanceDate"

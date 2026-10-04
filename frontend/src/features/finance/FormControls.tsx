@@ -1,6 +1,23 @@
-import { useEffect, useRef } from 'react';
+import { createContext, useContext, useEffect, useId, useRef, type ComponentProps } from 'react';
 import type { FieldErrors, Member } from '../../api/financeContract';
 import { memberName } from './presentation';
+
+const FormScope = createContext('finance');
+type FinanceFormProps = ComponentProps<'form'> & { focusName?: boolean };
+export function FinanceForm({ children, focusName, ...props }: FinanceFormProps) {
+  const scope = useId();
+  const reference = useRef<HTMLFormElement>(null);
+  useEffect(() => {
+    if (focusName) reference.current?.querySelector<HTMLInputElement>('[name="name"]')?.focus();
+  }, [focusName]);
+  return (
+    <FormScope value={scope}>
+      <form {...props} ref={reference}>
+        {children}
+      </form>
+    </FormScope>
+  );
+}
 
 type FieldProps = {
   label: string;
@@ -14,11 +31,12 @@ type FieldProps = {
 };
 export function Field(props: FieldProps) {
   const { label, name, value, onChange, error, type = 'text', help, required } = props;
+  const id = useContext(FormScope) + '-' + name;
   return (
     <div className="field">
-      <label htmlFor={name}>{label}</label>
+      <label htmlFor={id}>{label}</label>
       <input
-        id={name}
+        id={id}
         name={name}
         type={type}
         value={value}
@@ -26,12 +44,11 @@ export function Field(props: FieldProps) {
         onChange={(event) => onChange(event.target.value)}
         aria-invalid={error ? 'true' : undefined}
         aria-describedby={
-          [help ? name + '-help' : null, error ? name + '-error' : null]
-            .filter(Boolean)
-            .join(' ') || undefined
+          [help ? id + '-help' : null, error ? id + '-error' : null].filter(Boolean).join(' ') ||
+          undefined
         }
       />
-      <FieldMessages name={name} help={help} error={error} />
+      <FieldMessages name={id} help={help} error={error} />
     </div>
   );
 }
@@ -58,11 +75,12 @@ type OwnersProps = {
   error?: string | undefined;
 };
 export function Owners({ members, selected, onChange, error }: OwnersProps) {
+  const id = useContext(FormScope) + '-ownerIds';
   return (
     <fieldset
-      id="ownerIds"
+      id={id}
       tabIndex={-1}
-      aria-describedby={error ? 'ownerIds-error' : undefined}
+      aria-describedby={error ? id + '-error' : undefined}
       aria-invalid={error ? 'true' : undefined}
     >
       <legend>Owners</legend>
@@ -84,7 +102,7 @@ export function Owners({ members, selected, onChange, error }: OwnersProps) {
         </label>
       ))}
       {error && (
-        <p id="ownerIds-error" className="field-error">
+        <p id={id + '-error'} className="field-error">
           {error}
         </p>
       )}
@@ -92,6 +110,7 @@ export function Owners({ members, selected, onChange, error }: OwnersProps) {
   );
 }
 export function FormErrors({ message, errors }: { message: string; errors: FieldErrors }) {
+  const scope = useContext(FormScope);
   const reference = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (message) reference.current?.focus();
@@ -103,10 +122,10 @@ export function FormErrors({ message, errors }: { message: string; errors: Field
       {Object.entries(errors).map(([field, error]) => (
         <p key={field}>
           <a
-            href={'#' + field}
+            href={'#' + scope + '-' + field}
             onClick={(event) => {
               event.preventDefault();
-              document.getElementById(field)?.focus();
+              document.getElementById(scope + '-' + field)?.focus();
             }}
           >
             {error}

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { readOverview, request } from '../../api/finance';
 import { parseHousehold, type Member } from '../../api/financeContract';
-import { Field, FormErrors, FormActions } from './FormControls';
+import { Field, FormErrors, FormActions, FinanceForm } from './FormControls';
 import { normalized } from './presentation';
 import { useSave } from './useSave';
 import { useMemberDraft } from './useMemberDraft';
@@ -25,7 +25,7 @@ export function CreateHousehold({ navigate }: { navigate: Navigate }) {
   return (
     <>
       <p>Give this household a name. You can add people and checking accounts next.</p>
-      <form onSubmit={submit} noValidate>
+      <FinanceForm onSubmit={submit} noValidate>
         <FormErrors message={save.message} errors={save.errors} />
         <Field
           name="name"
@@ -36,7 +36,7 @@ export function CreateHousehold({ navigate }: { navigate: Navigate }) {
           error={save.errors.name}
         />
         <button disabled={save.pending}>Create household</button>
-      </form>
+      </FinanceForm>
     </>
   );
 }
@@ -62,7 +62,7 @@ export function RenameHousehold({
     );
   }
   return (
-    <form onSubmit={submit} noValidate>
+    <FinanceForm onSubmit={submit} noValidate focusName>
       <FormErrors message={save.message} errors={save.errors} />
       <Field
         name="name"
@@ -78,7 +78,7 @@ export function RenameHousehold({
           Cancel
         </button>
       </div>
-    </form>
+    </FinanceForm>
   );
 }
 
@@ -91,7 +91,7 @@ export function MemberForm({
 }) {
   const draft = useMemberDraft(member, onDone);
   return (
-    <form onSubmit={draft.submit} noValidate>
+    <FinanceForm onSubmit={draft.submit} noValidate focusName={member !== undefined}>
       {member && (
         <p>
           Correct this member's name or label. Their account ownership and balances stay the same.
@@ -119,6 +119,6 @@ export function MemberForm({
         label={member ? 'Save member details' : 'Add member'}
         {...(member ? { cancel: () => onDone() } : {})}
       />
-    </form>
+    </FinanceForm>
   );
 }

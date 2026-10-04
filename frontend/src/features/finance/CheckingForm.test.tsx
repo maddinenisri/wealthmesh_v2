@@ -36,6 +36,32 @@ function saved(id: string) {
   };
 }
 
+it('explains the exact supported range while retaining an out-of-range draft', async () => {
+  server.use(
+    http.post(create, () =>
+      HttpResponse.json(
+        {
+          code: 'INVALID_INPUT',
+          message: 'Enter a valid amount',
+          fieldErrors: { openingAmount: 'Enter a valid amount' },
+        },
+        { status: 400 },
+      ),
+    ),
+  );
+  render(<CheckingForm overview={overview} navigate={vi.fn()} />);
+  await enterChecking();
+  await userEvent.clear(screen.getByLabelText('Balance (USD, optional)'));
+  await userEvent.type(screen.getByLabelText('Balance (USD, optional)'), '1000000000000.00');
+  await userEvent.click(screen.getByRole('button', { name: 'Save checking account' }));
+  expect(await screen.findByRole('alert')).toHaveTextContent('Enter a valid amount');
+  expect(screen.getByLabelText('Balance (USD, optional)')).toHaveAccessibleDescription(
+    expect.stringContaining('between -$999,999,999,999.99 and $999,999,999,999.99'),
+  );
+  expect(screen.getByLabelText('Balance (USD, optional)')).toHaveValue('1000000000000.00');
+  expect(screen.getByRole('checkbox', { name: 'Name: Maya' })).toBeChecked();
+});
+
 it('one automatic reread confirms a committed create after the response is lost', async () => {
   let id = '';
   let reads = 0;

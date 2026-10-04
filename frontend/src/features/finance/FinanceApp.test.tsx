@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { http, HttpResponse } from 'msw';
 import { beforeEach, expect, it } from 'vitest';
@@ -70,6 +70,58 @@ const household = {
   household: { id: '33333333-3333-4333-8333-333333333333', name: 'Maya and Sam' },
   members: [maya],
 };
+
+function rejectConcurrentNames() {
+  const rejected = (message: string) =>
+    HttpResponse.json(
+      { code: 'INVALID_INPUT', message, fieldErrors: { name: message } },
+      { status: 400 },
+    );
+  server.use(
+    http.get(endpoint, () => HttpResponse.json(household)),
+    http.put(endpoint, () => rejected('Enter a household name')),
+    http.post(endpoint + '/members', () => rejected('Enter a member name')),
+    http.put(endpoint + '/members/' + maya.id, () => rejected('Enter a member name')),
+  );
+}
+
+it.each(['add', 'edit'])(
+  'keeps concurrent household and %s-member labels and error focus distinct',
+  async (mode) => {
+    window.history.replaceState(null, '', '/household');
+    rejectConcurrentNames();
+    render(<App />);
+    await userEvent.click(await screen.findByRole('button', { name: 'Rename household' }));
+    if (mode === 'edit')
+      await userEvent.click(screen.getByRole('button', { name: 'Edit member Maya' }));
+    const householdName = screen.getByRole('textbox', { name: /^Household name$/ });
+    const memberName = screen.getByRole('textbox', { name: /^Member name$/ });
+    expect(memberName).not.toBe(householdName);
+    expect(householdName.id).not.toBe(memberName.id);
+    if (mode === 'edit') expect(memberName).toHaveFocus();
+    await userEvent.clear(householdName);
+    await userEvent.click(screen.getByRole('button', { name: 'Save household name' }));
+    await userEvent.click(await screen.findByRole('link', { name: 'Enter a household name' }));
+    expect(householdName).toHaveFocus();
+    await userEvent.clear(memberName);
+    await userEvent.click(
+      screen.getByRole('button', { name: mode === 'edit' ? 'Save member details' : 'Add member' }),
+    );
+    await userEvent.click(await screen.findByRole('link', { name: 'Enter a member name' }));
+    expect(memberName).toHaveFocus();
+    expect(
+      document.getElementById(memberName.getAttribute('aria-describedby') ?? ''),
+    ).toHaveTextContent('Enter a member name');
+    const form = householdName.closest('form');
+    if (!form) throw new Error('Household input must remain inside its form.');
+    await userEvent.click(within(form).getByRole('button', { name: 'Cancel' }));
+    expect(
+      screen.getByRole('button', {
+        name: mode === 'edit' ? 'Edit member Maya' : 'Rename household',
+      }),
+    ).toHaveFocus();
+  },
+);
 
 it('keeps invalid raw amount and every entered field, then cancels without another command', async () => {
   window.history.replaceState(null, '', '/accounts/new/checking');
