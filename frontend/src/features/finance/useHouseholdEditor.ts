@@ -8,14 +8,14 @@ export function useHouseholdEditor(refresh: () => void, navigate: Navigate) {
   useEffect(() => {
     if (returnFocus) document.getElementById(returnFocus)?.focus();
   }, [rename, editing, returnFocus]);
-  function done(announcement?: string) {
-    if (announcement) {
-      refresh();
-      navigate('/household', announcement);
-      return;
-    }
-    setReturnFocus(editing ? 'edit-member-' + editing.id : 'rename-household');
+  function householdDone(announcement?: string) {
+    if (finishSave(announcement, refresh, navigate)) return;
+    setReturnFocus('rename-household');
     setRename(false);
+  }
+  function memberDone(announcement?: string) {
+    if (finishSave(announcement, refresh, navigate) || !editing) return;
+    setReturnFocus('edit-member-' + editing.id);
     setEditing(null);
   }
   return {
@@ -29,6 +29,13 @@ export function useHouseholdEditor(refresh: () => void, navigate: Navigate) {
       setReturnFocus(null);
       setEditing(member);
     },
-    done,
+    householdDone,
+    memberDone,
   };
+}
+function finishSave(announcement: string | undefined, refresh: () => void, navigate: Navigate) {
+  if (!announcement) return false;
+  refresh();
+  navigate('/household', announcement);
+  return true;
 }

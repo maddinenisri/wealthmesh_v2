@@ -30,7 +30,9 @@ async function overview(request: APIRequestContext) {
   return parseOverview(data);
 }
 async function addChecking(page: Page, amount = '5000.00', owners = ['Maya']) {
-  await page.goto('/accounts/new/checking');
+  const response = await page.goto('/accounts/new/checking');
+  expect(response?.status()).toBe(200);
+  expect(response?.headers()['content-type']).toContain('text/html');
   await page.getByLabel('Name', { exact: true }).fill('Everyday Checking');
   for (const owner of owners)
     await page.getByRole('checkbox', { name: 'Name: ' + owner, exact: true }).check();
@@ -104,14 +106,36 @@ for (const mode of ['add', 'edit']) {
       .filter({ has: householdName })
       .getByRole('button', { name: 'Cancel' })
       .click();
-    await expect(
-      page.getByRole('button', { name: mode === 'edit' ? 'Edit member Maya' : 'Rename household' }),
-    ).toBeFocused();
+    await expect(page.getByRole('button', { name: 'Rename household' })).toBeFocused();
+    await expect(memberName).toHaveValue('');
     const state = await overview(request);
     expect(state.household?.name).toBe('Maya and Sam');
     expect(state.members.map((member) => member.name)).toEqual(['Maya', 'Sam']);
   });
 }
+
+test('VD-03 member Cancel keeps the concurrent household draft and restores its own Edit invoker', async ({
+  page,
+  request,
+}) => {
+  await seedMembers(request);
+  const before = await overview(request);
+  await page.goto('/household');
+  await page.getByRole('button', { name: 'Rename household' }).click();
+  const householdName = page.getByRole('textbox', { name: 'Household name', exact: true });
+  await householdName.fill('Unsubmitted household');
+  await page.getByRole('button', { name: 'Edit member Maya' }).click();
+  const memberName = page.getByRole('textbox', { name: 'Member name', exact: true });
+  await memberName.fill('Unsubmitted member');
+  await page
+    .locator('form')
+    .filter({ has: memberName })
+    .getByRole('button', { name: 'Cancel' })
+    .click();
+  await expect(page.getByRole('button', { name: 'Edit member Maya' })).toBeFocused();
+  await expect(householdName).toHaveValue('Unsubmitted household');
+  expect(await overview(request)).toEqual(before);
+});
 
 test('VD-02 rejected out-of-range amount explains supported bounds and permits exact correction', async ({
   page,

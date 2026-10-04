@@ -115,13 +115,31 @@ it.each(['add', 'edit'])(
     const form = householdName.closest('form');
     if (!form) throw new Error('Household input must remain inside its form.');
     await userEvent.click(within(form).getByRole('button', { name: 'Cancel' }));
-    expect(
-      screen.getByRole('button', {
-        name: mode === 'edit' ? 'Edit member Maya' : 'Rename household',
-      }),
-    ).toHaveFocus();
+    expect(screen.getByRole('button', { name: 'Rename household' })).toHaveFocus();
+    expect(screen.getByRole('textbox', { name: /^Member name$/ })).toBe(memberName);
+    expect(memberName).toHaveValue('');
   },
 );
+
+it('member Cancel restores its own invoker and preserves the concurrent household draft', async () => {
+  window.history.replaceState(null, '', '/household');
+  server.use(http.get(endpoint, () => HttpResponse.json(household)));
+  render(<App />);
+  await userEvent.click(await screen.findByRole('button', { name: 'Rename household' }));
+  const householdName = screen.getByRole('textbox', { name: /^Household name$/ });
+  await userEvent.clear(householdName);
+  await userEvent.type(householdName, 'Unsubmitted household');
+  await userEvent.click(screen.getByRole('button', { name: 'Edit member Maya' }));
+  const memberName = screen.getByRole('textbox', { name: /^Member name$/ });
+  await userEvent.type(memberName, ' unsubmitted');
+  const form = memberName.closest('form');
+  if (!form) throw new Error('Member input must remain inside its form.');
+  await userEvent.click(within(form).getByRole('button', { name: 'Cancel' }));
+  expect(screen.getByRole('button', { name: 'Edit member Maya' })).toHaveFocus();
+  expect(screen.getByRole('textbox', { name: /^Household name$/ })).toBe(householdName);
+  expect(householdName).toHaveValue('Unsubmitted household');
+  expect(screen.getByRole('heading', { name: 'Maya and Sam' })).toBeVisible();
+});
 
 it('keeps invalid raw amount and every entered field, then cancels without another command', async () => {
   window.history.replaceState(null, '', '/accounts/new/checking');

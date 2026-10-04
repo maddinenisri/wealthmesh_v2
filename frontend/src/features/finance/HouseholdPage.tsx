@@ -6,13 +6,16 @@ import { Heading, type Navigate } from './Navigation';
 
 type HouseholdPageProps = { overview: Overview; refresh: () => void; navigate: Navigate };
 export function HouseholdPage({ overview, refresh, navigate }: HouseholdPageProps) {
-  const { rename, editing, openRename, openMember, done } = useHouseholdEditor(refresh, navigate);
+  const { rename, editing, openRename, openMember, householdDone, memberDone } = useHouseholdEditor(
+    refresh,
+    navigate,
+  );
   return (
     <>
       <Heading>Household and members</Heading>
       <h2>{overview.household?.name}</h2>
       {rename ? (
-        <RenameHousehold initial={overview.household?.name ?? ''} onDone={done} />
+        <RenameHousehold initial={overview.household?.name ?? ''} onDone={householdDone} />
       ) : (
         <button id="rename-household" onClick={openRename}>
           Rename household
@@ -20,7 +23,12 @@ export function HouseholdPage({ overview, refresh, navigate }: HouseholdPageProp
       )}
       <h2>Members</h2>
       <p>Members are names you attach to account ownership. They do not sign in.</p>
-      <MembersSection members={overview.members} editing={editing} edit={openMember} done={done} />
+      <MembersSection
+        members={overview.members}
+        editing={editing}
+        edit={openMember}
+        done={memberDone}
+      />
       <p>
         <a href="/">Back to overview</a>
       </p>
