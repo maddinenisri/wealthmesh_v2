@@ -29,6 +29,10 @@ The validator prepares the acceptance test plan before coding, and the human rev
 
 Agents may investigate independent parts of the current feature concurrently after their inputs are ready. Avoid concurrent writes to the same files. The coordinator alone maintains feature status, the question register and the decision record; it cannot supply human approval.
 
+Every agent assignment has a maximum ten-minute wall-clock budget (D-037). Record start/deadline using the existing clock; if still working, check at eight minutes and stop safely by ten. Leave compact completed/remaining work, actual commands/results and dirty/resource state in the existing feature section. Unfinished checks remain pending. Do not silently extend or automatically renew an identical assignment; the coordinator must narrow or reassess remaining work. Budget long commands explicitly before launching, including startup/cleanup, and do not interrupt unrelated services. No new timing infrastructure is required.
+
+Reuse unchanged approved UX/architecture for routine changes; record the delta rather than repeating those role handoffs. Independent validator/reviewer investigation may run in parallel on stable code with exclusive scopes, while packet writes and commands sharing mutable output stay sequential. Consolidate known corrections, read changed areas/current sections, and rerun affected checks. Preserve both human checkpoints, separate role sessions and all required outcomes; see `docs/process-improvement.md` for evidence and recommendations.
+
 ## Test driven development and evidence
 
 For behavior changes, add a meaningful failing test before production code, implement the smallest coherent change, then refactor with tests passing. A setup failure is not evidence that behavior is missing. The owner wants final test results only in the human-facing packet; do not require live red/green demonstrations or a per-increment failure log. This reporting preference does not remove test-first development.

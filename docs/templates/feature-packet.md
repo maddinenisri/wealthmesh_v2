@@ -6,6 +6,8 @@ Use one `docs/features/<feature>/index.md` for each future feature. Roles write 
 
 Coordinator owns: feature ID, title, current stage, source snapshot/scenario IDs, human decisions and tested Git commit. Place bounded role assignments and next stage here (scope, inputs, allowed changes, output and stop conditions).
 
+Each focused assignment includes start/deadline from the existing clock, at most ten minutes wall clock, exclusive ownership and an explicit command budget. Check at eight minutes if still running and stop safely by ten; update completed/remaining work, actual commands/exits, pending checks and dirty/resource state here. Reassess remaining scope, with no automatic identical renewals or new timing tools. Reuse unchanged approved UX/architecture; allow independent stable-code investigation in parallel while serializing packet writes/shared-output execution. Consolidate correction batches and select affected checks without waiving requirements.
+
 ## Behavior and scope
 
 What the household can do, a concrete example, expected results, excluded behavior, and links to stable question IDs in `docs/questions.md`. Link actual supplied human answers to `docs/decisions.md`; do not duplicate unanswered alternatives as decisions.
@@ -17,6 +19,8 @@ UX architect owns: journey, screens, validation, loading/empty/failure states, a
 ## Technical proposal
 
 Architect owns: financial rules, request flow, API/data contract, migrations, transaction boundaries, failure handling and decisions requiring human review.
+
+Keep one concise plain-English request-flow guide here: screen → request → service/rule → transaction/storage → response/error, with relevant source links. Reuse the accepted baseline and shared UI patterns purposefully; demonstrate an early real vertical slice after approval.
 
 Identify the authoritative location of shared business rules, intended reusable components, and any material design pattern with its concrete purpose.
 

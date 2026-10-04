@@ -1,75 +1,54 @@
 # Next feature session prompt
 
-Copy everything below **COPY FROM HERE** into a fresh session opened in this repository. It continues the [FIN-001 planning package](../features/household-checking/index.md); packaging the recommendation does not approve its concrete design or implementation.
+Copy everything below **COPY FROM HERE** into a fresh session in this repository. Setup and FIN-001 are accepted; continue from the delivered application rather than rebuilding its first feature.
 
 ## COPY FROM HERE
 
-You are the coordinator for FIN-001, “Household and first checking account”, the recommended next-session design target. Work in `/Users/srini/workspace/mdstect_ws/wealthmesh_v2`, origin `https://github.com/maddinenisri/wealthmesh_v2.git`. Build a household finance application the human owner can understand, operate and troubleshoot. Financial health only; localhost without login. Household members are owners/annotations, not authenticated identities.
+You coordinate the next bounded change to WealthMesh in `/Users/srini/workspace/mdstect_ws/wealthmesh_v2`, origin `https://github.com/maddinenisri/wealthmesh_v2.git`. Financial health only, one household, localhost without login; household members are owners, not authenticated identities. Bind services to loopback and preserve household data.
 
-### 1. Establish current facts before acting
+### Start from actual current state
 
-Read `AGENTS.md`, `README.md`, `docs/workflow.md`, `docs/agent-roles.md`, `docs/coding-standards.md`, `docs/templates/feature-packet.md`, `docs/questions.md`, `docs/decisions.md` (D-023/D-024/D-025), `docs/features/household-checking/index.md`, `docs/features/setup/status.md`, `docs/operations/index.md`, `package.json` and `docs/requirements/inventory.md`. Inspect Git status, current branch/HEAD and remote. Repository facts supersede this starting context; do not hardcode a starting commit or infer approval from a status label.
+Inspect Git status/branch/HEAD and read `AGENTS.md`, current sections of `docs/features/household-checking/index.md`, `docs/features/setup/status.md`, `docs/questions.md`, relevant `docs/decisions.md`, `docs/workflow.md`, `docs/agent-roles.md`, `docs/coding-standards.md`, `docs/templates/feature-packet.md`, `docs/process-improvement.md`, `docs/operations/index.md` and `package.json`. Read changed-area source before commands; do not reread every historical report each task. Repository facts supersede this context; do not pin a stale starting hash.
 
-Existing explicit human approvals and answers persist; do not ask again. Setup was delivered with passing independent evidence; resolve actual acceptance or explicit deferral before FIN-001 implementation only if Q-009 is still pending. Authorized FIN-001 design/planning may proceed while waiting. Do not repeat completed setup validation merely to obtain acceptance. This resolves the previous feature's existing checkpoint, not a third gate for FIN-001.
+Setup is accepted under D-026. FIN-001 household/checking is accepted under D-032, with modern UI correction accepted under D-036. Reuse actual answers and approvals; do not ask for these again or rebuild FIN-001. The accepted finance baseline uses Java 25/Spring Boot/Spring services/JPA/Hibernate, Flyway and PostgreSQL; setup retains its small JDBC metadata reader. Frontend is React/strict TypeScript/Vite; VitePress renders docs. Persistent development Compose storage and disposable test storage are separate. Do not replace this stack or adopt v3 because its playbook appears shorter.
 
-Preserve unrelated dirty changes and running services. Scope the work before running builds, installs or lifecycle commands. Retain Java 25/Spring Boot/JDBC/Flyway/Gradle, React/strict TypeScript/Vite, persistent PostgreSQL through Compose, disposable PostgreSQL Testcontainers, isolated MSW, real-system Playwright E2E and VitePress. Reuse existing tooling, locks and operating commands. Routine details within the baseline are autonomous; major frameworks/services/providers/security/deployment changes need concrete alternatives, cost and human review before dependent work.
+No next feature is assigned in the present record. Q-004 leaves wider first-release scope open; ask one concise next-capability question only if no newer actual direction exists. Read relevant originals in immutable `docs/requirements/snapshots/2026-10-03-v2/source/` and recommend a narrow dependency-aware slice. Deferred activity, transfers, savings and Update balance are possible future scope, not approved assignments. Record actual choices/product answers in the separate registers; never infer answers from silence. Full original completion requires every original assertion, separately from acceptance of a partial feature. Preserve originals/inventory and sibling projects read-only.
 
-### 2. Refine the supplied recommendation, not a generic feature choice
+### Timebox and communicate
 
-D-025 authorizes preparing the combined recommendation, not final scope/design, the first release or acceptance. Consume the existing FIN-001 packet and its nine-ID coverage table. Do not ask the owner to pick household versus checking again; ask only concrete unresolved design questions about opening-amount input/sign/precision, date policy and member-name uniqueness after the architect proposes implications/defaults. Q-004's first-release scope remains open.
+Every role assignment has a maximum ten-minute wall-clock budget under D-037. Record outcome, feature/scenario IDs, inputs, permitted/exclusive files, required section, start/deadline from the existing clock, command budget and stop conditions in the single feature packet. If still active, check at eight minutes and stop safe work by ten. Leave completed/remaining work, actual commands/exits/skips, pending checks and dirty/resource state. No identical rolling auto-renewals: coordinator narrows or reassesses remaining work. Budget expensive commands explicitly, including startup/cleanup; do not launch one unlikely to fit. Unfinished checks stay pending, with safe owned-fixture cleanup. Do not add timer tools or kill unrelated services.
 
-Read `household/setup/set-up-household.feature` and `accounts/checking/setup.feature` under immutable `docs/requirements/snapshots/2026-10-03-v2/source/`. The inventory captures 39 feature files and 262 scenario identities; setup completes none. Keep originals/global completion unchanged and the sibling read-only; never import its implementation. Preserve FIN-001's checking-only aggregate, joint ownership and persisted reload boundaries, while activity, original savings/date coverage and Update balance clauses remain deferred/partial as specified. Full original completion requires every original assertion; accepting a partial feature cannot complete that scenario. Do not claim income activity exists or show enabled nonfunctional future buttons.
+Use one active feature and one `docs/features/<slug>/index.md` based on the template, with sequential role-owned sections. Root coordinates and chats with the human; actual role agents work in separate sessions. Transfer the writing turn explicitly. Tool notifications contain path/stage only; substantive results remain in the packet. Keep questions/decisions separate. No per-role report chains, fingerprint manifests, custom supervisors, infrastructure rebuilds or commits just to notify a writing turn. Preserve unrelated dirty work and existing services.
 
-First actions are to read facts, assign sequential role design and refine the pre-code plan in the existing packet. No installers, services, application changes or feature tests are needed for this planning stage. Record actual answers in questions/decisions; no inference from silence. Stop at the concrete combined design approval before implementation.
+### Design and first human checkpoint
 
-### 3. Keep communication small and durable
+For a new feature, run UX architect → architect → validator acceptance plan → concrete combined human design approval. UX defines screens/states/accessibility and annotated visual targets with synthetic data; reference the accepted modern workspace and shared UI patterns. Architect explains financial invariants, request/data/transaction/error contracts and costs. Keep one short request-flow guide in the packet. Validator maps about five acceptance groups to meaningful domain, persistence, UI, error and real-system tests before coding; five groups are not a coverage/test cap.
 
-Use **one** `docs/features/household-checking/index.md`, following the existing template. It already contains scope/status, draft assignments, pending UX/architecture/test plan and future evidence/operation/acceptance sections. Complete those sections in place. Keep separate `docs/questions.md` and `docs/decisions.md`. No per-role task/report files, new manifests, fingerprint tools, custom supervisors or speculative infrastructure; do not reopen trimming setup without a concrete new blocker.
+Reuse unchanged approved UX/architecture for routine changes and describe the delta instead of repeating handoffs. New/changed design still needs the existing concrete review; no third gate. Prototype execution needs scoped authorization. Major services/frameworks/providers/security/deployment additions require concrete alternatives and human review; routine approved details are autonomous. Stop dependent production changes until actual design approval is recorded.
 
-Delegate actual agent sessions for the roles below; root coordinates and chats only with the human. Assign role, feature/scenario IDs, inputs, approved scope, allowed changes, output section and stop conditions within the feature document. Transfer its writing turn explicitly: one Markdown writer at a time. Notifications contain its path and stage; substantive handoffs stay in its sections. Concurrent code work needs useful independence and exclusive file scopes, not another feature or report chain.
+### Implement, independently validate and review
 
-### 4. Design, then obtain the first checkpoint
+After approval, developer uses genuine test-first behavior tests → minimal coherent implementation → refactor with passing tests. A setup failure is not missing behavior. Show an early real vertical slice before multiplying forms. Human receives final results, not increment logs. Enforce SRP, authoritative DRY financial rules, guard clauses, composition and purposeful reuse/patterns; review nesting above two levels, complexity above ten and methods above forty meaningful lines. Exact money, dates, currency, constraints and atomic transactions stay authoritative in the backend; no speculative abstractions or financial waivers.
 
-Run this order, allowing design iteration:
+Separate validator/reviewer independently check stable finished code; neither accepts it for the owner. They may investigate concurrently with exclusive scopes, while packet writes and commands sharing outputs remain sequential. Consolidate known findings into one correction batch; return fixes to developer and rerun affected independent checks. Preserve earlier evidence for unchanged areas and actual historical failures.
 
-1. `ux_architect`: journey, annotated screens, wording, loading/empty/error/cancel states, accessible keyboard/focus behavior. Propose a clickable experience within the existing review scope; no unapproved executable prototype.
-2. `architect`: domain invariants, API/data contract, migrations, constraints, transactions, errors and operational cost, explained plainly. Resolve dependencies with UX.
-3. `validator`: acceptance plan **before coding**, mapping source clauses to expected results and establishing test layers.
-4. Human reviews the concrete combined design and plan. Coordinator records actual approval, date and packet revision, or requested changes. No production implementation before explicit approval; selection of a feature alone is not design approval.
+Select existing commands by changed risk and approved plan:
 
-Validator refines FIN-001's five draft groups before approval, mapping exact original clauses and adapted rules to domain/integration/UI/error/E2E tests. The groups are not a test-count cap or coverage waiver. Keep the recommended synthetic Maya/Sam joint-checking journey and add failure/atomicity/accessibility checks appropriate to the final contract.
+| Need                     | Existing command                                                               |
+| ------------------------ | ------------------------------------------------------------------------------ |
+| Prerequisite/status/demo | `/bin/sh scripts/preflight.sh`; `npm run status`; `npm run dev` only if needed |
+| Backend/domain/database  | `npm run test:backend`; `npm run test:integration`                             |
+| Isolated UI              | `npm run test:frontend`; `npm run typecheck --workspace frontend`              |
+| Real system              | `npm run test:e2e` or existing affected-suite selection                        |
+| Quality/build            | Relevant subcommands; `npm run quality` / `npm run build` when justified       |
+| Authored Markdown        | Affected formatting/lint/link/diff checks; no services or behavior suites      |
 
-### 5. Implement with strict engineering and real TDD
+Testcontainers uses disposable PostgreSQL, MSW isolates frontend tests, and real E2E reaches Java/PostgreSQL with mocks disabled. Add feature-specific E2E assertions/fixtures; setup-only E2E cannot establish new finance behavior. Never use development storage/credentials for tests or reset its volume. Use synthetic data, protect secrets and proper sandbox escalation. Record actual exits, failures/skips and tested Git commits; unfinished/unexecuted checks cannot pass. Avoid repeated historical full suites; changed risks still require checks.
 
-Launch `developer` after approval. For each behavior, write and run a meaningful failing test, implement the smallest coherent change, then refactor with tests passing. Setup errors are not missing-behavior evidence. Human receives final results only, not per-increment red/green logs.
+### Handover, acceptance and resume
 
-Require one coherent responsibility per method/component, authoritative backend invariants, DRY rules, composition, purposeful reuse/patterns and guard clauses. Review triggers: more than two nesting levels, complexity above 10 or methods above 40 meaningful lines. Refactor or document a narrow reviewer-checked mechanical justification; never waive financial integrity. Avoid generic repositories, interfaces for every class or universal components without a real need.
+Commit tested revisions with D-024 descriptive feature-ID titles and concise plain-English purpose/result/high-level changes plus actual validation/limits. Inspect staged paths, respect ignored files, preserve unrelated changes and existing Git identity. Push normally to origin under standing authorization once reviewed; no force/history rewrite. A push is not acceptance.
 
-Specify exact money representation, currency/scale/rounding and financial dates versus timestamps before implementing relevant rules. Use `BigDecimal` or approved exact types, not floating-point arithmetic. Keep transport, use-case/domain and SQL boundaries clear; use constraints/transactions where integrity needs them. Frontend validates runtime responses and provides feedback; it does not own monetary truth. Keep MSW aligned with the API.
+Provide a working synthetic demo and plain-English explanation of screens, backend rules/storage, changed behavior and troubleshooting. Example: “You can now record the selected financial action. Java validates and saves it atomically; the summary reads saved amounts. Independent checks covered the real save/reload journey and invalid inputs. These listed capabilities remain deferred.” Supply actual feature-specific evidence, not a mechanically filled example.
 
-### 6. Validate and review independently
-
-Use a separate `validator` session to execute the approved plan, then a `reviewer` session that authored no implementation. Reviewer checks correctness, standards, maintainability and the explanation. Defects return to developer; rerun affected validator/reviewer checks after corrections. Do not silently weaken assertions or required outcomes.
-
-Select existing commands according to the change and approved plan; do not automatically run everything:
-
-| Need                           | Existing commands                                                                |
-| ------------------------------ | -------------------------------------------------------------------------------- |
-| Prerequisites/owned local demo | `/bin/sh scripts/preflight.sh`; `npm run status`; `npm run dev` only when needed |
-| Backend behavior/database      | `npm run test:backend`; `npm run test:integration`                               |
-| Isolated frontend              | `npm run test:frontend`; `npm run typecheck --workspace frontend`                |
-| Real-system acceptance         | `npm run test:e2e`                                                               |
-| Affected quality/build         | `npm run quality`; `npm run build`, or relevant existing subcommands             |
-| Authored documentation         | `npm run docs:lint`; `npm run docs:check`; affected formatting checks            |
-
-Integration/E2E use disposable databases, never development credentials/storage; real E2E disables MSW. Add feature-specific real E2E assertions and fixture data as needed; rerunning setup-only E2E does not establish new financial behavior. Use synthetic data. Preserve secrets, unrelated processes and persistent volumes; no destructive resets. Use proper escalation for sandbox/socket/network failures. Record actual commands, exits, failures/skips, scenario coverage and tested Git commits in the feature document. Unexecuted checks never pass. Repeat affected checks for relevant changes, not arbitrary timers or redundant fingerprint ceremonies. Reuse setup safety coverage; expand it only for changed behavior/risk. Documentation-only edits need document checks, not services or behavioral suites.
-
-### 7. Commit, explain and obtain acceptance
-
-Use local commits to identify tested revisions; note later dirty changes with a diff. Follow D-024: descriptive feature-ID title plus a short plain-English problem/result/high-level-change body and actual validation/limits. Inspect staged paths, respect `.gitignore`, use existing identity and preserve unrelated work. Once reviewed, push normally to origin under the standing commit/push instruction. No force/history rewrite; pushing does not accept the feature.
-
-Complete the working demo and plain-English explanation before requesting the second human checkpoint. The same feature document explains screens, backend behavior, saved data, important rules, code/test links, one realistic failure symptom, logs/requests and safe troubleshooting. No mandatory live failure exercise.
-
-Example handover: “You can now [approved capability]. The screen sends [input]; Java checks [rule] and saves [record]. [Important limit] remains deferred. Independent checks passed on commit [actual revision], with [actual skips]. Demo: [local URL]; explanation: [feature path]. Please accept or identify required changes.” Never fill placeholders with invented evidence.
-
-Stop at a required unanswered product decision, missing design approval or unresolved required defect/check; continue useful independent authorized work. Record the blocker in the existing packet, without accepting or starting another feature. After completed evidence, await the owner's actual acceptance. Resume future sessions from the packet's stage, decisions and latest tested commit; do not restart completed work or add more handoff documents.
+Stop for the second human checkpoint after required independent evidence, review, demo and operating explanation are complete. Record the actual answer; agents/tests cannot accept. At a timebox stop, resume from compact remaining-work state in the same packet under a reassessed assignment. Preserve accepted FIN-001 history, source-coverage boundaries and prior actual decisions.

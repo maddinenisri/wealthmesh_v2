@@ -1,15 +1,16 @@
 # WealthMesh: household financial health
 
-This project is for one household, on this computer through localhost, without login. The owner accepted project setup; it creates no accounts, balances, spending records or investments. [FIN-001 household and first checking](features/household-checking/index.md) is the current design review, with implementation awaiting approval.
+This project is for one household, on this computer through localhost, without login. Project setup and [FIN-001 household and first checking](features/household-checking/index.md#next-stage) are accepted. FIN-001 delivers household/member correction, individual/joint checking, saved exact balances and a modern responsive workspace; activity and other financial features remain deferred.
 
 ## Current work and your review
 
-Open the [FIN-001 combined packet](features/household-checking/index.md) for proposed screens, financial rules and the acceptance plan. The [canonical setup status](features/setup/status.md) retains its completed evidence and actual acceptance under D-026. Approval and acceptance are distinct recorded decisions; this reader does not infer either from tests or files.
+Open the [FIN-001 combined packet](features/household-checking/index.md#next-stage) for current accepted status and its retained design, independent results, demo and operating guidance under D-032/D-036. The [canonical setup status](features/setup/status.md) retains acceptance under D-026. No next feature is assigned; wider release scope remains open in Q-004. Approval and acceptance are distinct actual human decisions.
 
 - [Questions awaiting or retaining your answers](questions.md)
 - [Human decisions and their history](decisions.md)
 - [Feature index](features/index.md)
 - [Requirements captured for future scope selection](requirements/index.md)
+- [Process comparison and ten-minute assignment guidance](process-improvement.md)
 
 ## Understand what agents build
 

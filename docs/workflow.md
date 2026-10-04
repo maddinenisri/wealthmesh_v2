@@ -24,6 +24,14 @@ The developer self-reviews against [coding standards](coding-standards.md), and 
 
 ## Routine handoff
 
+### Ten-minute assignments
+
+[D-037](decisions.md#d-037-limit-agent-assignments-to-ten-minutes) limits each agent assignment to ten minutes wall clock, not each feature. Put outcome, exclusive scope, start/deadline and command budget in the existing compact assignment. Read the current section/diff and relevant inputs. Check the existing clock at eight minutes if still active; stop safe work by ten and record completed/remaining work, actual commands/exits, pending checks and dirty/resource state. No rolling identical auto-renewals, extra reports, timer tools or notification-only commits. The coordinator narrows/reassesses unfinished work rather than declaring it passed or waiving it.
+
+Budget expensive execution separately and explicitly within a bounded assignment, including startup/cleanup; do not launch a command unlikely to fit the remaining time. Plan safe interruption/cleanup of owned fixtures, preserve unrelated services and report unfinished execution pending. A time limit never removes a required financial or acceptance assertion. [Process comparison](process-improvement.md) distinguishes inspected sources, historical durations and unverified v3 claims.
+
+Skip repeated UX/architect work for a routine change when approved screens/contracts/invariants are unchanged; identify the reused baseline and delta. New/changed design still follows the existing combined approval. Validator/reviewer may inspect stable code in parallel with exclusive scopes; serialize feature-packet writing and shared-output execution, then consolidate findings into one correction batch. Use existing standard commands, purposeful shared UI patterns, an early real vertical slice after approval and one plain-English request-flow guide inside the packet.
+
 ### Keep delivery proportional
 
 For a small change, describe the delta against the accepted application rather than redesigning its baseline. Settle material technology choices before coding; reuse the approved Spring Data JPA, exact-money/date rules, fixtures and screen patterns. A new framework or material product decision still follows the existing design checkpoint.

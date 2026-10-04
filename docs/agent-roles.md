@@ -6,6 +6,8 @@ For future features, all roles write sequential owned sections in one feature do
 
 ## Coordinator
 
+Timebox each focused assignment to ten minutes under [D-037](decisions.md#d-037-limit-agent-assignments-to-ten-minutes), with start/deadline, exclusive scope and explicit command budget. At the eight-minute checkpoint, narrow to safe completion; by ten record completed/remaining work, actual commands/results and dirty/resource state. Reassess unfinished work without identical rolling renewals, invented passes or scope waivers. Skip unchanged UX/architecture for routine approved-baseline changes. Independent validator/reviewer can investigate stable inputs in parallel; serialize packet writes/shared-output commands and batch known corrections. No extra timing/report infrastructure.
+
 Maintain scope/status/assignments in the single feature document, source traceability, [questions](questions.md), [human decisions](decisions.md), and stage transitions. Provide bounded work and approved inputs in that document; coordinate sequential writing turns and surface conflicting assumptions.
 
 The coordinator can organize work and request clarifications. It cannot approve designs or acceptance for the human, invent missing requirements, or describe an unexecuted check as passing.

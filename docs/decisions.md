@@ -205,6 +205,14 @@ Acceptance relies on the recorded evidence and limits: 39 isolated and 18 real-s
 
 No wider Q-004 release scope, deferred activity/savings/Update balance, original scenario completion, deployment or new feature is approved. Application code, saved records, services and tooling are unchanged by recording this acceptance.
 
+## D-037: Limit agent assignments to ten minutes
+
+Date: October 4, 2026. Owner: human product owner.
+
+The owner requested comparing v2 with `../wealthmesh_v3` and optimizing the workflow, with a maximum **10 minutes per agent task**. This is a binding wall-clock limit per focused assignment, not a promise that a whole feature or long test suite finishes in ten minutes. Use the existing clock, check at eight minutes if still active, stop safely by ten and retain completed/remaining work, actual commands/results and dirty/resource state in the existing packet. Unfinished validation remains pending; no identical automatic renewals or requirement waivers.
+
+The [comparison](process-improvement.md) records additional recommendations separately. This direction authorizes process documentation, not v3 adoption, a stack migration, infrastructure refactoring, new financial scope or removal of TDD/independent roles/two human checkpoints. D-032/D-036 FIN-001 acceptance and prior decisions remain intact.
+
 ## Architect authority boundaries
 
 Routine choices follow the approved baseline and feature design. New deployable services, message brokers, external providers, replacement frameworks or databases, and material changes to security or deployment require a concrete explanation and human review before implementation. Routine dependency changes must remain justified and recorded. Setup revision 1 is approved; future finance scope remains unresolved under [Q-004](questions.md#q-004-first-usable-finance-release).
