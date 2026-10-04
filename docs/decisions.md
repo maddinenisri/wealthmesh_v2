@@ -177,6 +177,24 @@ The owner requested: “lets fix running or documenting too many hops and rework
 
 Remove Setup status and Documentation from the finance navigation in the proposed UI correction. Retain direct diagnostics/documentation URLs, the documentation server, engineering records, tests and operating tools. Preserve running services and saved development records. Research and concrete visual design may proceed; the combined revision 5 screen proposal and affected acceptance plan still need the existing design approval before production changes. D-032 acceptance and financial scope remain unchanged. Reduce routine hops through compact assignments, reused architecture, early independent read-only inspection and batched findings within D-023; separate developer/validator/reviewer sessions and both human checkpoints remain required.
 
+## D-034: Approve FIN-001 revision 5 UI correction
+
+Date: October 3, 2026. Owner: human product owner. Reviewable revision: `618c952`, [revision 5 screens and affected plan](features/household-checking/index.md#ui-correction--revision-5-approved).
+
+After the concrete annotated UI design and independently prepared affected plan were presented, the owner answered **“approve, lets implement”.** This explicitly approves revision 5: the original-style warm workspace/sidebar/typography, desktop account table and complete mobile cards, consistent form panels, two product navigation links, direct checking entry, route titles and removal of technical navigation/footer from the product UI. Direct setup/docs and tooling remain available under D-033. The five-group affected acceptance plan is approved, including retained diagnostics and financial assertions with revised navigation expectations.
+
+Implementation may start within the frontend/E2E scope. Accepted Java/JPA/API/data/money/date/ownership rules are unchanged; retain their evidence and expand checks only for changed risk. No new framework, service, dependency, fixture infrastructure, sibling implementation import, source completion, Q-004 scope or correction acceptance is approved. D-032 financial acceptance remains valid; the working visual correction still needs independent validation/review and owner acceptance.
+
+## D-035: Select the modern finance workspace style
+
+Date: October 3, 2026. Owner: human product owner. Related: [Q-012](questions.md#q-012-visual-direction-during-fin-001-correction).
+
+During approved revision 5 implementation the owner requested current online UX modernization research and said the visible UI was still unsatisfactory. Asked whether to use smaller sans-serif headings, tighter summary/table spacing and restrained green accents or continue the original warm serif style, the owner answered **“Modern finance workspace.”**
+
+This selects the modern presentation direction for the existing approved shell, native navigation, account table/mobile cards and forms. It supersedes the original serif/warm styling direction while retaining D-034's structural/behavioral scope and affected acceptance plan. The coordinator's previously stated modern-style working assumption is now confirmed as a preference, not retroactively a supplied answer. Source `fb48238` implements that routine visual refinement; owner implementation acceptance still requires the working demo and completed independent evidence.
+
+No backend/API/data/money/date/ownership change, new framework/service/dependency, wider Q-004 release scope, original-scenario completion or visual correction acceptance is implied. D-032's financial acceptance remains intact.
+
 ## Architect authority boundaries
 
 Routine choices follow the approved baseline and feature design. New deployable services, message brokers, external providers, replacement frameworks or databases, and material changes to security or deployment require a concrete explanation and human review before implementation. Routine dependency changes must remain justified and recorded. Setup revision 1 is approved; future finance scope remains unresolved under [Q-004](questions.md#q-004-first-usable-finance-release).

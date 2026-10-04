@@ -1,6 +1,6 @@
 # Run and understand WealthMesh locally
 
-This guide describes the existing local operating commands. Setup is accepted; its command evidence remains in [platform evidence](../features/setup/platform-implementation.md), [backend evidence](../features/setup/backend-implementation.md) and [canonical status](../features/setup/status.md). FIN-001 is accepted under D-032 with a UI/process correction requested. Its [packet](../features/household-checking/index.md) explains the household/checking screens, saved data, financial rules, independent results and follow-up audit.
+This guide describes the existing local operating commands. Setup is accepted; its command evidence remains in [platform evidence](../features/setup/platform-implementation.md), [backend evidence](../features/setup/backend-implementation.md) and [canonical status](../features/setup/status.md). FIN-001 finances are accepted under D-032. The modern finance workspace correction is implemented, with owner UI acceptance pending. Its [packet](../features/household-checking/index.md) explains the current screens, saved data, financial rules, independent results, demo and delivery-process changes. The product navigation contains Overview and Household; diagnostics remain directly available at `/setup`, and engineering documentation remains at `http://127.0.0.1:5174/`.
 
 ## First installation
 

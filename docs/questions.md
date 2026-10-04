@@ -138,4 +138,13 @@ The supplied policy answers are recorded in [D-027](decisions.md#d-027-fin-001-a
 - Status: resolved October 3, 2026.
 - Question: does “keep only the actual application” mean removing Setup status and Documentation from the product UI, or also stopping the documentation server?
 - Answer: **“Product UI only.”**
-- Decision: [D-033](decisions.md#d-033-keep-engineering-utilities-outside-the-product-ui). Utilities remain available directly; no service/tooling deletion is authorized. Concrete UI revision 5 approval remains pending.
+- Decision: [D-033](decisions.md#d-033-keep-engineering-utilities-outside-the-product-ui). Utilities remain available directly; no service/tooling deletion is authorized. Concrete UI revision 5 was subsequently approved under [D-034](decisions.md#d-034-approve-fin-001-revision-5-ui-correction).
+
+## Q-012: Visual direction during FIN-001 correction
+
+- Owner: human product owner; coordinator records the answer.
+- Status: resolved October 3, 2026 during the approved revision 5 implementation.
+- Question: use a modern finance workspace with smaller sans-serif headings, tighter summary/table spacing and restrained green accents, or keep refining the original warm serif style?
+- Context: the owner says the visible UI is still unsatisfactory and requests current online UX research. Current sources/findings are in the [existing feature packet](features/household-checking/index.md#owner-visual-steering-and-current-ux-research). This changes presentation preference within the financial correction, not backend/data scope or acceptance.
+- Answer: **“Modern finance workspace.”**
+- Decision: [D-035](decisions.md#d-035-select-the-modern-finance-workspace-style). Structural/financial scope stays unchanged; visual acceptance remains pending.
