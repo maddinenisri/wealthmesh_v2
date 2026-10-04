@@ -20,6 +20,8 @@ Read the immutable originals linked in the packet: `spending/income/record-incom
 
 Run sequential bounded design assignments:
 
+Start from the packet's compact clause/gap/task/test-level table, order tasks by actual dependencies and refine only the changed Salary contract. Use its accepted FIN-001 and runbook pointers instead of ceremonial baseline redesign. The table supports the existing combined UX/technical/pre-code-plan approval, not a replacement task-list-only gate. Explain unsettled choices with concrete examples. Board statuses and scenario-ID citations are traceability, not proof of every assertion; never automatically defer a mandatory approved check. Keep one consolidated independent finding batch. Add a short retro to the existing process record only for a demonstrated repeated problem, with a reusable fix.
+
 1. UX architect: existing checking detail → positive Salary/amount/date/account/entered-by → review/confirm/cancel → activity/entry/month navigation. Reuse accepted workspace/form/error patterns; specify retained drafts, pending/error/focus states and honest deferred actions. No executable prototype now.
 2. Architect: salary-only API/storage/service/transaction/read delta and one plain-English request-flow guide. Propose amount/result/aggregate overflow rules, concurrent/replayed confirmation without double credit, entered-by versus owner, preserved opening/date semantics and tracking-start/today/no-future policy. Avoid speculative whole-ledger design. Reuse exact USD/no-rounding/date/JPA baseline.
 3. Validator: refine about five draft groups before coding, map exact source/adapted assertions and Testcontainers/MSW/real E2E boundaries. Groups are not a coverage cap.

@@ -221,6 +221,14 @@ The owner requested preparing the next feature so execution can be observed in a
 
 D-037's ten-minute assignment limit, existing TDD/independent roles and both human checkpoints remain. The new session develops bounded design/test-plan deltas, then presents the concrete combined packet before implementation. FIN-001 and its modern UI remain accepted; no application, service, source snapshot or v3 change is authorized by this preparation.
 
+## D-039: Assess v3 checking session for compatible process learning
+
+Date: October 4, 2026. Owner: human product owner.
+
+The owner supplied the v3 checking-setup transcript and asked what process can be learned or borrowed. This authorizes a read-only reference assessment and compatible compact planning/runbook guidance in the existing v2 documents. The [dated assessment](process-improvement.md#october-4-follow-up-v3-checking-setup-session) separates source inspection, attributed session claims, different acceptance boundaries and timing limits.
+
+This is a request for analysis/process learning, not v3 skill/code/stack adoption, a role merger, altered financial scope, FIN-002 design approval, feature/release acceptance or original-scenario completion. D-037's ten-minute cap, pre-code validator plan, separate developer/validator/reviewer and both checkpoints persist. V2's standing commit/push authorization remains; v3's different local rules do not supersede it.
+
 ## Architect authority boundaries
 
 Routine choices follow the approved baseline and feature design. New deployable services, message brokers, external providers, replacement frameworks or databases, and material changes to security or deployment require a concrete explanation and human review before implementation. Routine dependency changes must remain justified and recorded. Setup revision 1 is approved; future finance scope remains unresolved under [Q-004](questions.md#q-004-first-usable-finance-release).

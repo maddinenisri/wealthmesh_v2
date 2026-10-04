@@ -32,6 +32,18 @@ Reuse JPA/services/Flyway, exact USD parser/range/no-rounding and plain dates. P
 
 ## Test plan — validator pending
 
+Coordinator's compact **gap/task draft**, pending role refinement and the combined human design checkpoint:
+
+| Clauses / group                                      | Existing gap and dependency-ordered task                                                                                             | Proposed establishing levels                             |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------- |
+| INCOME_001 partial; CHECKING_002 salary context / G1 | Reuse opening/joint checking; add confirmed Salary persistence and coherent account/month/entry reads. Spending/net remain deferred. | Domain + Testcontainers API/integration + MSW + real E2E |
+| INCOME_005 / G2                                      | Extend exact input validation to positive received Salary, retained context and no-write errors; both original examples.             | Domain + API/integration + MSW + real E2E                |
+| Adapted integrity / G3                               | Review/cancel then atomic confirmation, concurrent/replayed requests without double credit; contract pending architect.              | Domain/API integration + MSW + targeted real E2E         |
+| INCOME_006 partial/adapted / G4                      | Decide tracking-start/today/future handling with existing dates unchanged; reminder deferred.                                        | Domain + API/integration + MSW + real E2E                |
+| INCOME_001 inspection and adapted handover / G5      | Real saved activity/entry/income-only month links, reload, accessibility and explanation; no general spending claims.                | MSW + feature-specific real E2E + human demo             |
+
+Use the [accepted baseline/current state](../household-checking/index.md#next-stage), [existing financial technical contract](../household-checking/index.md#technical-proposal), [implemented operating explanation](../household-checking/index.md#operating-guide--implemented-developer-handover) and [shared command/runbook guidance](../../operations/index.md). Read relevant current facts and changed-area source; do not reproduce the full baseline. Role output/tests remain pending, and this table proves no source completion.
+
 Five **draft groups**, not a test-count cap:
 
 1. Confirm Salary; exact list/detail/total/month/entry agreement, joint count once and opening excluded.
