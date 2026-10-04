@@ -131,3 +131,11 @@ The supplied policy answers are recorded in [D-027](decisions.md#d-027-fin-001-a
 - Options: retain the approved Spring JDBC adapter; or prepare a bounded Spring Data JPA/Hibernate persistence amendment preserving the approved financial/API/UX rules, Flyway and disposable PostgreSQL tests. Architect explains concrete mappings, transactions, risks and cost in the existing FIN-001 packet before dependent implementation.
 - Answer: **“Switch to Spring Data JPA/Hibernate repositories.”** The earlier “we should go with spring approach” is now clarified. Do not ask this technology choice again.
 - Decision: [D-030](decisions.md#d-030-select-spring-data-jpahibernate-persistence) selects the technology; [D-031](decisions.md#d-031-approve-fin-001-revision-4-persistence-amendment) approves the concrete architecture, cost and reconciled plan. D-029's feature scope and financial rules persist; its JDBC choice is superseded. Implementation resumes within the approved amendment.
+
+## Q-011: Application UI and engineering utilities
+
+- Owner: human product owner; coordinator records the answer.
+- Status: resolved October 3, 2026.
+- Question: does “keep only the actual application” mean removing Setup status and Documentation from the product UI, or also stopping the documentation server?
+- Answer: **“Product UI only.”**
+- Decision: [D-033](decisions.md#d-033-keep-engineering-utilities-outside-the-product-ui). Utilities remain available directly; no service/tooling deletion is authorized. Concrete UI revision 5 approval remains pending.

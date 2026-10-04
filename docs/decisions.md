@@ -169,6 +169,14 @@ After the working demo, explanation and independent results were presented, the 
 
 This explicitly accepts the delivered FIN-001 capability and records dissatisfaction with its visual design and delivery time. The coordinator will compare the original UI read-only and audit the actual delivery record, keeping findings and a bounded correction proposal in the existing packet. Acceptance is not endorsement of the current visual design, approval of a replacement design, or authorization to import the sibling implementation. Deferred original clauses and Q-004 remain unchanged; original global scenario completion is not advanced by partial feature acceptance.
 
+## D-033: Keep engineering utilities outside the product UI
+
+Date: October 3, 2026. Owner: human product owner. Related: [Q-011](questions.md#q-011-application-ui-and-engineering-utilities).
+
+The owner requested: “lets fix running or documenting too many hops and rework on UI with proper UX standards and keep only actual application, perfrom research how to do that UX design”. Asked whether this meant product UI only or also stopping the documentation server, the owner answered **“Product UI only.”**
+
+Remove Setup status and Documentation from the finance navigation in the proposed UI correction. Retain direct diagnostics/documentation URLs, the documentation server, engineering records, tests and operating tools. Preserve running services and saved development records. Research and concrete visual design may proceed; the combined revision 5 screen proposal and affected acceptance plan still need the existing design approval before production changes. D-032 acceptance and financial scope remain unchanged. Reduce routine hops through compact assignments, reused architecture, early independent read-only inspection and batched findings within D-023; separate developer/validator/reviewer sessions and both human checkpoints remain required.
+
 ## Architect authority boundaries
 
 Routine choices follow the approved baseline and feature design. New deployable services, message brokers, external providers, replacement frameworks or databases, and material changes to security or deployment require a concrete explanation and human review before implementation. Routine dependency changes must remain justified and recorded. Setup revision 1 is approved; future finance scope remains unresolved under [Q-004](questions.md#q-004-first-usable-finance-release).

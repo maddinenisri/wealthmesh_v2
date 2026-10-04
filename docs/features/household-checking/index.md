@@ -2,9 +2,131 @@
 
 ## Identity, status and assignment
 
-**ACCEPTED UNDER D-032; UI/PROCESS AUDIT COMPLETE, VISUAL CORRECTION PROPOSED.** October 3, 2026. Owner accepted delivery `90b2016` while explicitly rejecting its visual quality relative to the original and requesting investigation of delivery time. Read the [post-acceptance audit](#post-acceptance-ui-and-delivery-audit) for current findings/recommendation; earlier assignments below are history. Final reviewed code is `a7493e8`; financial/date evidence at `c976d69` is retained unchanged. Acceptance does not approve a replacement visual design or complete partial original scenarios. Existing application/services/data are preserved.
+**ACCEPTED UNDER D-032; UI REVISION 5 READY FOR DESIGN REVIEW.** October 3, 2026. Owner accepted delivery `90b2016` while explicitly rejecting its visual quality relative to the original and requesting investigation of delivery time. Review the [current revision 5 proposal](#ui-correction--revision-5-design-pending) below; the [post-acceptance audit](#post-acceptance-ui-and-delivery-audit) and earlier assignments are history. Final reviewed code is `a7493e8`; financial/date evidence at `c976d69` is retained unchanged. Acceptance does not approve a replacement visual design or complete partial original scenarios. Existing application/services/data are preserved.
 
 The owner authorized packaging the recommendation under [D-025](../../decisions.md#d-025-prepare-the-combined-first-feature-planning-package). [D-027](../../decisions.md#d-027-fin-001-amount-date-and-member-policies) settles the stated product policies; [Q-004](../../questions.md#q-004-first-usable-finance-release) remains open for the wider release only; D-029 approves this combined design. The owner answered **“Accept completed SETUP-001”** on October 3, 2026; [D-026](../../decisions.md#d-026-accept-completed-project-setup) resolves [Q-009](../../questions.md#q-009-setup-feature-acceptance), satisfying the previous feature's checkpoint without repeating validation. This does not approve FIN-001. [D-023](../../decisions.md#d-023-finish-setup-and-simplify-future-workflow) retains setup and the lighter process; no infrastructure cleanup is proposed.
+
+## UI correction — revision 5, design pending
+
+[D-033](../../decisions.md#d-033-keep-engineering-utilities-outside-the-product-ui) settles product UI only: remove Setup status/Documentation from finance navigation; retain direct URLs, tooling and running services. This revision changes presentation of accepted FIN-001 only. Source coverage remains the nine primary IDs (`@V2_HOUSEHOLD_SETUP_001/003/004`, `@V2_CHECKING_001/002/003/004/005/017`, both 002 examples), with supporting partial `@V2_MEMBERS_001/005`; all deferred clauses and global completion remain unchanged.
+
+### Current assignment
+
+UX architect and separate validator completed the annotated design and affected plan below; both released the writing turn. **Coordinator owns final documentation checks and the existing human design checkpoint.** No production UI changes or application checks have occurred. Review this current section rather than rereading the accepted feature history.
+
+After explicit revision 5 approval, the bounded developer task is FIN-001's listed primary/supporting IDs, presentation/navigation only: `frontend/` and affected existing frontend/E2E tests, plus implementation/explanation in this section. Inputs are the approved revision 5 screens/plan, accepted contracts, D-023/D-032/D-033 and coding standards. Use meaningful TDD for changed behavior, preserve clean component responsibilities and authoritative financial rules; no backend/API/schema, fixture infrastructure, new dependency, sibling/source/global completion, service/storage or unrelated-file changes. Stop for changed contracts, missing product approval, unsafe service ownership or required failures; otherwise deliver one stable tested commit and concise results. Separate validator executes the affected plan, then independent reviewer checks the finished correction; their read-only investigation may start on stable inputs, substantive packet writes remain sequential. Record results/findings once, batch known defects, rerun affected checks only, and present the working UI before correction acceptance. No handoff commits, new reports or mandatory live failure exercise.
+
+### UX design and research
+
+**Review target:** recover the original application's warm workspace, clear hierarchy and compact account presentation using newly authored React/CSS. The original sidebar/palette/table proportions are visual references only; its implementation, broader navigation and account capabilities are not imported. Screens below use synthetic Maya/Sam data. Financial contracts, routes and saved records stay unchanged.
+
+Research informs these choices rather than requiring a new design system. [NN/g usability heuristics](https://www.nngroup.com/articles/ten-usability-heuristics/) support consistent actions, visible progress, useful errors and removing irrelevant product content; [visual design principles](https://www.nngroup.com/articles/principles-visual-design/) support size, contrast and grouping to distinguish the balance, section headings and supporting details. The design therefore has one clear financial summary, an aligned registry and quiet explanatory text, with only implemented actions.
+
+#### Visual tokens and shell
+
+| Element             | Concrete target                                                                                                                                                                                                                                                                                          |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Palette             | Paper `#f3f1ec`, panel `#fffefa`, sidebar `#faf9f5`, ink `#1e2924`, secondary text `#5e6861`, accent `#2e5c4c`, active navigation `#e6efea`, decorative dividers `#deddd4`. Error text `#8a251d`; form-control borders use a stronger `#68756d`.                                                         |
+| Typography          | Georgia/system serif for the wordmark, page heading and summary amount; system sans-serif for body, forms and tables. Desktop heading 40–44px, mobile 30px, summary 40px, body/input 16px with 1.5 line height; supporting text at least 14px. No downloaded fonts. Numbers align with tabular numerals. |
+| Desktop workspace   | At widths at least 900px, 228px left sidebar with internal scrolling if needed; main begins after it, with 32px vertical/38px horizontal padding and maximum content width 1600px. No setup-era centered 800px wrapper. Sidebar contains WealthMesh, Overview and Household only.                        |
+| Panels and controls | Panels have 12px corners, 24px padding, restrained border and no decorative shadow. Use an 8/16/24/32px spacing rhythm. Primary buttons are green with white text; Cancel is a distinct neutral button. Controls and action targets are at least 44px high; inputs have explicit visible labels.         |
+| Focus and contrast  | Visible 3px green focus outline with 3px offset; heading focus fits its text rather than outlining a full-width empty block. Text meets 4.5:1 for ordinary text and 3:1 for large text; controls/focus remain distinguishable. Decorative pale borders do not identify inputs by themselves.             |
+
+Contrast targets follow [WCAG contrast guidance](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html). The chosen 44px control size exceeds the ordinary 24px minimum described in [WCAG target-size guidance](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html); this is a design choice, not a claim that rendering has been validated.
+
+#### Desktop Overview annotation — 1440px review viewport
+
+```text
+228px sidebar              Main workspace, generous usable width
+WealthMesh                 Maya and Sam                [Add checking account]
+[Overview: active]         Household overview
+ Household                 ┌ Checking total (USD) ───────────────────┐
+                           │ $5,000.00                              │
+                           │ Checking only · Shared counted once    │
+                           └────────────────────────────────────────┘
+                           Accounts
+                           Account / Bank       Type     Owners   Balance (USD)  Balance date
+                           Everyday Checking    Checking Maya     $5,000.00      2026-09-01
+                           Harbor Bank                   Sam
+```
+
+The total is one compact panel, up to 480px wide; it does not stretch into unsupported asset/debt/income tiles. The Accounts panel uses the remaining content width. Account names are links; bank appears beneath the name, all owners and distinguishing labels remain visible, and amounts align right. A joint account occupies one row. Negative balances keep their minus sign; color is supplementary. Table headers identify columns and the Accounts heading labels the table; ordinary links provide navigation, with no row-wide click handlers or added sorting/filter controls. This use of a semantic table and right-aligned numerical columns follows [GOV.UK table guidance](https://design-system.service.gov.uk/components/table/).
+
+#### Mobile annotation — 320px review viewport
+
+```text
+WealthMesh
+[Overview] [Household]        Two visible navigation links
+Maya and Sam
+Household overview
+Checking total (USD)
+$5,000.00
+Checking only · Shared counted once
+Accounts
+[Add checking account]       Full-width action if needed
+Everyday Checking            Account link
+Checking · Harbor Bank
+Owners: Maya; Sam            Labels shown separately when present
+Balance (USD): $5,000.00
+Balance date: 2026-09-01
+```
+
+Below 900px the sidebar becomes an ordinary top header with both links always visible: two destinations do not need a hamburger, overlay or focus trap. Account rows become labelled cards below 760px; desktop and mobile presentations expose the same fields, with only the active presentation in the accessibility tree. Panels use 16px padding; long names, labels, helpers and large exact totals wrap without clipping. There is no page-level horizontal scrolling at 320px or equivalent 400% zoom, preserving all actions and information as described by [WCAG reflow guidance](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html). Navigation remains native links inside a labelled `nav`, not ARIA menu widgets; [WAI navigation guidance](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-navigation/) explains that distinction.
+
+#### Screen and journey annotations
+
+| Existing screen/route                       | Presentation and wording                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Set up household, `/` when confirmed absent | Same workspace shell; one panel up to 640px wide under **Set up your household**. Keep Household name, explanation and Create household. Never show onboarding merely because a read failed.                                                                                                                                                                                                                                                               |
+| Overview, `/`                               | Above annotated registry and total; empty registry says **No accounts added yet. Start with a checking account.** Primary **Add checking account** links directly to existing `/accounts/new/checking`, removing the one-option selection hop. Keep the existing invoker ID for Cancel focus and the Add household members link for ownership setup. A confirmed empty list has `$0.00`; loading/failure does not manufacture it.                          |
+| Household, `/household`                     | Heading **Household**; saved household name and Rename household in a compact panel. Separate Members panel with member rows/Edit member, plus Add member panel. Two columns only when at least 1100px leaves comfortable field widths; otherwise stack. Preserve concurrent rename/member drafts and independent pending/error states. Name and Distinguishing label (optional) retain existing helpers and unique-pair feedback.                         |
+| Choose type, `/accounts/new`                | Existing bookmarks still show **Add account**, one working Checking choice with its current description, then Cancel. This page is no longer in the primary creation journey. Deferred types remain plain explanation. With no members, retain the actionable Household link; never invent an owner.                                                                                                                                                       |
+| Add checking, `/accounts/new/checking`      | Heading **Add checking account**, form panel up to 640px wide, one column: Name; Owners checkbox fieldset; Bank (optional); Balance (USD, optional); Balance date. Keep exact money grammar/range/overdraft/no-income helpers and backend date/zone helper. Primary **Save checking account**, secondary Cancel beneath the fields. With no members, preserve the existing explanation, Go to Household and Cancel instead of presenting an unusable form. |
+| Details, `/accounts/{id}`                   | Back to accounts; account-name heading; prominent exact Balance (USD) and Balance date in one summary panel. Owners/labels, bank and Checking type in a compact facts panel; Edit account is the only editing action. Keep honest activity/deferred-balance explanation as quiet text, without fake transactions or future buttons.                                                                                                                        |
+| Edit, `/accounts/{id}/edit`                 | **Edit account**, same 640px form treatment with Name, Owners and Bank only; visible explanation that balance/date stay unchanged. Save account details and Cancel retain current behavior. Member editing uses the same spacing and action treatment within its own panel.                                                                                                                                                                                |
+
+Overview is the financial navigation section for account pages; Household is active only for its route. Use `aria-current="page"` only for the exact linked page. Keep all existing routes; no new Accounts landing page. Update document titles to **Overview · WealthMesh**, **Household · WealthMesh**, **Add account · WealthMesh**, **Add checking account · WealthMesh**, **Checking account · WealthMesh** and **Edit account · WealthMesh**; onboarding uses **Set up household · WealthMesh**. Direct `/setup` uses **Setup status · WealthMesh**, remains independent, and has no entry in finance navigation. Documentation and the technical localhost/no-login footer leave the product UI under D-033; their services/tooling remain intact.
+
+#### Shared states and keyboard behavior
+
+Retain the accepted loading/refresh/error messages, Retry and safe request reference, with modest status/error panels positioned before affected content. Previously loaded data keeps its stale-information label. No skeleton balance, invented zero or celebratory success on an uncertain save. Save and Cancel stay disabled while pending, with visible and politely announced **Saving…**; an uncertain result retains the draft, performs the existing one reread and permits only deliberate same-ID retry through the ordinary Save button.
+
+Keep visible labels, associated helpers/errors, native owner checkboxes with fieldset/legend, scoped form IDs and exact input behavior. Errors explain how to correct the field and keep other entries. [GOV.UK text-input guidance](https://design-system.service.gov.uk/components/text-input/) supports explicit labels and linked hints/errors; [error-summary guidance](https://design-system.service.gov.uk/components/error-summary/) supports matching summary/field messages and links. Current forms use `noValidate` and [FormErrors](../../../frontend/src/features/finance/FormControls.tsx) focuses the server-error summary, whose links focus invalid fields. Preserve that implemented workflow, including direct focus on the invalid field when its link is activated; do not introduce native validation or a new automatic first-invalid-field transition.
+
+The skip link is first in keyboard order; navigation, fields and actions follow visible order. Route headings remain focusable for existing navigation announcements; Cancel returns to its own invoking control when available. Unsubmitted Cancel writes nothing; leaving after uncertain submission does not promise rollback. Member/household Cancel affects only its own form. No navigation prompts, drawer/modal state machine or new saved-draft promise. All loading, empty, missing-account, malformed-response, network-error and successful-save behavior remains the approved financial feature; this revision improves its presentation.
+
+UX proposal complete; no production implementation, prototype, service or data change. Packet writing turn released to the coordinator for the affected validator plan and combined design review.
+
+### Affected acceptance plan
+
+This five-group delta plan is ready for combined revision 5 review, **before code**. The [nine-ID clause mappings](#source-clauses-and-retained-boundaries), both checking-002 examples and partial members-001/005 remain authoritative. Backend/API/data/money/date rules are unchanged: retain their actual accepted evidence at `c976d69` and earlier attributed revisions. A changed contract or financial calculation stops this UI-only scope for review.
+
+**G1 — Workspace and complete account presentation** (`household-001/003`, `checking-001/002`; adapted visual rules).
+Compare newly rendered synthetic v2 with the original read-only at 1440px desktop and 320px mobile: sidebar/top navigation, warm palette, serif hierarchy, panel/table density and consistent forms must meet the annotated targets. Record material differences and v2 screenshots in this packet; do not import sibling implementation or capture real financial records.
+Real-browser inspection establishes all seven screens, specified titles, two product navigation links and exact-page `aria-current`. Desktop semantic table and mobile labelled cards expose the same name, bank, type, all owners/labels, exact signed amount and plain date; only the active representation is accessible. Inspect 900/760px transitions, long text/large totals, 320px and equivalent 400% zoom: no clipping/page-level horizontal scroll, visible 44px actions and required text/control/focus contrast. Isolated UI assertions establish structure/visibility; visual judgment requires rendered comparison, not merely passing suites.
+
+**G2 — Direct creation and saved joint checking** (`household-001/003/004`, `checking-001/002`; partial `members-001`).
+Real Java/PostgreSQL/Playwright journey: create Maya and Sam → Overview → **Add checking account** directly → Everyday Checking, Harbor Bank, both owners, `$5,000.00`, `2026-09-01` → detail → Overview/reload. One account, both UUID owners, matching bank/date/balance and once-only `$5,000.00` total remain; reads create nothing. Retain individual creation and both blank/explicit `$0.00` examples with saved date, backend today/zone defaults and selected past date.
+Update the empty-journey CTA/heading expectations for the approved direct route; separately retain `/accounts/new` bookmark, working Checking choice, plain deferred-type explanation and no-member Household guidance. Opening-balance/no-activity wording remains honest; savings/date, income/activity/first transaction and Update balance clauses stay partial/deferred, with no enabled future actions.
+
+**G3 — Corrections and own-invoker Cancel** (`checking-003/004`, household-001 rename; partial `members-005`).
+Isolated UI and real browser retain Sam → Maya account details edit, name/bank changes, no money/date controls, identical saved amount/date/list/detail after save, and no mutation on Cancel. Member typo/label correction preserves member/account IDs, owner links and money through reload; no attribution/history claim.
+The direct Overview CTA keeps its invoker ID: cancelled checking returns there with focus; bookmarked chooser Cancel returns to Overview. Concurrent household rename/member add or edit retains scoped IDs, own labels/helpers/errors and drafts; cancelling one returns to its own invoker and leaves the other draft intact. Keep existing VD-01/03 assertions rather than hiding concurrent forms.
+
+**G4 — States, correction and keyboard access** (`checking-005/017`; adapted shared states across all forms).
+MSW held-response/error tests establish **Saving…** polite status, disabled Save/applicable Cancel, retained inputs and status removal on completion for household/member/checking saves. Missing-name and `five thousand` errors retain all other fields; correction saves exact values and unsubmitted Cancel sends no command. Range/no-rounding guidance remains accessible.
+FormErrors focuses the **error summary**; activating each summary link focuses its own invalid field. Check visible focus, skip link first, native owner fieldset/checkbox/date controls, keyboard actions and route-heading focus in isolated and real-browser checks. Retain safe request reference, malformed-response/network/missing-account/Retry cases, stale-data label and uncertainty's one reread/deliberate same-ID retry: no invented onboarding, zero balance or confirmed success, and no promised rollback after uncertain submission.
+
+**G5 — Independent diagnostics and stable affected evidence** (D-033; adapted navigation, retained setup assertions).
+Replace isolated Setup/Documentation **navigation-link presence** assertions with absence from finance navigation plus direct `/setup` availability even when finance reads fail. Replace the real mobile test's removed Setup-link traversal with direct `/setup` navigation and retain its diagnostic result/heading-focus assertion. Existing setup E2E must still establish installation version, absence, Retry and bounded database failure; documentation's direct URL/service stays available independently.
+After concrete approval, developer performs meaningful test-first changes, then one stable affected pass; separate validator repeats that stable scope and independently inspects visual results. Use existing `npm run test:frontend`, `npm run typecheck --workspace frontend`, existing ESLint/Prettier on affected frontend/E2E files, and `npm run test:e2e` (which supplies the fresh frontend build and real setup/finance suites). Shared shell/forms/styles justify the existing real suites; no new runner/filter infrastructure or backend/platform/full-quality rerun is needed unless their behavior changes. Sequence build-serving operations; preserve disposable-copy cleanup, MSW-disabled real E2E and persistent owner data.
+Record actual revision, commands/exits, filtered/skipped/unexecuted scope, visual findings and later dirty diff once. Early independent read-only review batches findings; corrections trigger affected reruns only. Root checks combined documentation once. No tests, code, services or commits were performed for this plan; **validator writing turn released for combined human design review**.
+
+### Revision 5 design review decision
+
+Pending actual human approval of revision 5. D-032 accepts the financial feature; D-033 clarifies utility scope. Neither approves the concrete replacement screens.
+
+Planning documentation evidence: `npm run docs:lint` initially exited 1 for duplicate/incorrectly styled headings in the new section; those editorial issues were corrected. After correction, `npm run docs:lint` and `npm run docs:check` each exited 0 across 44 authored files; four-file Prettier and `git diff --check` also exited 0. No application, service or financial test was run for this planning-only change.
 
 ## Recommended behavior and boundaries
 
@@ -804,4 +926,4 @@ Audit documentation checks on `90b2016` plus the seven-file documentation diff: 
 
 ## Next stage
 
-**Acceptance and requested audit are complete; the proposed visual correction is the next review target.** Original delivery `90b2016` is normally pushed to `origin/main` and accepted. Updated workflow guidance applies within D-023's existing roles/checkpoints; no process waiver or new framework is introduced. No production UI redesign has been approved or implemented. Prepare its annotated screens and affected validator plan within the existing design checkpoint before dependent code. Preserve accepted financial behavior, source boundaries, Q-004, services/storage and sibling read-only status; do not restart completed validation or begin an unrelated feature.
+**Revision 5 combined design and affected plan are ready; awaiting explicit human design approval.** No production UI work before explicit combined approval. Accepted delivery and financial rules/evidence remain authoritative. Preserve Q-004, source boundaries, running services/storage and sibling read-only status.
