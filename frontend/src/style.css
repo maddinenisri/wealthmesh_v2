@@ -39,7 +39,9 @@ a {
   overflow-y: auto;
 }
 .brand {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   font-size: 24px;
   font-weight: 600;
   color: var(--ink);
@@ -65,6 +67,14 @@ a {
 .workspace-sidebar nav a.section-active {
   background: #e6efea;
   color: var(--accent);
+}
+.workspace-main > a,
+.workspace-main > p > a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 44px;
+  max-width: 100%;
 }
 .workspace-main {
   max-width: 1600px;
@@ -207,6 +217,11 @@ p {
   padding-bottom: 0;
 }
 .account-name a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 44px;
+  max-width: 100%;
   font-size: 16px;
   font-weight: 650;
 }

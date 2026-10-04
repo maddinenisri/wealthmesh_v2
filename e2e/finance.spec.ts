@@ -415,6 +415,14 @@ test('UI-05 modern desktop workspace reflows into complete mobile cards with key
 }) => {
   await seedMembers(request);
   await addChecking(page, '-$125.50', ['Maya', 'Sam']);
+  const account = (await overview(request)).accounts[0];
+  expect(
+    (
+      await request.put('/api/accounts/' + account.id + '/details', {
+        data: { name: 'Checking', bank: account.bank, ownerIds: [maya, sam] },
+      })
+    ).status(),
+  ).toBe(200);
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.goto('/');
   await expect(page).toHaveTitle('Overview · WealthMesh');
@@ -430,6 +438,7 @@ test('UI-05 modern desktop workspace reflows into complete mobile cards with key
   await expect(registry.getByRole('cell', { name: '-$125.50 USD', exact: true })).toBeVisible();
   await verifyRegistryReflow(page);
   await expect(registry.locator('.mobile-label').filter({ hasText: /^Owners$/ })).toBeVisible();
+  await verifyStandaloneTargets(page);
   const action = page.getByRole('link', { name: 'Add checking account' });
   expect((await action.boundingBox())?.height).toBeGreaterThanOrEqual(44);
   await verifyCreationKeyboardJourney(page);
@@ -439,7 +448,7 @@ async function verifyRegistryReflow(page: Page) {
   const registry = page.getByRole('table', { name: 'Accounts' });
   for (const width of [900, 899, 760, 759, 320]) {
     await page.setViewportSize({ width, height: 1000 });
-    await expect(page.getByRole('link', { name: 'Everyday Checking' })).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Checking', exact: true })).toBeVisible();
     await expect(registry.getByText('Harbor Bank')).toBeVisible();
     await expect(registry.getByText('Maya', { exact: true })).toBeVisible();
     await expect(registry.getByText('Sam', { exact: true })).toBeVisible();
@@ -468,7 +477,9 @@ async function verifyCreationKeyboardJourney(page: Page) {
   await expect(page).toHaveTitle('Add account · WealthMesh');
   await expect(page.getByRole('link', { name: 'Checking', exact: true })).toBeVisible();
   await expect(page.getByText('Other account types will be added later.')).toBeVisible();
-  await page.getByRole('link', { name: 'Cancel', exact: true }).press('Enter');
+  const cancel = page.getByRole('link', { name: 'Cancel', exact: true });
+  expect((await cancel.boundingBox())?.height).toBeGreaterThanOrEqual(44);
+  await cancel.press('Enter');
   await expect(page.getByRole('link', { name: 'Add checking account' })).toBeFocused();
 }
 
@@ -509,3 +520,19 @@ test('UI-06 long owner labels and exact large totals remain complete at 320px', 
     true,
   );
 });
+
+async function verifyStandaloneTargets(page: Page) {
+  for (const name of ['WealthMesh', 'Checking']) {
+    const link = page.getByRole('link', { name, exact: true });
+    expect
+      .soft((await link.boundingBox())?.height, name + ' target height')
+      .toBeGreaterThanOrEqual(44);
+  }
+  await page.getByRole('link', { name: 'Checking', exact: true }).press('Enter');
+  const back = page.getByRole('link', { name: 'Back to accounts', exact: true });
+  expect
+    .soft((await back.boundingBox())?.height, 'Account Back target height')
+    .toBeGreaterThanOrEqual(44);
+  await back.press('Enter');
+  await expect(page.getByRole('link', { name: 'Checking', exact: true })).toBeVisible();
+}
