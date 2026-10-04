@@ -1,6 +1,6 @@
 # Run and understand WealthMesh locally
 
-This guide describes the implemented setup commands. Their final execution results are in [platform evidence](../features/setup/platform-implementation.md), [backend evidence](../features/setup/backend-implementation.md), and [integrated delivery](../features/setup/implementation.md). Independent validation and owner acceptance remain separate in [canonical status](../features/setup/status.md).
+This guide describes the existing local operating commands. Setup is accepted; its command evidence remains in [platform evidence](../features/setup/platform-implementation.md), [backend evidence](../features/setup/backend-implementation.md) and [canonical status](../features/setup/status.md). The [FIN-001 packet](../features/household-checking/index.md) explains the delivered household/checking screens, saved data, financial rules, current independent checks and pending human acceptance.
 
 ## First installation
 
@@ -34,14 +34,15 @@ npm run stop
 
 Startup builds the Java application, starts PostgreSQL, waits for database health, then starts the API, application screen and documentation. Normal shutdown preserves PostgreSQL's named volume and signals only verified project-owned host processes. Starting the complete stack twice reports that it is already running. Stopping twice is safe.
 
-| Service       | Default local address                     | Purpose                      |
-| ------------- | ----------------------------------------- | ---------------------------- |
-| Application   | `http://127.0.0.1:5173`                   | Display real setup status    |
-| API           | `http://127.0.0.1:8080/api/system/status` | Read the installation record |
-| Documentation | `http://127.0.0.1:5174`                   | Browse saved agent Markdown  |
-| PostgreSQL    | `127.0.0.1:5433`                          | Persistent development data  |
+| Service       | Default local address                     | Purpose                       |
+| ------------- | ----------------------------------------- | ----------------------------- |
+| Application   | `http://127.0.0.1:5173`                   | Manage household and checking |
+| Setup status  | `http://127.0.0.1:5173/setup`             | Independent setup diagnostics |
+| API           | `http://127.0.0.1:8080/api/system/status` | Read the installation record  |
+| Documentation | `http://127.0.0.1:5174`                   | Browse saved agent Markdown   |
+| PostgreSQL    | `127.0.0.1:5433`                          | Persistent development data   |
 
-All addresses bind to this computer only. There is no login; do not expose these services to the home network. This delivery has no household finance capabilities yet.
+All addresses bind to this computer only. There is no login; household members annotate account ownership. Create a household, add members and save an individual or joint checking account from the application. A joint account counts once in the checking total. Balances use exact USD cents; dates use backend local today or an earlier Gregorian date. Member and account-detail edits are available; activity, income, savings and updating balances remain deferred. Read the [feature's operating guide](../features/household-checking/index.md#operating-guide--implemented-developer-handover) for the screens and a save/failure explanation.
 
 The reader works independently of Java and PostgreSQL:
 
@@ -90,13 +91,13 @@ npm run verify
 
 `npm run test:lifecycle` runs an actual unrelated-port conflict check. Stop the application/backend first; an independent documentation reader may remain running. The synthetic listener must survive the failed startup. This supplemental check is separate from `verify` because it requires that service state.
 
-Backend unit tests need no database. Integration tests use real PostgreSQL through Testcontainers. Frontend tests use MSW only for isolated responses. Full-system E2E builds the frontend, launches the real Java application and a disposable Testcontainers database on separate loopback ports, disables service workers, and checks stored versions and failures. It never reads development credentials or changes the development setup row.
+Backend unit tests need no database. Integration tests use real PostgreSQL through Testcontainers. Frontend tests use MSW only for isolated responses. Full-system E2E builds the frontend once and runs setup then finance in separate sequential disposable Java/PostgreSQL lifecycles, with service workers disabled. Each fixture serves its own copied build, isolated from subsequent shared-output changes. Finance checks include joint ownership, exact balances/dates, saved reload, errors and keyboard focus. The test-only finance reset operates solely on its verified disposable database. E2E never reads development credentials or changes development data.
 
 The fixture protocol is documented in [backend handoff](../features/setup/backend-implementation.md#fixture-protocol-now-implemented). E2E results/logs are in `.runtime/e2e/<run-id>/`; Playwright failures produce `test-results/` traces and `playwright-report/`. Each run cleans its own fixture process and PostgreSQL; Ryuk stays enabled.
 
 The harness verifies that both exact owned PostgreSQL and Ryuk IDs disappear after the fixture JVM exits, including the controlled startup failure. Controlled checks are `WM_E2E_FORCE_ASSERTION_FAILURE=1 npm run test:e2e` and `WM_E2E_FORCE_STARTUP_FAILURE=1 npm run test:e2e`: an exit of 1 is intentional in these modes, and `result.json` must still record completed cleanup. Ordinary E2E must exit 0. These options affect only the disposable fixture.
 
-Automated checks include strict TypeScript, typed ESLint, complexity/depth/method-length checks, Vue lint/type checks, Prettier, Markdown lint, document links, rendered docs build, Java static checks and duplication signal. Single responsibility, rule ownership, purposeful reuse, architecture and financial correctness remain independent review responsibilities. No financial arithmetic is implemented in setup.
+Automated checks include strict TypeScript, typed ESLint, complexity/depth/method-length checks, Vue lint/type checks, Prettier, Markdown lint, document links, rendered docs build, Java static checks and duplication signal. Single responsibility, rule ownership, purposeful reuse, architecture and financial correctness remain independent review responsibilities. Java owns exact money validation and totals; frontend response validation and formatting do not replace those rules.
 
 Immutable imported source text under `docs/requirements/snapshots/` is intentionally excluded from formatting and authored-document link checks. Its exact bytes are verified by recorded SHA-256. Historical coordinator and role-owned documents retain their ownership; the formatter covers the current developer's assigned artifacts.
 
