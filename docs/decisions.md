@@ -195,6 +195,16 @@ This selects the modern presentation direction for the existing approved shell, 
 
 No backend/API/data/money/date/ownership change, new framework/service/dependency, wider Q-004 release scope, original-scenario completion or visual correction acceptance is implied. D-032's financial acceptance remains intact.
 
+## D-036: Accept FIN-001 modern UI correction
+
+Date: October 3, 2026 (America/New_York). Owner: human product owner. Reviewed delivery: `2509791`; independently tested/reviewed UI code: `f700ee8`.
+
+After the working modern workspace, plain-English explanation, independent results and final review were presented, the owner answered **“yes, approved”** to the request to accept the updated UI or identify required changes. This accepts the finished FIN-001 revision 5 UI correction: modern typography/spacing, responsive account presentation, direct checking creation, product-only navigation and corrected standalone touch targets. D-034 remains its design approval and D-035 its selected visual direction; D-032's financial acceptance is retained.
+
+Acceptance relies on the recorded evidence and limits: 39 isolated and 18 real-system checks at `fb48238`, three affected real-system checks at `f700ee8`, completed disposable cleanup and no remaining required reviewer finding. Unselected cases retain earlier evidence; actual browser 400% zoom was not executed. The [feature packet](features/household-checking/index.md#revision-5-demonstration-and-acceptance) records the demo and owner checkpoint.
+
+No wider Q-004 release scope, deferred activity/savings/Update balance, original scenario completion, deployment or new feature is approved. Application code, saved records, services and tooling are unchanged by recording this acceptance.
+
 ## Architect authority boundaries
 
 Routine choices follow the approved baseline and feature design. New deployable services, message brokers, external providers, replacement frameworks or databases, and material changes to security or deployment require a concrete explanation and human review before implementation. Routine dependency changes must remain justified and recorded. Setup revision 1 is approved; future finance scope remains unresolved under [Q-004](questions.md#q-004-first-usable-finance-release).
