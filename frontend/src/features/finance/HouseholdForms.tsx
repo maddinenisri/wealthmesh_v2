@@ -35,7 +35,7 @@ export function CreateHousehold({ navigate }: { navigate: Navigate }) {
           onChange={setName}
           error={save.errors.name}
         />
-        <button disabled={save.pending}>Create household</button>
+        <FormActions pending={save.pending} label="Create household" />
       </FinanceForm>
     </>
   );
@@ -72,12 +72,7 @@ export function RenameHousehold({
         onChange={setName}
         error={save.errors.name}
       />
-      <div className="actions">
-        <button disabled={save.pending}>Save household name</button>
-        <button type="button" disabled={save.pending} onClick={() => onDone()}>
-          Cancel
-        </button>
-      </div>
+      <FormActions pending={save.pending} label="Save household name" cancel={() => onDone()} />
     </FinanceForm>
   );
 }

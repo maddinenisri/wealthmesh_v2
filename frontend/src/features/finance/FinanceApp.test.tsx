@@ -4,6 +4,7 @@ import { http, HttpResponse } from 'msw';
 import { beforeEach, expect, it } from 'vitest';
 import { server } from '../../test/setup';
 import { App } from '../../App';
+import { parseHousehold } from '../../api/financeContract';
 
 const endpoint = 'http://127.0.0.1:5173/api/household';
 const empty = {
@@ -70,6 +71,57 @@ const household = {
   household: { id: '33333333-3333-4333-8333-333333333333', name: 'Maya and Sam' },
   members: [maya],
 };
+
+function holdHouseholdSave(mode: 'create' | 'rename') {
+  let release: () => void = () => undefined;
+  const pending = new Promise<void>((resolve) => {
+    release = resolve;
+  });
+  let completed = false;
+  const initial = mode === 'create' ? empty : household;
+  let saved = { ...household, household: { ...household.household, name: 'Our Household' } };
+  const command = mode === 'create' ? http.post : http.put;
+  server.use(
+    http.get(endpoint, () => HttpResponse.json(completed ? saved : initial)),
+    command(endpoint, async ({ request }) => {
+      if (mode === 'create') saved = { ...saved, household: parseHousehold(await request.json()) };
+      await pending;
+      completed = true;
+      return HttpResponse.json(saved.household, { status: mode === 'create' ? 201 : 200 });
+    }),
+  );
+  return release;
+}
+
+it.each(['create', 'rename'] as const)(
+  'announces pending household %s, disables its actions and clears Saving after completion',
+  async (mode) => {
+    const release = holdHouseholdSave(mode);
+    window.history.replaceState(null, '', mode === 'create' ? '/' : '/household');
+    render(<App />);
+    if (mode === 'rename')
+      await userEvent.click(await screen.findByRole('button', { name: 'Rename household' }));
+    const input = await screen.findByRole('textbox', { name: /^Household name$/ });
+    await userEvent.clear(input);
+    await userEvent.type(input, 'Our Household');
+    const form = input.closest('form');
+    if (!form) throw new Error('Household input must remain inside its form.');
+    const controls = within(form);
+    const label = mode === 'create' ? 'Create household' : 'Save household name';
+    await userEvent.click(controls.getByRole('button', { name: label }));
+    try {
+      expect(await controls.findByRole('status')).toHaveTextContent('Saving…');
+      expect(controls.getByRole('button', { name: label })).toBeDisabled();
+      if (mode === 'rename')
+        expect(controls.getByRole('button', { name: 'Cancel' })).toBeDisabled();
+      expect(input).toHaveValue('Our Household');
+    } finally {
+      release();
+    }
+    expect(await screen.findByRole('heading', { name: 'Our Household' })).toBeVisible();
+    expect(screen.queryByText('Saving…')).not.toBeInTheDocument();
+  },
+);
 
 function rejectConcurrentNames() {
   const rejected = (message: string) =>
