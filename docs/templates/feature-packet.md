@@ -12,7 +12,7 @@ What the household can do, a concrete example, expected results, excluded behavi
 
 ## User experience proposal
 
-UX architect owns: journey, screens, validation, loading/empty/failure states, accessibility and sketches/prototype references.
+UX architect owns: journey, screens, validation, loading/empty/failure states, accessibility and sketches/prototype references. When an existing application is the visual reference, name the inspected screens and show annotated desktop/mobile targets in this same design review. Specify the shell, typography, spacing, list/form presentation and unsupported actions. Functional test success is not visual approval; executable prototype scope must be authorized.
 
 ## Technical proposal
 
@@ -50,4 +50,4 @@ Record the demonstration and explanation reviewed, tested revision, remaining li
 
 ## Next stage
 
-Coordinator owns next role/stage and unresolved question links. Routine handoff notification is this document's path plus stage; evidence stays in its existing owned sections.
+Coordinator owns next role/stage and unresolved question links. Keep one compact current assignment and update it in place; do not append repeated scope/instruction paragraphs for every turn. Routine handoff notification is this document's path plus stage; evidence stays in its existing owned sections. Reviewer/validator read-only investigation may start once stable inputs are available, while writing turns remain sequential. Keep evidence and actual failures; summarize correction status rather than duplicating complete reports.

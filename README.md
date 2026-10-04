@@ -2,7 +2,7 @@
 
 WealthMesh v2 is a greenfield application for one household to manage its finances and understand its financial health. The MVP runs on the owner's computer through localhost and has no login.
 
-The owner accepted completed setup under [D-026](docs/decisions.md#d-026-accept-completed-project-setup). FIN-001 now implements household/member setup and individual or joint checking accounts through Spring Data JPA, with exact balances and persistent reload. Its revision 3 scope and revision 4 persistence amendment were approved (D-029/D-031). Follow the [FIN-001 packet](docs/features/household-checking/index.md) for current independent verification, working demo, rules and limitations; human feature acceptance remains pending.
+The owner accepted completed setup under [D-026](docs/decisions.md#d-026-accept-completed-project-setup) and FIN-001 under D-032. Household/member setup and individual or joint checking accounts persist through Spring Data JPA, with exact balances and saved reload. The owner requested correction of the visual design and delivery process. Follow the [FIN-001 packet](docs/features/household-checking/index.md) for accepted evidence, rules, limitations and that follow-up.
 
 ## Start here
 
@@ -21,7 +21,7 @@ The owner accepted completed setup under [D-026](docs/decisions.md#d-026-accept-
 - [Approved project setup design](docs/bootstrap-design.md)
 - [Feature review packet template](docs/templates/feature-packet.md)
 - [Copyable prompt for the next feature session](docs/prompts/next-feature-session.md)
-- [FIN-001: household and first checking](docs/features/household-checking/index.md) — implemented, independently validated and reviewed; awaiting owner acceptance
+- [FIN-001: household and first checking](docs/features/household-checking/index.md) — accepted; UI/process correction requested
 
 The source requirements are in `../wealthmesh/docs/requirements/v2`. Setup captured an immutable text-only [snapshot and provenance](docs/requirements/index.md), with [current inventory](docs/requirements/inventory.md) recording 39 feature files and 262 scenario identities. No sibling implementation was imported or source file modified. FIN-001 maps its nine original scenario IDs and partial/deferred clauses in its packet; global original completion remains unchanged. The wider first release remains Q-004. Later source changes require a new dated capture/comparison rather than overwriting the snapshot.
 

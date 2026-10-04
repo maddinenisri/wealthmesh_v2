@@ -24,6 +24,24 @@ The developer self-reviews against [coding standards](coding-standards.md), and 
 
 ## Routine handoff
 
+### Keep delivery proportional
+
+For a small change, describe the delta against the accepted application rather than redesigning its baseline. Settle material technology choices before coding; reuse the approved Spring Data JPA, exact-money/date rules, fixtures and screen patterns. A new framework or material product decision still follows the existing design checkpoint.
+
+When an original UI is the reference, inspect it read-only and identify the visual target in the existing design review: shell/navigation, typography, spacing, account presentation, forms and mobile behavior. Include annotated representative screens with synthetic data and distinguish unsupported features. Behavior tests and accessibility checks alone do not establish visual quality. An executable prototype still needs scoped authorization; this adds no third human gate.
+
+Independent investigation can overlap implementation once a working vertical slice and stable contract exist. Start the reviewer read-only then, and let the validator inspect scenario-to-test coverage before the final execution pass. Collect required findings together before handing back a correction batch; do not withhold a known issue until another correction has completed. Final independent results/recommendation still refer to the completed code. Separate developer, validator and reviewer sessions, one feature and one Markdown writer remain required.
+
+Use one compact active assignment and current-state summary in the packet. Update them in place rather than adding another repeated handoff for each turn. Each role records its substantive final result once; use a compact finding/resolution table for corrections while retaining actual failures, tested commits and limits. Read the current stage and relevant sections first, not the entire historical packet on every resumption. Preserve FIN-001's existing detailed evidence; this guidance governs future additions rather than erasing its history.
+
+Before checks, select the affected command set from the approved plan and changed risks. Run one developer verification pass and one independent validator pass on stable code; fixes repeat affected checks. Required financial, persistence, accessibility and real-system outcomes remain binding. When fresh execution is needed, invoke the existing forced-execution option directly instead of first running an UP-TO-DATE task and then forcing it. Sequence commands that mutate shared output or temporary MSW tests; use the existing per-fixture preview copies. Do not add custom supervisors, manifests or timing tools.
+
+Format owned documentation before a compound quality check. Check documentation at substantive stage boundaries and final delivery, not after every notification. A prose-only update needs relevant documentation checks, not application builds or behavior suites. Code commits identify tested revisions; a writing-turn notification does not by itself require another commit.
+
+The coordinator stays active through authorized implementation, validation and review. Do not end a turn just after launching work and leave completed handoffs waiting for another owner message. Progress updates report a new finding or completed outcome; routine waiting does not need a new report paragraph in the packet. Missing required human decisions still stop dependent work.
+
+Use observed Git milestone intervals and existing command results to discuss time. Distinguish wall-clock intervals, owner wait, environment startup and test execution; do not present unmeasured focused-hour estimates as evidence. Audit avoidable rework without weakening financial integrity, clean-code standards or either human checkpoint.
+
 Update the owned feature section with its result, evidence, unresolved question IDs and next action. Notify only the existing feature document path and stage. The coordinator places each bounded assignment (role, scope/scenario IDs, relevant inputs, allowed changes, required outcome and stop conditions) in the same document. No separate task/report chains are required for future features.
 
 Keep proposals, evidence, and approvals distinct. Chat is for communicating with the owner only. Agents write their assignments, generation plans, architecture changes, technical findings, decisions, handoffs and final evidence in repository Markdown. Agent notifications identify document paths and readiness. The coordinator records consequential human answers and resolves ambiguous feedback before dependent work.

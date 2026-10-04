@@ -159,6 +159,16 @@ Not approved: feature acceptance (second checkpoint), deferred scope, setup-tool
 
 The owner's subsequent instruction reinforced the approval and engineering requirement: **“approved, please keep clean code.”** Developer self-review and independent reviewer enforcement of the existing coding standards remain mandatory, including coherent responsibilities, DRY financial rules, composition and correction of complexity/length/nesting violations. This does not add a checkpoint or waive required tests.
 
+## D-032: Accept FIN-001 and request UI/process correction
+
+Date: October 3, 2026. Owner: human product owner. Delivery: `90b2016`; final reviewed application code: `a7493e8`, with unchanged financial/date evidence at `c976d69`.
+
+After the working demo, explanation and independent results were presented, the owner answered:
+
+> I accept this but UI is terriablely wrong compate to original version localhost:3000 or ../wealthmesh and also we are taking too long for each stry. We need to find why its taking this long or how to address process
+
+This explicitly accepts the delivered FIN-001 capability and records dissatisfaction with its visual design and delivery time. The coordinator will compare the original UI read-only and audit the actual delivery record, keeping findings and a bounded correction proposal in the existing packet. Acceptance is not endorsement of the current visual design, approval of a replacement design, or authorization to import the sibling implementation. Deferred original clauses and Q-004 remain unchanged; original global scenario completion is not advanced by partial feature acceptance.
+
 ## Architect authority boundaries
 
 Routine choices follow the approved baseline and feature design. New deployable services, message brokers, external providers, replacement frameworks or databases, and material changes to security or deployment require a concrete explanation and human review before implementation. Routine dependency changes must remain justified and recorded. Setup revision 1 is approved; future finance scope remains unresolved under [Q-004](questions.md#q-004-first-usable-finance-release).

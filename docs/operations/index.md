@@ -1,6 +1,6 @@
 # Run and understand WealthMesh locally
 
-This guide describes the existing local operating commands. Setup is accepted; its command evidence remains in [platform evidence](../features/setup/platform-implementation.md), [backend evidence](../features/setup/backend-implementation.md) and [canonical status](../features/setup/status.md). The [FIN-001 packet](../features/household-checking/index.md) explains the delivered household/checking screens, saved data, financial rules, current independent checks and pending human acceptance.
+This guide describes the existing local operating commands. Setup is accepted; its command evidence remains in [platform evidence](../features/setup/platform-implementation.md), [backend evidence](../features/setup/backend-implementation.md) and [canonical status](../features/setup/status.md). FIN-001 is accepted under D-032 with a UI/process correction requested. Its [packet](../features/household-checking/index.md) explains the household/checking screens, saved data, financial rules, independent results and follow-up audit.
 
 ## First installation
 
