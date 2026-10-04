@@ -4,7 +4,7 @@ This project is for one household, on this computer through localhost, without l
 
 ## Current work and your review
 
-Open the [FIN-001 combined packet](features/household-checking/index.md#next-stage) for current accepted status and its retained design, independent results, demo and operating guidance under D-032/D-036. The [canonical setup status](features/setup/status.md) retains acceptance under D-026. No next feature is assigned; wider release scope remains open in Q-004. Approval and acceptance are distinct actual human decisions.
+Open the [FIN-001 combined packet](features/household-checking/index.md#next-stage) for accepted status and retained evidence/demo under D-032/D-036. [FIN-002 received salary](features/checking-income/index.md) is the recommended next-session planning target under D-038: design approval pending, not implemented. Use the [copyable session prompt](prompts/next-feature-session.md) to develop its bounded design and pre-code plan. The [canonical setup status](features/setup/status.md) retains acceptance under D-026; wider release scope remains open in Q-004. Approval and acceptance require actual human decisions.
 
 - [Questions awaiting or retaining your answers](questions.md)
 - [Human decisions and their history](decisions.md)

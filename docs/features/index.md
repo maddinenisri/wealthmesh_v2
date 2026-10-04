@@ -2,10 +2,11 @@
 
 One feature is implemented at a time. Each packet links its designs, acceptance plan, role work, explanation and final evidence. Human approval and acceptance live in the feature's canonical status record.
 
-| Feature                                                                      | What it adds                                                                                                         | Current facts                                 |
-| ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
-| [SETUP-001: project setup](setup/index.md)                                   | Reproducible local application foundation, persistent development PostgreSQL, disposable tests and a Markdown reader | [Canonical setup status](setup/status.md)     |
-| [FIN-001: Household and first checking account](household-checking/index.md) | Household/member/checking slice with distinguishing labels, joint ownership and persisted reload                     | Finances and modern UI accepted (D-032/D-036) |
+| Feature                                                                      | What it adds                                                                                                         | Current facts                                           |
+| ---------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| [SETUP-001: project setup](setup/index.md)                                   | Reproducible local application foundation, persistent development PostgreSQL, disposable tests and a Markdown reader | [Canonical setup status](setup/status.md)               |
+| [FIN-001: Household and first checking account](household-checking/index.md) | Household/member/checking slice with distinguishing labels, joint ownership and persisted reload                     | Finances and modern UI accepted (D-032/D-036)           |
+| [FIN-002: Record received salary into checking](checking-income/index.md)    | Recommended salary recording, account activity and income-only month view                                            | Planning only; design approval pending, not implemented |
 
 ## Household finance features
 

@@ -1,6 +1,6 @@
 # WealthMesh v2 questions
 
-The coordinator owns this register. Questions have stable IDs and remain here after resolution. Actual human decisions live in [decisions](decisions.md); setup approval and acceptance facts are canonical in [setup status](features/setup/status.md). Updated October 3, 2026.
+The coordinator owns this register. Questions have stable IDs and remain here after resolution. Actual human decisions live in [decisions](decisions.md); setup approval and acceptance facts are canonical in [setup status](features/setup/status.md). Updated October 4, 2026.
 
 Agents propose questions and alternatives in their role handoffs. The coordinator records them here, communicates with the owner in chat, and records the supplied answer and decision link. An open question blocks only work that depends on its answer. Do not infer answers from silence or add another mandatory checkpoint.
 
@@ -148,3 +148,12 @@ The supplied policy answers are recorded in [D-027](decisions.md#d-027-fin-001-a
 - Context: the owner says the visible UI is still unsatisfactory and requests current online UX research. Current sources/findings are in the [existing feature packet](features/household-checking/index.md#owner-visual-steering-and-current-ux-research). This changes presentation preference within the financial correction, not backend/data scope or acceptance.
 - Answer: **“Modern finance workspace.”**
 - Decision: [D-035](decisions.md#d-035-select-the-modern-finance-workspace-style). Structural/financial scope stays unchanged; visual acceptance remains pending.
+
+## Q-013: FIN-002 design boundaries
+
+- Owner: human product owner; UX/architect propose implications, coordinator records answers.
+- Status: open; blocks concrete FIN-002 design approval/dependent implementation, not authorized planning.
+- Question: approve the bounded received-Salary contract after role proposals, including received-date limits, entered-by selection and the honest income-only summary?
+- Rationale/options: recommend positive actual Salary into existing checking, review/confirm/cancel and income-only monthly inspection. Spending/net assertions remain deferred rather than fabricated. Propose backend-local today/default, dates at or after the saved tracking-start date, and no future dates; pre-start history and reminders stay deferred. Explain how existing dated openings are preserved without double credit and whether any existing member may be entered-by independently of owners. Architect must propose precise amount/result/aggregate bounds, atomicity and replay/concurrency behavior; these are not supplied decisions.
+- Answer: not supplied. The owner requested preparing observable execution in a new session; that supplies packaging direction only, not concrete design or first-release approval.
+- Decision: [D-038](decisions.md#d-038-prepare-an-observable-next-feature-session), preparation only. See [FIN-002 draft](features/checking-income/index.md). Q-004's remaining release scope stays open; original-scenario completion is unchanged.

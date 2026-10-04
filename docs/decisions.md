@@ -213,6 +213,14 @@ The owner requested comparing v2 with `../wealthmesh_v3` and optimizing the work
 
 The [comparison](process-improvement.md) records additional recommendations separately. This direction authorizes process documentation, not v3 adoption, a stack migration, infrastructure refactoring, new financial scope or removal of TDD/independent roles/two human checkpoints. D-032/D-036 FIN-001 acceptance and prior decisions remain intact.
 
+## D-038: Prepare an observable next-feature session
+
+Date: October 4, 2026. Owner: human product owner. Related: [Q-013](questions.md#q-013-fin-002-design-boundaries).
+
+The owner requested preparing the next feature so execution can be observed in a **new session**. This authorizes the [FIN-002 received-salary planning package](features/checking-income/index.md), next-session prompt and navigation updates. The coordinator recommends a narrow checking-income slice from the captured requirements; this direction does not approve its concrete product/UX/technical/test contract, feature acceptance, original-scenario completion or wider first-release scope.
+
+D-037's ten-minute assignment limit, existing TDD/independent roles and both human checkpoints remain. The new session develops bounded design/test-plan deltas, then presents the concrete combined packet before implementation. FIN-001 and its modern UI remain accepted; no application, service, source snapshot or v3 change is authorized by this preparation.
+
 ## Architect authority boundaries
 
 Routine choices follow the approved baseline and feature design. New deployable services, message brokers, external providers, replacement frameworks or databases, and material changes to security or deployment require a concrete explanation and human review before implementation. Routine dependency changes must remain justified and recorded. Setup revision 1 is approved; future finance scope remains unresolved under [Q-004](questions.md#q-004-first-usable-finance-release).
